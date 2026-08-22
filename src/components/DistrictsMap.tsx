@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Navigation, Car } from 'lucide-react';
+import { MapPin, Navigation, Car, CheckCircle2 } from 'lucide-react';
 import { QASHQADARYO_DISTRICTS } from '../data/districts';
 import type { Language } from '../types';
 import type { TranslationsType } from '../data/translations';
@@ -10,7 +10,7 @@ interface DistrictsMapProps {
 }
 
 export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
-  const [filter, setFilter] = useState<'all' | 'active' | 'expanding' | 'planned'>('all');
+  const [filter, setFilter] = useState<'all' | 'active' | 'expanding'>('all');
 
   const filteredDistricts = QASHQADARYO_DISTRICTS.filter((d) => {
     if (filter === 'all') return true;
@@ -26,36 +26,38 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
   return (
     <section id="districts" className="py-20 md:py-28 relative bg-[#090d18]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
             <MapPin className="w-3.5 h-3.5" />
             <span>{t.districts.tag}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
             {t.districts.title}
           </h2>
-          <p className="text-base sm:text-lg text-slate-300">
+          <p className="text-sm sm:text-base md:text-lg text-slate-300">
             {t.districts.subtitle}
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+        {/* Filter Pills */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-10">
           <button
             onClick={() => setFilter('all')}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               filter === 'all'
-                ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/25'
+                : 'bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700'
             }`}
           >
-            Barchasi (15 tuman)
+            Barchasi (15 ta tuman)
           </button>
           <button
             onClick={() => setFilter('active')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
               filter === 'active'
-                ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/20'
-                : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                ? 'bg-emerald-500 text-slate-950 font-black shadow-lg shadow-emerald-500/25'
+                : 'bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
@@ -65,8 +67,8 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
             onClick={() => setFilter('expanding')}
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
               filter === 'expanding'
-                ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/20'
-                : 'bg-slate-900 text-slate-300 border border-slate-800 hover:border-slate-700'
+                ? 'bg-amber-500 text-slate-950 font-black shadow-lg shadow-amber-500/25'
+                : 'bg-slate-900/90 text-slate-300 border border-slate-800 hover:border-slate-700'
             }`}
           >
             <span className="w-2 h-2 rounded-full bg-amber-400"></span>
@@ -74,40 +76,45 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        {/* Responsive Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3 sm:gap-4">
           {filteredDistricts.map((d) => (
             <div
               key={d.id}
-              className="glass-panel p-5 rounded-2xl border border-slate-800/80 hover:border-amber-500/40 transition-all duration-200 group"
+              className="glass-panel p-4 sm:p-5 rounded-2xl border border-slate-800/90 hover:border-amber-500/50 transition-all duration-300 group flex flex-col justify-between"
             >
-              <div className="flex items-start justify-between mb-3">
-                <span className="text-xs font-mono text-slate-500">#{d.id.slice(0, 4)}</span>
-                <span
-                  className={`inline-block w-2.5 h-2.5 rounded-full ${
-                    d.coverageStatus === 'active'
-                      ? 'bg-emerald-400 shadow-sm shadow-emerald-400'
-                      : d.coverageStatus === 'expanding'
-                      ? 'bg-amber-400'
-                      : 'bg-slate-500'
-                  }`}
-                  title={d.coverageStatus}
-                />
+              <div>
+                <div className="flex items-center justify-between mb-2.5">
+                  <span className="text-[11px] font-mono text-slate-500">#{d.id.slice(0, 4)}</span>
+                  <div className="flex items-center gap-1.5">
+                    <span
+                      className={`inline-block w-2 h-2 rounded-full ${
+                        d.coverageStatus === 'active'
+                          ? 'bg-emerald-400 shadow-sm shadow-emerald-400'
+                          : 'bg-amber-400'
+                      }`}
+                    />
+                    <span className="text-[10px] font-semibold text-slate-400 uppercase">
+                      {d.coverageStatus === 'active' ? 'Faol' : 'Kengaymoqda'}
+                    </span>
+                  </div>
+                </div>
+
+                <h4 className="text-base font-bold text-white mb-3 group-hover:text-amber-300 transition-colors">
+                  {getDistrictName(d)}
+                </h4>
               </div>
 
-              <h4 className="text-base font-bold text-white mb-3 group-hover:text-amber-400 transition-colors">
-                {getDistrictName(d)}
-              </h4>
-
-              <div className="space-y-2 text-xs border-t border-slate-800/80 pt-3">
+              <div className="space-y-1.5 text-xs border-t border-slate-800/80 pt-3 mt-1">
                 <div className="flex justify-between text-slate-400">
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1.5">
                     <Car className="w-3.5 h-3.5 text-amber-400" />
                     <span>Haydovchilar:</span>
                   </span>
                   <span className="font-bold text-slate-200 font-mono">{d.targetDrivers}+</span>
                 </div>
                 <div className="flex justify-between text-slate-400">
-                  <span className="flex items-center gap-1">
+                  <span className="flex items-center gap-1.5">
                     <Navigation className="w-3.5 h-3.5 text-sky-400" />
                     <span>Yo'nalishlar:</span>
                   </span>
@@ -117,7 +124,14 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
             </div>
           ))}
         </div>
+
+        {/* Bottom Note */}
+        <div className="mt-8 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+          <span>Qashqadaryo viloyatining barcha tumanlarida haydovchilar bazasi kengaytirilib borilmoqda.</span>
+        </div>
       </div>
     </section>
   );
 };
+
