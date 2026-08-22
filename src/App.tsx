@@ -14,7 +14,6 @@ import { ApplicationForm } from './components/ApplicationForm';
 import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
-import { FloatingCTA } from './components/FloatingCTA';
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
@@ -96,9 +95,6 @@ export function App() {
 
       {/* Footer */}
       <Footer t={t} />
-
-      {/* Floating Action Buttons */}
-      <FloatingCTA />
 
       {/* Contract Modal */}
       <ContractModal
