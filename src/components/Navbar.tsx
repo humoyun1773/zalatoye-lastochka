@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Globe, Menu, X, FileText, ChevronRight, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Globe, Menu, X, FileText, ChevronRight, ChevronDown, Check } from 'lucide-react';
 import type { Language } from '../types';
 import type { TranslationsType } from '../data/translations';
 
@@ -13,6 +13,8 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract }) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [langDropdownOpen, setLangDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +22,17 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setLangDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const navLinks = [
@@ -31,6 +44,14 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
     { href: '#faq', label: t.nav.faq },
     { href: '#contact', label: t.nav.contact },
   ];
+
+  const languages: { code: Language; label: string; name: string }[] = [
+    { code: 'uz', label: 'UZ', name: "O'zbekcha" },
+    { code: 'ru', label: 'RU', name: 'Русский' },
+    { code: 'en', label: 'EN', name: 'English' },
+  ];
+
+  const currentLang = languages.find((l) => l.code === lang) || languages[0];
 
   return (
     <header
@@ -86,22 +107,53 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
             ))}
           </nav>
 
-          {/* Right Action: Language Select & Contract Modal Button */}
+          {/* Right Action: Custom Language Dropdown & Contract Modal Button */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Language Switcher Select Dropdown */}
-            <div className="relative flex items-center bg-[#0d1322] border border-amber-500/30 hover:border-amber-400/70 rounded-xl px-2.5 py-1.5 shadow-inner transition-all duration-200 group">
-              <Globe className="w-3.5 h-3.5 text-amber-400 mr-2 shrink-0 pointer-events-none" />
-              <select
-                value={lang}
-                onChange={(e) => setLang(e.target.value as Language)}
-                className="bg-transparent text-white font-bold text-xs focus:outline-none appearance-none pr-5 cursor-pointer uppercase tracking-wider"
-                aria-label="Tilni tanlang"
+            {/* Custom Luxury Language Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                type="button"
+                onClick={() => setLangDropdownOpen(!langDropdownOpen)}
+                className="flex items-center gap-2 bg-[#0c1220] hover:bg-[#11182c] border border-amber-500/30 hover:border-amber-400/80 rounded-xl px-3 py-1.5 text-xs font-bold text-white transition-all duration-200 shadow-md cursor-pointer group"
+                aria-haspopup="true"
+                aria-expanded={langDropdownOpen}
               >
-                <option value="uz" className="bg-[#090e1c] text-white">UZ</option>
-                <option value="ru" className="bg-[#090e1c] text-white">RU</option>
-                <option value="en" className="bg-[#090e1c] text-white">EN</option>
-              </select>
-              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400 absolute right-2 pointer-events-none transition-colors" />
+                <Globe className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="font-extrabold uppercase font-mono">{currentLang.label}</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400 transition-transform duration-200 ${
+                    langDropdownOpen ? 'rotate-180 text-amber-400' : ''
+                  }`}
+                />
+              </button>
+
+              {/* Dropdown Menu Popup */}
+              {langDropdownOpen && (
+                <div className="absolute right-0 mt-2 w-36 bg-[#0c1222]/98 border border-amber-500/40 rounded-2xl shadow-2xl shadow-black/90 backdrop-blur-2xl p-1.5 z-50 animate-fadeIn">
+                  {languages.map((l) => {
+                    const isSelected = lang === l.code;
+                    return (
+                      <button
+                        key={l.code}
+                        type="button"
+                        onClick={() => {
+                          setLang(l.code);
+                          setLangDropdownOpen(false);
+                        }}
+                        className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold transition-all duration-150 cursor-pointer ${
+                          isSelected
+                            ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 shadow-md font-black'
+                            : 'text-slate-300 hover:bg-slate-800/80 hover:text-white'
+                        }`}
+                      >
+                        <span className="font-mono">{l.label}</span>
+                        <span className="text-[11px] font-normal opacity-90">{l.name}</span>
+                        {isSelected && <Check className="w-3.5 h-3.5 text-slate-950 stroke-[3]" />}
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
             </div>
 
             {/* Desktop Contract Modal Button */}
