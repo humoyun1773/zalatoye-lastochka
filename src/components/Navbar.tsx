@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Menu, X, FileText, ChevronRight } from 'lucide-react';
+import { Globe, Menu, X, FileText, ChevronRight, ChevronDown } from 'lucide-react';
 import type { Language } from '../types';
 import type { TranslationsType } from '../data/translations';
 
@@ -86,24 +86,22 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
             ))}
           </nav>
 
-          {/* Right Action: Language Switcher & Contract Modal Button */}
+          {/* Right Action: Language Select & Contract Modal Button */}
           <div className="flex items-center gap-2 sm:gap-3">
-            {/* Language Switcher */}
-            <div className="flex items-center bg-[#0d1322] border border-slate-800/90 rounded-xl p-1 shadow-inner">
-              <Globe className="w-3.5 h-3.5 text-amber-400 ml-1.5 mr-1 hidden sm:inline-block" />
-              {(['uz', 'ru', 'en'] as Language[]).map((l) => (
-                <button
-                  key={l}
-                  onClick={() => setLang(l)}
-                  className={`px-2.5 py-1 text-[10px] sm:text-xs font-bold rounded-lg uppercase transition-all duration-200 cursor-pointer ${
-                    lang === l
-                      ? 'bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 shadow-md font-black'
-                      : 'text-slate-400 hover:text-white'
-                  }`}
-                >
-                  {l}
-                </button>
-              ))}
+            {/* Language Switcher Select Dropdown */}
+            <div className="relative flex items-center bg-[#0d1322] border border-amber-500/30 hover:border-amber-400/70 rounded-xl px-2.5 py-1.5 shadow-inner transition-all duration-200 group">
+              <Globe className="w-3.5 h-3.5 text-amber-400 mr-2 shrink-0 pointer-events-none" />
+              <select
+                value={lang}
+                onChange={(e) => setLang(e.target.value as Language)}
+                className="bg-transparent text-white font-bold text-xs focus:outline-none appearance-none pr-5 cursor-pointer uppercase tracking-wider"
+                aria-label="Tilni tanlang"
+              >
+                <option value="uz" className="bg-[#090e1c] text-white">UZ</option>
+                <option value="ru" className="bg-[#090e1c] text-white">RU</option>
+                <option value="en" className="bg-[#090e1c] text-white">EN</option>
+              </select>
+              <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-amber-400 absolute right-2 pointer-events-none transition-colors" />
             </div>
 
             {/* Desktop Contract Modal Button */}
