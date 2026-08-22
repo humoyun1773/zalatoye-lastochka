@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass } from 'lucide-react';
+import { Compass, FileSignature, Cpu, TrendingUp, ShieldCheck } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
 interface RoadmapProps {
@@ -7,6 +7,8 @@ interface RoadmapProps {
 }
 
 export const Roadmap: React.FC<RoadmapProps> = ({ t }) => {
+  const stepIcons = [FileSignature, Cpu, TrendingUp, ShieldCheck];
+
   return (
     <section className="py-20 md:py-28 relative bg-[#060a14]">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,31 +26,34 @@ export const Roadmap: React.FC<RoadmapProps> = ({ t }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-          {t.roadmap.steps.map((step, idx) => (
-            <div
-              key={idx}
-              className="luxury-card p-6 sm:p-7 rounded-3xl relative group flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-5">
-                  <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/35 flex items-center justify-center text-amber-300 font-mono font-black text-lg group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300 shadow-md">
-                    {step.step}
+          {t.roadmap.steps.map((step, idx) => {
+            const Icon = stepIcons[idx] || Compass;
+            return (
+              <div
+                key={idx}
+                className="luxury-card p-6 sm:p-7 rounded-3xl relative group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-5">
+                    <div className="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/35 flex items-center justify-center text-amber-300 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-slate-950 transition-all duration-300 shadow-md">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
+                      {idx === 3 ? 'Yakuniy Qadam' : `${idx + 1}-Bosqich`}
+                    </span>
                   </div>
-                  <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">
-                    {idx === 3 ? 'Yakuniy Qadam' : `${idx + 1}-Bosqich`}
-                  </span>
+
+                  <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
+                    {step.title}
+                  </h3>
                 </div>
 
-                <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-amber-300 transition-colors">
-                  {step.title}
-                </h3>
+                <p className="text-xs text-slate-300/90 leading-relaxed border-t border-slate-800/80 pt-4 mt-4">
+                  {step.desc}
+                </p>
               </div>
-
-              <p className="text-xs text-slate-300/90 leading-relaxed border-t border-slate-800/80 pt-4 mt-4">
-                {step.desc}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
