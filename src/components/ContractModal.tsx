@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { X, ShieldCheck, Printer, FileSignature, ArrowRight } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
@@ -10,6 +10,34 @@ interface ContractModalProps {
 }
 
 export const ContractModal: React.FC<ContractModalProps> = ({ isOpen, onClose, t, onApply }) => {
+  // Lock background scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
+      const originalPaddingRight = document.body.style.paddingRight;
+      
+      // Prevent scrollbar layout jump
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+      if (scrollBarWidth > 0) {
+        document.body.style.paddingRight = `${scrollBarWidth}px`;
+      }
+      document.body.style.overflow = 'hidden';
+
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        document.body.style.overflow = originalOverflow;
+        document.body.style.paddingRight = originalPaddingRight;
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
   const handlePrint = () => {
@@ -17,7 +45,12 @@ export const ContractModal: React.FC<ContractModalProps> = ({ isOpen, onClose, t
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xl">
+    <div
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/85 backdrop-blur-xl animate-fadeIn"
+    >
       <div className="relative w-full max-w-3xl max-h-[92vh] bg-[#070b14] border border-amber-500/40 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
         {/* Modal Topbar */}
         <div className="p-5 sm:p-6 border-b border-slate-800/90 flex items-center justify-between bg-[#050811]/90">

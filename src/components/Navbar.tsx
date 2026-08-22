@@ -24,6 +24,17 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock background scroll when mobile drawer is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const originalOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => {
+        document.body.style.overflow = originalOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
   // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
