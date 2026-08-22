@@ -50,8 +50,8 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
 
   return (
     <section id="application" className="py-20 md:py-28 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto glass-panel-gold p-6 sm:p-10 lg:p-12 rounded-3xl border border-amber-500/40 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto luxury-card-gold p-6 sm:p-10 lg:p-12 rounded-3xl border border-amber-500/40 shadow-2xl relative overflow-hidden backdrop-blur-2xl">
           {/* Ambient Glow */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-amber-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 

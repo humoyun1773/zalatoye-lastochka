@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
           : 'bg-gradient-to-b from-[#080c14]/90 to-transparent py-4 sm:py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between gap-2">
           {/* Brand & Logo */}
           <a href="#" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">

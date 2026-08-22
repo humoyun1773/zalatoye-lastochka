@@ -38,7 +38,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Header */}
         <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-18">
           {/* Official Shimmer Verification Badge */}

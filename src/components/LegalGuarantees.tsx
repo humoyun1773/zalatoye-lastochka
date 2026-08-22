@@ -10,7 +10,7 @@ interface LegalGuaranteesProps {
 export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContract }) => {
   return (
     <section id="guarantees" className="py-20 md:py-28 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4">
             <ShieldCheck className="w-3.5 h-3.5" />
@@ -46,7 +46,7 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
         </div>
 
         {/* Contract Preview Callout */}
-        <div className="max-w-4xl mx-auto luxury-card-gold p-6 sm:p-10 rounded-3xl text-center space-y-4 relative overflow-hidden">
+        <div className="w-full luxury-card-gold p-6 sm:p-10 rounded-3xl text-center space-y-4 relative overflow-hidden">
           <div className="w-14 h-14 rounded-2xl bg-amber-400/20 border border-amber-400/40 text-amber-300 flex items-center justify-center mx-auto mb-2 shadow-lg shadow-amber-500/20">
             <FileSignature className="w-7 h-7" />
           </div>

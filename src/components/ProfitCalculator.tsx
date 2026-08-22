@@ -43,7 +43,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
 
   return (
     <section id="calculator" className="py-20 md:py-28 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
@@ -59,7 +59,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
         </div>
 
         {/* Main Calculator Card */}
-        <div className="max-w-5xl mx-auto bg-gradient-to-b from-[#121826]/95 to-[#0a0f1c]/95 rounded-3xl border border-amber-500/30 p-5 sm:p-8 lg:p-10 shadow-2xl shadow-black/80 backdrop-blur-xl">
+        <div className="w-full bg-gradient-to-b from-[#121826]/95 to-[#0a0f1c]/95 rounded-3xl border border-amber-500/30 p-5 sm:p-8 lg:p-12 shadow-2xl shadow-black/80 backdrop-blur-xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Left Controls */}
             <div className="lg:col-span-6 space-y-6">

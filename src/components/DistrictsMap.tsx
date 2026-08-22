@@ -25,7 +25,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
 
   return (
     <section id="districts" className="py-20 md:py-28 relative bg-[#090d18]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-bold uppercase tracking-wider mb-4">
