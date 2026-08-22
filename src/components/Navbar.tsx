@@ -41,7 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
     { href: '#calculator', label: t.nav.calculator },
     { href: '#districts', label: t.nav.districts },
     { href: '#guarantees', label: t.nav.guarantees },
-    { href: '#faq', label: t.nav.faq },
     { href: '#contact', label: t.nav.contact },
   ];
 
