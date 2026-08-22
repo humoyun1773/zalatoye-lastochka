@@ -52,8 +52,8 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
           </div>
 
           {/* Main Headline */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.12] mb-6">
-            <span className="block text-slate-200 font-light text-xl sm:text-3xl lg:text-4xl mb-2.5">
+          <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black font-display tracking-tight leading-[1.08] mb-6">
+            <span className="block text-slate-200 font-light text-xl sm:text-3xl lg:text-4xl mb-3 tracking-normal">
               "{t.hero.companyName}" <span className="text-amber-400 font-extrabold">{t.hero.companyType}</span>
             </span>
             <span className="gold-gradient-text">
@@ -62,7 +62,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-lg lg:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 font-normal px-2">
+          <p className="text-sm sm:text-base lg:text-xl text-slate-300/95 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 font-normal px-2">
             {t.hero.subtitle}
           </p>
 
