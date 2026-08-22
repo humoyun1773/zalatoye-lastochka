@@ -120,16 +120,16 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-3 pt-4 border-t border-amber-500/30">
-              <div className="p-3 rounded-2xl bg-[#090e1c]/80 border border-slate-800">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-amber-500/30">
+              <div className="p-3.5 rounded-2xl bg-[#090e1c]/80 border border-slate-800 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start">
                 <span className="block text-[10px] uppercase font-bold text-slate-400">1 Ulush Narxi</span>
-                <span className="text-sm sm:text-base font-black text-amber-400 font-mono">2.64 mln</span>
+                <span className="text-sm sm:text-base font-black text-amber-400 font-mono">2,640,000 so'm</span>
               </div>
-              <div className="p-3 rounded-2xl bg-[#090e1c]/80 border border-slate-800">
+              <div className="p-3.5 rounded-2xl bg-[#090e1c]/80 border border-slate-800 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start">
                 <span className="block text-[10px] uppercase font-bold text-slate-400">Sof Foyda</span>
-                <span className="text-sm sm:text-base font-black text-emerald-400 font-mono">+100%</span>
+                <span className="text-sm sm:text-base font-black text-emerald-400 font-mono">+100% (+2.64 mln)</span>
               </div>
-              <div className="p-3 rounded-2xl bg-[#090e1c]/80 border border-slate-800">
+              <div className="p-3.5 rounded-2xl bg-[#090e1c]/80 border border-slate-800 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start">
                 <span className="block text-[10px] uppercase font-bold text-slate-400">Sarmoya Qaytishi</span>
                 <span className="text-sm sm:text-base font-black text-sky-400 font-mono">17-oy (100%)</span>
               </div>
