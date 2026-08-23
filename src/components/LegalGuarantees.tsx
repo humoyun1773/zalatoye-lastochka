@@ -39,14 +39,14 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
     <section id="guarantees" className="py-20 md:py-28 relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#22C55E]/15 border border-[#22C55E]/30 text-[#22C55E] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <ShieldCheck className="w-3.5 h-3.5 text-[#22C55E]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
             <span>{t.guarantees.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
             {t.guarantees.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-400">
+          <p className="text-sm sm:text-base md:text-lg text-slate-600">
             {t.guarantees.subtitle}
           </p>
         </div>
@@ -57,21 +57,21 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
             return (
               <div
                 key={idx}
-                className="luxury-card p-6 sm:p-8 rounded-3xl flex items-start gap-5 group border border-white/10 hover:border-[#22C55E]/50 transition-all duration-300 relative overflow-hidden"
+                className="luxury-card bg-white p-6 sm:p-8 rounded-3xl flex items-start gap-5 group border border-slate-200 hover:border-emerald-500 transition-all duration-300 relative overflow-hidden shadow-sm"
               >
-                <div className="w-12 h-12 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E] shrink-0 group-hover:scale-110 group-hover:bg-[#22C55E] group-hover:text-slate-950 transition-all duration-300">
+                <div className="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300">
                   <Icon className="w-6 h-6" />
                 </div>
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1.5">
-                    <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-[#FFD21F] transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                       {card.title}
                     </h3>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-white/5 border border-white/10 text-slate-400">
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-600">
                       {card.tag}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {card.desc}
                   </p>
                 </div>
@@ -81,22 +81,22 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
         </div>
 
         {/* Contract Preview Callout */}
-        <div className="w-full luxury-card-gold p-6 sm:p-10 rounded-3xl text-center space-y-4 relative overflow-hidden border border-[#FFD21F]/40 shadow-2xl">
-          <div className="w-14 h-14 rounded-2xl bg-[#FFD21F]/20 border border-[#FFD21F]/40 text-[#FFD21F] flex items-center justify-center mx-auto mb-2 shadow-lg">
+        <div className="w-full luxury-card-blue p-6 sm:p-10 rounded-3xl text-center space-y-4 relative overflow-hidden border border-blue-200 shadow-xl bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/50">
+          <div className="w-14 h-14 rounded-2xl bg-blue-100 border border-blue-200 text-blue-700 flex items-center justify-center mx-auto mb-2 shadow-sm">
             <FileSignature className="w-7 h-7" />
           </div>
-          <h3 className="text-xl sm:text-3xl font-black text-white">
+          <h3 className="text-xl sm:text-3xl font-black text-slate-900">
             Rasmiy Ikki Tomonlama Shartnoma Namunasi
           </h3>
-          <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
             "ZALATIYE LASTOCHKA" MCHJ bilan tuziladigan to'liq yuridik shartnoma bandlari, huquq va majburiyatlar bilan tanishing.
           </p>
           <div className="pt-2">
             <button
               onClick={onOpenContract}
-              className="gold-btn inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-xs sm:text-sm font-bold shadow-xl cursor-pointer"
+              className="blue-btn inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-xs sm:text-sm font-bold shadow-xl cursor-pointer text-white"
             >
-              <FileCheck2 className="w-4 h-4" />
+              <FileCheck2 className="w-4 h-4 text-white" />
               <span>SHARTNOMA NAMUNASINI KO‘RISH</span>
             </button>
           </div>

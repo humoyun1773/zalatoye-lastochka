@@ -14,17 +14,17 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ t }) => {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 relative bg-[#0D1117]/60 border-y border-white/5">
+    <section id="faq" className="py-20 md:py-28 relative bg-slate-50 border-y border-slate-200">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFD21F]/10 border border-[#FFD21F]/30 text-[#FFD21F] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-blue-600" />
             <span>{t.faq.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-4">
             {t.faq.title}
           </h2>
-          <p className="text-sm sm:text-base text-slate-400">
+          <p className="text-sm sm:text-base text-slate-600">
             {t.faq.subtitle}
           </p>
         </div>
@@ -35,24 +35,24 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ t }) => {
             return (
               <div
                 key={idx}
-                className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
+                className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${
                   isOpen
-                    ? 'luxury-card border-[#FFD21F]/50 shadow-xl'
-                    : 'luxury-card border-white/10 hover:border-white/20'
+                    ? 'border-blue-500 shadow-md'
+                    : 'border-slate-200 hover:border-slate-300'
                 }`}
               >
                 <button
                   onClick={() => toggle(idx)}
                   className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none cursor-pointer"
                 >
-                  <span className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? 'text-[#FFD21F]' : 'text-white'}`}>
+                  <span className={`text-sm sm:text-base font-bold transition-colors ${isOpen ? 'text-blue-700' : 'text-slate-900'}`}>
                     {item.q}
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
                       isOpen
-                        ? 'rotate-180 bg-[#FFD21F] text-slate-950 shadow-sm'
-                        : 'bg-white/5 text-slate-400 border border-white/10'
+                        ? 'rotate-180 bg-blue-600 text-white shadow-sm'
+                        : 'bg-slate-100 text-slate-500 border border-slate-200'
                     }`}
                   >
                     <ChevronDown className="w-4 h-4" />
@@ -60,7 +60,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ t }) => {
                 </button>
 
                 {isOpen && (
-                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-slate-400 leading-relaxed border-t border-white/5">
+                  <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100">
                     {item.a}
                   </div>
                 )}

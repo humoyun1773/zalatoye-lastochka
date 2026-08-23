@@ -56,14 +56,14 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFD21F]/10 border border-[#FFD21F]/30 text-[#FFD21F] text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <Camera className="w-3.5 h-3.5 text-[#FFD21F]" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
+            <Camera className="w-3.5 h-3.5 text-blue-600" />
             <span>{t.gallery.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
             {t.gallery.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-400">
+          <p className="text-sm sm:text-base md:text-lg text-slate-600">
             {t.gallery.subtitle}
           </p>
         </div>
@@ -75,39 +75,39 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
             return (
               <div
                 key={idx}
-                className={`relative rounded-3xl overflow-hidden group border border-white/10 hover:border-[#FFD21F]/60 transition-all duration-500 shadow-xl ${imgData.height}`}
+                className={`relative rounded-3xl overflow-hidden group border border-slate-200 hover:border-blue-500 transition-all duration-500 shadow-md ${imgData.height}`}
               >
                 {/* Background Image with Zoom on Hover */}
                 <img
                   src={imgData.url}
                   alt={item.title}
                   loading="lazy"
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90 group-hover:brightness-100"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-95 group-hover:brightness-100"
                 />
 
-                {/* Dark Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#070A0F] via-[#070A0F]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent opacity-75 group-hover:opacity-85 transition-opacity" />
 
                 {/* Top Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-xl bg-black/60 backdrop-blur-md border border-white/10 text-[11px] font-bold text-[#FFD21F] uppercase tracking-wider">
+                  <span className="px-3 py-1 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-bold text-blue-700 uppercase tracking-wider shadow-sm">
                     {item.tag}
                   </span>
                 </div>
 
                 {/* Bottom Content & Hover Hover Badge */}
                 <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6 flex flex-col justify-end transform transition-transform duration-300">
-                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-[#FFD21F] mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center gap-1.5 text-[11px] font-semibold text-blue-400 mb-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Sparkles className="w-3.5 h-3.5" />
                     <span>{t.gallery.caption}</span>
                   </div>
-                  <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-[#FFD21F] transition-colors leading-snug">
+                  <h4 className="text-base sm:text-lg font-bold text-white group-hover:text-blue-300 transition-colors leading-snug">
                     {item.title}
                   </h4>
                 </div>
 
                 {/* Hover Eye Action Icon */}
-                <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-[#FFD21F]/20 backdrop-blur-md border border-[#FFD21F]/40 text-[#FFD21F] flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                <div className="absolute top-4 right-4 w-9 h-9 rounded-xl bg-blue-600/80 backdrop-blur-md border border-blue-400 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 shadow-md">
                   <Eye className="w-4 h-4" />
                 </div>
               </div>
