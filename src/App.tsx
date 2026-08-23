@@ -42,7 +42,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#080c14] text-slate-100 selection:bg-amber-500 selection:text-black flex flex-col justify-between">
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-amber-400 selection:text-slate-950 flex flex-col justify-between">
       {/* Top Fixed Navbar */}
       <Navbar
         lang={lang}

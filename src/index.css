@@ -2,18 +2,18 @@
 
 @layer base {
   :root {
-    --gold-primary: #f59e0b;
-    --gold-bright: #fbbf24;
-    --gold-light: #fef08a;
-    --emerald-primary: #10b981;
-    --bg-dark: #050811;
-    --card-bg: rgba(13, 19, 35, 0.75);
+    --gold-primary: #d97706;
+    --gold-bright: #f59e0b;
+    --gold-light: #fef3c7;
+    --emerald-primary: #059669;
+    --bg-light: #f8fafc;
+    --card-bg: rgba(255, 255, 255, 0.9);
   }
 
   html {
     scroll-behavior: smooth;
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color-scheme: dark;
+    color-scheme: light;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -30,91 +30,91 @@
   }
 
   body {
-    background-color: #050811;
+    background-color: #f8fafc;
     background-image: 
       radial-gradient(at 0% 0%, rgba(245, 158, 11, 0.08) 0px, transparent 50%),
       radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.06) 0px, transparent 50%),
-      radial-gradient(at 50% 50%, rgba(30, 58, 138, 0.08) 0px, transparent 60%),
-      radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.05) 0px, transparent 50%);
+      radial-gradient(at 50% 50%, rgba(219, 234, 254, 0.4) 0px, transparent 60%),
+      radial-gradient(at 100% 100%, rgba(245, 158, 11, 0.06) 0px, transparent 50%);
     background-attachment: fixed;
-    color: #f8fafc;
+    color: #0f172a;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
   }
 
   * {
-    border-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(226, 232, 240, 0.9);
   }
 }
 
-/* Luxury Glassmorphism & Metallic Gold Panels */
+/* Luxury White Glassmorphism & Metallic Gold Panels */
 .luxury-card {
-  background: linear-gradient(135deg, rgba(16, 24, 44, 0.75) 0%, rgba(9, 14, 26, 0.85) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.06), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card:hover {
-  border-color: rgba(245, 158, 11, 0.45);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85), 0 0 25px -5px rgba(245, 158, 11, 0.25), inset 0 1px 0 rgba(255, 215, 0, 0.2);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 20px 40px -12px rgba(245, 158, 11, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.04);
   transform: translateY(-3px);
 }
 
 .luxury-card-gold {
-  background: linear-gradient(135deg, rgba(38, 28, 10, 0.85) 0%, rgba(18, 14, 28, 0.85) 50%, rgba(10, 16, 30, 0.9) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(245, 158, 11, 0.4);
-  box-shadow: 0 25px 50px -15px rgba(245, 158, 11, 0.2), inset 0 1px 0 rgba(254, 240, 138, 0.25);
+  background: linear-gradient(135deg, #fffdfa 0%, #ffffff 50%, #fef8eb 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  box-shadow: 0 15px 35px -10px rgba(245, 158, 11, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card-gold:hover {
-  border-color: rgba(251, 191, 36, 0.7);
-  box-shadow: 0 30px 60px -15px rgba(245, 158, 11, 0.35), 0 0 30px rgba(245, 158, 11, 0.25);
+  border-color: rgba(217, 119, 6, 0.6);
+  box-shadow: 0 25px 50px -12px rgba(245, 158, 11, 0.22), 0 0 25px rgba(245, 158, 11, 0.1);
   transform: translateY(-4px);
 }
 
 .luxury-card-emerald {
-  background: linear-gradient(135deg, rgba(6, 36, 26, 0.85) 0%, rgba(10, 22, 35, 0.85) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  box-shadow: 0 20px 45px -15px rgba(16, 185, 129, 0.2), inset 0 1px 0 rgba(110, 231, 183, 0.2);
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 50%, #ecfdf5 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 15px 35px -10px rgba(16, 185, 129, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card-emerald:hover {
-  border-color: rgba(52, 211, 153, 0.65);
-  box-shadow: 0 25px 55px -12px rgba(16, 185, 129, 0.3), 0 0 25px rgba(16, 185, 129, 0.2);
+  border-color: rgba(5, 150, 105, 0.55);
+  box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.2), 0 0 20px rgba(16, 185, 129, 0.1);
   transform: translateY(-3px);
 }
 
-/* Gradient Typography */
+/* Gradient Typography for White Background */
 .gold-gradient-text {
-  background: linear-gradient(135deg, #ffffff 0%, #fef08a 20%, #f59e0b 60%, #b45309 100%);
+  background: linear-gradient(135deg, #92400e 0%, #d97706 40%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .gold-gradient-sub {
-  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .emerald-gradient-text {
-  background: linear-gradient(135deg, #f0fdf4 0%, #86efac 30%, #10b981 70%, #047857 100%);
+  background: linear-gradient(135deg, #065f46 0%, #059669 60%, #047857 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .cyber-gradient-text {
-  background: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #0369a1 0%, #0284c7 60%, #4338ca 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -122,15 +122,15 @@
 /* Premium Buttons */
 .gold-btn {
   background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
-  color: #050811;
+  color: #0f172a;
   font-weight: 800;
-  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.5);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .gold-btn:hover {
   background: linear-gradient(135deg, #fde047 0%, #fbbf24 50%, #ea580c 100%);
-  box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.6), 0 0 20px rgba(245, 158, 11, 0.4);
+  box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.45), 0 0 20px rgba(245, 158, 11, 0.2);
   transform: translateY(-2px) scale(1.02);
 }
 
@@ -139,30 +139,30 @@
 }
 
 .dark-glass-btn {
-  background: rgba(15, 23, 42, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #e2e8f0;
-  backdrop-filter: blur(12px);
+  background: #ffffff;
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  color: #1e293b;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
   transition: all 0.25s ease;
 }
 
 .dark-glass-btn:hover {
-  background: rgba(30, 41, 59, 0.95);
-  border-color: rgba(245, 158, 11, 0.5);
-  color: #fbbf24;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+  background: #f8fafc;
+  border-color: rgba(217, 119, 6, 0.5);
+  color: #b45309;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
   transform: translateY(-2px);
 }
 
 /* Floating animated background mesh */
 @keyframes pulseGlow {
   0%, 100% {
-    opacity: 0.3;
+    opacity: 0.4;
     transform: scale(1) translate(0, 0);
   }
   50% {
-    opacity: 0.7;
-    transform: scale(1.1) translate(10px, -10px);
+    opacity: 0.8;
+    transform: scale(1.08) translate(8px, -8px);
   }
 }
 
@@ -172,10 +172,10 @@
 
 @keyframes floatSlow {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-8px);
   }
 }
 
@@ -185,10 +185,10 @@
 
 @keyframes borderGlow {
   0%, 100% {
-    border-color: rgba(245, 158, 11, 0.25);
+    border-color: rgba(245, 158, 11, 0.3);
   }
   50% {
-    border-color: rgba(245, 158, 11, 0.65);
+    border-color: rgba(245, 158, 11, 0.7);
   }
 }
 
@@ -206,26 +206,27 @@
 }
 
 .shimmer-badge {
-  background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, rgba(254, 240, 138, 0.3) 50%, rgba(245, 158, 11, 0.1) 100%);
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.1) 0%, rgba(254, 240, 138, 0.5) 50%, rgba(245, 158, 11, 0.1) 100%);
   background-size: 200% 100%;
   animation: shimmer 4s infinite;
 }
 
-/* Custom Scrollbar */
+/* Custom Scrollbar for White Theme */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #050811;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #cbd5e1;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f59e0b;
 }
+
 
 
 
