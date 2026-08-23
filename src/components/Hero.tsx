@@ -1,17 +1,12 @@
 import React from 'react';
 import { 
-  TrendingUp, 
-  ShieldCheck, 
-  Zap, 
   ArrowRight, 
   Calculator, 
   Send, 
   CheckCircle2, 
   Award, 
   Sparkles, 
-  Car, 
-  Activity, 
-  Layers
+  Activity 
 } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
@@ -23,203 +18,104 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToForm }) => {
   return (
-    <section className="relative pt-28 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28 overflow-hidden">
-      {/* Dynamic Animated Ambient Orbs */}
-      <div className="absolute top-12 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] lg:w-[950px] h-[350px] sm:h-[600px] bg-amber-500/12 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute top-1/3 left-0 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-emerald-500/10 rounded-full blur-[130px] pointer-events-none -z-10" />
-      <div className="absolute top-24 right-0 w-72 sm:w-[400px] h-72 sm:h-[400px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-
-      {/* Grid Pattern */}
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-36 overflow-hidden">
+      {/* Background Cinematic Realistic Image with Dark Gradient Overlay */}
       <div 
-        className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-luminosity filter brightness-75 scale-105 pointer-events-none -z-20"
         style={{
-          backgroundImage: 'radial-gradient(#ffffff 1.5px, transparent 1.5px)',
-          backgroundSize: '40px 40px'
+          backgroundImage: "url('https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=2000&q=85')"
         }}
       />
 
+      {/* Dark Multi-layer Gradient Overlays for High Contrast Readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#070A0F]/90 via-[#070A0F]/80 to-[#070A0F] pointer-events-none -z-15" />
+      <div className="absolute inset-0 bg-radial at-center from-transparent via-[#070A0F]/70 to-[#070A0F] pointer-events-none -z-15" />
+
+      {/* Dynamic Animated Ambient Glows */}
+      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] lg:w-[1000px] h-[350px] sm:h-[600px] bg-[#FFD21F]/10 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse-glow" />
+      <div className="absolute top-1/3 left-0 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-[#22C55E]/10 rounded-full blur-[140px] pointer-events-none -z-10" />
+
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Header */}
-        <div className="text-center max-w-4xl mx-auto mb-14 sm:mb-18">
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
           {/* Official Shimmer Verification Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full shimmer-badge border border-amber-400/60 text-amber-900 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-sm backdrop-blur-xl">
-            <Award className="w-4 h-4 text-amber-600 shrink-0" />
+          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full shimmer-badge border border-[#FFD21F]/40 text-[#FFD21F] text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg backdrop-blur-xl">
+            <Award className="w-4 h-4 text-[#FFD21F] shrink-0" />
             <span className="tracking-wide">{t.hero.badge}</span>
             <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22C55E] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#22C55E]"></span>
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black font-display tracking-tight leading-[1.08] mb-6">
-            <span className="block text-slate-700 font-light text-xl sm:text-3xl lg:text-4xl mb-3 tracking-normal">
-              "{t.hero.companyName}" <span className="text-amber-600 font-extrabold">{t.hero.companyType}</span>
+            <span className="block text-slate-300 font-light text-lg sm:text-2xl lg:text-3xl mb-3 tracking-normal">
+              "{t.hero.companyName}" <span className="text-[#FFD21F] font-extrabold">{t.hero.companyType}</span>
             </span>
             <span className="gold-gradient-text">
-              {t.hero.title}
+              Qashqadaryoda zamonaviy taksi tizimining bir qismiga aylaning
             </span>
           </h1>
 
           {/* Subtitle */}
-          <p className="text-sm sm:text-base lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 font-normal px-2">
-            {t.hero.subtitle}
+          <p className="text-sm sm:text-base lg:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 font-normal px-2">
+            “O‘rgimchak Taksi” — viloyat tumanlari o‘rtasida taksi xizmatlarini avtomatlashtirish va rivojlantirishga qaratilgan zamonaviy Taxi Park loyihasi.
           </p>
 
+          {/* Highlight Badge Card */}
+          <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-8 px-6 py-4 rounded-3xl bg-[#111820]/90 border border-[#FFD21F]/40 shadow-2xl backdrop-blur-2xl mb-8 sm:mb-10">
+            <div className="flex items-center gap-3 text-left">
+              <div className="w-12 h-12 rounded-2xl bg-[#FFD21F]/15 border border-[#FFD21F]/30 flex items-center justify-center text-[#FFD21F]">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Boshlang‘ich sarmoya</span>
+                <span className="text-xl sm:text-2xl font-black text-[#FFD21F] font-mono">2 640 000 so‘m</span>
+              </div>
+            </div>
+
+            <div className="hidden sm:block w-px h-10 bg-white/10" />
+
+            <div className="flex items-center gap-3 text-left">
+              <div className="w-12 h-12 rounded-2xl bg-[#22C55E]/15 border border-[#22C55E]/30 flex items-center justify-center text-[#22C55E]">
+                <Activity className="w-6 h-6" />
+              </div>
+              <div>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">Loyiha ulushi</span>
+                <span className="text-xl sm:text-2xl font-black text-white font-mono">0.1% ulush</span>
+              </div>
+            </div>
+          </div>
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 mb-12 sm:mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
             <button
               onClick={onScrollToCalculator}
-              className="w-full sm:w-auto gold-btn px-8 py-4 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base cursor-pointer"
+              className="w-full sm:w-auto gold-btn px-8 py-4 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base cursor-pointer shadow-xl"
             >
               <Calculator className="w-5 h-5 fill-slate-950 shrink-0" />
-              <span>{t.hero.buttons.calculate}</span>
+              <span>Sarmoya imkoniyatini ko‘rish</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
+            </button>
+
+            <button
+              onClick={onScrollToForm}
+              className="w-full sm:w-auto dark-glass-btn px-7 py-4 rounded-2xl flex items-center justify-center gap-2.5 text-sm sm:text-base font-bold text-white hover:text-[#FFD21F] hover:border-[#FFD21F]/50 cursor-pointer shadow-lg"
+            >
+              <CheckCircle2 className="w-5 h-5 text-[#22C55E] shrink-0" />
+              <span>Bog‘lanish →</span>
             </button>
 
             <a
               href="https://t.me/afrod991"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto dark-glass-btn px-7 py-4 rounded-2xl flex items-center justify-center gap-2.5 text-sm sm:text-base font-bold text-sky-600 hover:border-sky-400 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-sky-500/15 hover:bg-sky-500/25 border border-sky-500/30 text-sky-400 hover:text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-lg"
             >
-              <Send className="w-5 h-5 text-sky-600 shrink-0" />
-              <span>{t.hero.buttons.telegram}</span>
+              <Send className="w-4 h-4 text-sky-400 shrink-0" />
+              <span>Telegram @afrod991</span>
             </a>
-
-            <button
-              onClick={onScrollToForm}
-              className="w-full sm:w-auto dark-glass-btn px-7 py-4 rounded-2xl flex items-center justify-center gap-2.5 text-sm sm:text-base font-bold text-amber-700 hover:border-amber-400 cursor-pointer"
-            >
-              <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-              <span>{t.nav.cta}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Hero Interactive Visual Showcase & 4 Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch mb-8">
-          {/* Left Hero Feature Showcase Card (Lg: Col 7) */}
-          <div className="lg:col-span-7 luxury-card-gold p-6 sm:p-8 rounded-3xl flex flex-col justify-between relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div>
-              <div className="flex items-center justify-between mb-6">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-amber-100 border border-amber-300 text-amber-900 text-xs font-black">
-                  <Activity className="w-3.5 h-3.5 text-emerald-600 animate-pulse" />
-                  <span>AVTOMATLASHTIRILGAN TAKSI PARKI</span>
-                </div>
-                <span className="text-xs font-mono text-slate-500 font-bold">Qashqadaryo 15/15</span>
-              </div>
-
-              <h3 className="text-2xl sm:text-3xl font-black text-slate-900 mb-3">
-                "O'rgimchak Taksi" Dispecherlik & Flot Tizimi
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                Qashqadaryoning barcha 15 ta tumanlari o'rtasida taksi qatnovlarini boshqaruvchi markazlashgan tizim. Har bir qatnovdan komissiya olinib, sarmoyadorlarga oylik kafolatlangan sof foyda sifatida to'lab beriladi.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-4 border-t border-amber-200">
-              <div className="p-3.5 rounded-2xl bg-white border border-slate-200 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start shadow-sm">
-                <span className="block text-[10px] uppercase font-bold text-slate-500">1 Ulush Narxi</span>
-                <span className="text-sm sm:text-base font-black text-amber-600 font-mono">2,640,000 so'm</span>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-white border border-slate-200 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start shadow-sm">
-                <span className="block text-[10px] uppercase font-bold text-slate-500">Sof Foyda</span>
-                <span className="text-sm sm:text-base font-black text-emerald-600 font-mono">+100% (+2.64 mln)</span>
-              </div>
-              <div className="p-3.5 rounded-2xl bg-white border border-slate-200 flex sm:flex-col justify-between sm:justify-start items-center sm:items-start shadow-sm">
-                <span className="block text-[10px] uppercase font-bold text-slate-500">Sarmoya Qaytishi</span>
-                <span className="text-sm sm:text-base font-black text-sky-600 font-mono">17-oy (100%)</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right 2 Stacked Metrics (Lg: Col 5) */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Card 1: 100% Kafolat */}
-            <div className="luxury-card-emerald p-6 rounded-3xl flex-1 flex flex-col justify-between">
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-600 shrink-0">
-                  <ShieldCheck className="w-6 h-6" />
-                </div>
-                <span className="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-black uppercase">
-                  Yuridik Kafolat
-                </span>
-              </div>
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
-                  Rasmiy 2 Tomonlama Shartnoma
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Har oy beriladigan mablag'lar bo'yicha Faktura-Vedomost imzolanadi va boshlang'ich sarmoyangiz 17-oyda 100% to'liq qaytariladi.
-                </p>
-              </div>
-            </div>
-
-            {/* Card 2: 15 Tuman Qamrovi */}
-            <div className="luxury-card p-6 rounded-3xl flex-1 flex flex-col justify-between">
-              <div className="flex items-start justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-600 shrink-0">
-                  <Layers className="w-6 h-6" />
-                </div>
-                <span className="px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 text-[10px] font-black uppercase">
-                  15/15 Qamrov
-                </span>
-              </div>
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-1">
-                  Viloyat Bo'ylab Kengaytirilgan Flot
-                </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  Qarshi, Shahrisabz, Kitob, Koson, G'uzor va barcha tumanlarda yuzlab haydovchilar bilan real qatnovlar oqimi.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* 4 Bottom Key Metrics */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="luxury-card p-5 rounded-2xl flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-600 shrink-0">
-              <Zap className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Minimal Sarmoya</span>
-              <span className="text-lg font-black text-slate-900 font-mono">2,640,000 so'm</span>
-            </div>
-          </div>
-
-          <div className="luxury-card p-5 rounded-2xl flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-sky-100 border border-sky-300 flex items-center justify-center text-sky-600 shrink-0">
-              <TrendingUp className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Shartnoma Muddati</span>
-              <span className="text-lg font-black text-slate-900 font-mono">16 Oylik Reja</span>
-            </div>
-          </div>
-
-          <div className="luxury-card-gold p-5 rounded-2xl flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-amber-100 border border-amber-300 flex items-center justify-center text-amber-700 shrink-0">
-              <Sparkles className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-amber-800 block">Kafolatlangan Sof Foyda</span>
-              <span className="text-lg font-black text-amber-700 font-mono">+2,640,000 so'm</span>
-            </div>
-          </div>
-
-          <div className="luxury-card-emerald p-5 rounded-2xl flex items-center gap-4">
-            <div className="w-11 h-11 rounded-xl bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-600 shrink-0">
-              <Car className="w-5 h-5" />
-            </div>
-            <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block">17-Oyda Sarmoya Qaytishi</span>
-              <span className="text-lg font-black text-emerald-700 font-mono">100% To'liq Qaytariladi</span>
-            </div>
           </div>
         </div>
       </div>

@@ -3,17 +3,22 @@ import type { Language } from './types';
 import { translations } from './data/translations';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
-import { ProfitCalculator } from './components/ProfitCalculator';
-import { FinancialTerms } from './components/FinancialTerms';
+import { TrustBar } from './components/TrustBar';
 import { ProjectOverview } from './components/ProjectOverview';
-import { DistrictsMap } from './components/DistrictsMap';
-import { LegalGuarantees } from './components/LegalGuarantees';
-import { ContractModal } from './components/ContractModal';
+import { FinancialTerms } from './components/FinancialTerms';
+import { ProfitCalculator } from './components/ProfitCalculator';
 import { Roadmap } from './components/Roadmap';
+import { LegalGuarantees } from './components/LegalGuarantees';
+import { WhySpiderTaxi } from './components/WhySpiderTaxi';
+import { DistrictsMap } from './components/DistrictsMap';
+import { Gallery } from './components/Gallery';
+import { CTASection } from './components/CTASection';
 import { ApplicationForm } from './components/ApplicationForm';
-import { FaqSection } from './components/FaqSection';
 import { ContactSection } from './components/ContactSection';
+import { FaqSection } from './components/FaqSection';
+import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
+import { ContractModal } from './components/ContractModal';
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
@@ -42,8 +47,8 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-900 selection:bg-amber-400 selection:text-slate-950 flex flex-col justify-between">
-      {/* Top Fixed Navbar */}
+    <div className="min-h-screen bg-[#070A0F] text-white selection:bg-[#FFD21F] selection:text-slate-950 flex flex-col justify-between overflow-x-hidden font-sans">
+      {/* 1. Top Fixed Navbar */}
       <Navbar
         lang={lang}
         setLang={setLang}
@@ -53,19 +58,26 @@ export function App() {
 
       {/* Main Content Sections */}
       <main className="flex-1">
+        {/* 2. Hero Section */}
         <Hero
           t={t}
           onScrollToCalculator={scrollToCalculator}
           onScrollToForm={scrollToForm}
         />
 
+        {/* 3. Trust Stats Bar (01: 15 ta tuman, 02: 16 oy, 03: 2.64 mln, 04: 100%) */}
+        <TrustBar t={t} />
+
+        {/* 4. Loyiha haqida (6 ta ustun va 4 ta floating cards taxi visual) */}
         <ProjectOverview t={t} />
 
+        {/* 5. Investitsiya shartlari (Katta premium card) */}
         <FinancialTerms
           t={t}
           onOpenContract={() => setContractModalOpen(true)}
         />
 
+        {/* 6. Interaktiv Kalkulyator (Real-time hisob-kitob) */}
         <ProfitCalculator
           t={t}
           selectedShares={selectedShares}
@@ -73,30 +85,52 @@ export function App() {
           onApplyWithShares={handleApplyWithShares}
         />
 
-        <DistrictsMap lang={lang} t={t} />
+        {/* 7. Qanday ishlaydi (4 bosqichli jarayon) */}
+        <Roadmap t={t} />
 
+        {/* 8. Huquqiy kafolatlar va shaffoflik */}
         <LegalGuarantees
           t={t}
           onOpenContract={() => setContractModalOpen(true)}
         />
 
-        <Roadmap t={t} />
+        {/* 9. Nega aynan O‘rgimchak Taksi? (6 ta ustunlik) */}
+        <WhySpiderTaxi t={t} />
 
+        {/* 10. Qashqadaryo 15 ta tumani xaritasi/kartalari */}
+        <DistrictsMap lang={lang} t={t} />
+
+        {/* 11. Vizual Galereya (8 ta zamonaviy rasm + hover caption) */}
+        <Gallery t={t} />
+
+        {/* 12. Katta CTA Section */}
+        <CTASection
+          t={t}
+          onOpenContract={() => setContractModalOpen(true)}
+          onApply={scrollToForm}
+        />
+
+        {/* 13. Hamkorlikka ariza qoldirish shakli */}
         <ApplicationForm
           lang={lang}
           t={t}
           initialShares={selectedShares}
         />
 
+        {/* 14. Aloqa ma'lumotlari */}
+        <ContactSection t={t} />
+
+        {/* 15. FAQ (Ko'p so'raladigan savollar) */}
         <FaqSection t={t} />
 
-        <ContactSection t={t} />
+        {/* 16. Huquqiy Disclaimer */}
+        <Disclaimer t={t} />
       </main>
 
-      {/* Footer */}
+      {/* 17. Footer */}
       <Footer t={t} />
 
-      {/* Contract Modal */}
+      {/* 18. Rasmiy Shartnoma Modali */}
       <ContractModal
         isOpen={contractModalOpen}
         onClose={() => setContractModalOpen(false)}

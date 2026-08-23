@@ -243,6 +243,78 @@ export const translations = {
       "copyright": "© 2026 'ZALATIYE LASTOCHKA' MCHJ. Barcha huquqlar qonun bilan himoyalangan.",
       "disclaimer": "Mazkur taklif rasmiy sarmoyaviy hamkorlik shartnomasiga asoslanadi. Har bir operatsiya yuridik vedomost va faktura bilan tasdiqlanadi."
     },
+    "trustBar": {
+      "items": [
+        { "num": "01", "val": "15 ta", "label": "Qashqadaryo tumani" },
+        { "num": "02", "val": "16 oy", "label": "Shartnoma muddati" },
+        { "num": "03", "val": "2 640 000 so‘m", "label": "Boshlang‘ich sarmoya" },
+        { "num": "04", "val": "100%", "label": "Ko‘rsatilgan daromad modeli" }
+      ]
+    },
+    "why": {
+      "tag": "Nega O‘rgimchak Taksi?",
+      "title": "Nega aynan O‘rgimchak Taksi?",
+      "subtitle": "Viloyat transport infratuzilmasini yagona raqamli tizimga birlashtirishdagi 6 ta asosiy ustunlik:",
+      "cards": [
+        {
+          "title": "15 ta tuman",
+          "desc": "Qashqadaryo viloyatining turli hududlarini yagona platformaga birlashtirish.",
+          "icon": "MapPin"
+        },
+        {
+          "title": "Taxi Park",
+          "desc": "Haydovchilarni yagona platformaga jalb qilish va tizimlashtirish.",
+          "icon": "Car"
+        },
+        {
+          "title": "Avtomatlashtirish",
+          "desc": "Buyurtmalar va boshqaruv jarayonlarini to'liq raqamlashtirish.",
+          "icon": "Smartphone"
+        },
+        {
+          "title": "Rivojlanish",
+          "desc": "Taxi xizmatlari bozorini kengaytirish va yangi yo'nalishlarni ochish.",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "Hamkorlik",
+          "desc": "Jismoniy shaxslar bilan rasmiy va qonuniy hamkorlik modeli.",
+          "icon": "Users"
+        },
+        {
+          "title": "Zamonaviy texnologiya",
+          "desc": "Tezkor, xavfsiz va qulay xizmat ko‘rsatish aqlli tizimi.",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "gallery": {
+      "tag": "Vizual Galereya",
+      "title": "Loyiha va Taxi Park Muhiti",
+      "subtitle": "Zamonaviy avtomobillar, shahar yo'llari, texnologik infratuzilma va jamoa faoliyati",
+      "caption": "O‘rgimchak Taksi — Kelajak transport tizimi",
+      "items": [
+        { "title": "Zamonaviy taxi avtomobili", "tag": "Avtopark" },
+        { "title": "Qashqadaryo tungi shahar yo'llari", "tag": "Infratuzilma" },
+        { "title": "Taxi haydovchisi va mijoz aloqasi", "tag": "Xizmat" },
+        { "title": "Mobil ilova orqali taxi buyurtma qilish", "tag": "Ilova" },
+        { "title": "Viloyatlararo shahar ko‘chalari", "tag": "Marshrut" },
+        { "title": "Markaziy Taxi Park hududi", "tag": "Baza" },
+        { "title": "Boshqaruv jamoasi va dispetcherlik", "tag": "Jamoa" },
+        { "title": "Texnologik monitoring dashboardi", "tag": "Fintech" }
+      ]
+    },
+    "ctaSection": {
+      "tag": "Imkoniyatni Qo'ldan Boy Bermang",
+      "title": "Kelajak transport tizimiga bugun qo‘shiling",
+      "subtitle": "“O‘rgimchak Taksi” loyihasi haqida batafsil ma'lumot oling va hamkorlik imkoniyatlarini mas'ul xodim bilan muhokama qiling.",
+      "submitBtn": "HAMKORLIKKA ARIZA QOLDIRISH",
+      "telegramBtn": "Telegram orqali bog‘lanish"
+    },
+    "legalDisclaimer": {
+      "title": "Muhim Huquqiy Ogohlantirish",
+      "text": "Muhim: Ushbu sahifadagi moliyaviy ma'lumotlar taqdim etilgan hamkorlik shartlariga asoslangan. Investitsiya kiritishdan oldin shartnoma, kompaniya hujjatlari, daromad modeli, xavflar va boshqa huquqiy shartlarni mustaqil ravishda o‘rganish tavsiya etiladi. “100% kafolatlangan foyda” kabi iboralar faqat amaldagi rasmiy shartnoma va qonunchilik bunga asos bergan taqdirdagina ishlatilsin."
+    },
     "modal": {
       "title": "Rasmiy Sarmoyaviy Hamkorlik Shartnomasi (Namuna)",
       "badge": "Yuridik kuchga ega shartnoma loyihasi",
@@ -500,6 +572,78 @@ export const translations = {
       "copyright": "© 2026 ООО «ZALATIYE LASTOCHKA». Все права защищены.",
       "disclaimer": "Данное предложение основано на официальном договоре инвестиционного партнерства. Каждая операция подтверждается юридической ведомостью и фактурой."
     },
+    "trustBar": {
+      "items": [
+        { "num": "01", "val": "15 районов", "label": "Кашкадарьинская область" },
+        { "num": "02", "val": "16 месяцев", "label": "Срок договора" },
+        { "num": "03", "val": "2 640 000 сум", "label": "Стартовая инвестиция" },
+        { "num": "04", "val": "100%", "label": "Модель чистой прибыли" }
+      ]
+    },
+    "why": {
+      "tag": "Почему Оргимчак Такси?",
+      "title": "Почему именно «Оргимчак Такси»?",
+      "subtitle": "6 ключевых факторов объединения транспортной инфраструктуры региона в единую систему:",
+      "cards": [
+        {
+          "title": "15 районов",
+          "desc": "Объединение всех городов и районов Кашкадарьи в единую платформу.",
+          "icon": "MapPin"
+        },
+        {
+          "title": "Таксопарк",
+          "desc": "Привлечение и систематизация тысяч водителей в единый парк.",
+          "icon": "Car"
+        },
+        {
+          "title": "Автоматизация",
+          "desc": "Полная цифровизация распределения заказов и управления поездками.",
+          "icon": "Smartphone"
+        },
+        {
+          "title": "Развитие",
+          "desc": "Расширение рынка такси и запуск новых междугородних направлений.",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "Партнерство",
+          "desc": "Официальная юридическая модель сотрудничества с физическими лицами.",
+          "icon": "Users"
+        },
+        {
+          "title": "Современные технологии",
+          "desc": "Умная система быстрого, безопасного и комфортного обслуживания 24/7.",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "gallery": {
+      "tag": "Фотогалерея",
+      "title": "Проект и атмосфера таксопарка",
+      "subtitle": "Современные автомобили, городские магистрали, технологическая база и команда",
+      "caption": "«Оргимчак Такси» — Транспортная система будущего",
+      "items": [
+        { "title": "Современный таксопарк и авто", "tag": "Автопарк" },
+        { "title": "Ночные магистрали Кашкадарьи", "tag": "Инфраструктура" },
+        { "title": "Водитель такси и сервис для клиента", "tag": "Сервис" },
+        { "title": "Заказ такси через мобильное приложение", "tag": "Приложение" },
+        { "title": "Междугородние городские маршруты", "tag": "Маршруты" },
+        { "title": "Центральная база таксопарка", "tag": "База" },
+        { "title": "Команда управления и диспетчерская", "tag": "Команда" },
+        { "title": "Технологический мониторинг поездок", "tag": "Финтех" }
+      ]
+    },
+    "ctaSection": {
+      "tag": "Не упустите возможность",
+      "title": "Присоединяйтесь к транспортной системе будущего",
+      "subtitle": "Узнайте подробные условия проекта «Оргимчак Такси» и обсудите партнерство с ответственным специалистом прямо сейчас.",
+      "submitBtn": "ОСТАВИТЬ ЗАЯВКУ НА СОТРУДНИЧЕСТВО",
+      "telegramBtn": "Связаться через Telegram"
+    },
+    "legalDisclaimer": {
+      "title": "Важное юридическое предупреждение",
+      "text": "Важно: Финансовые данные на этой странице основаны на предоставленных условиях партнерства. Перед внесением инвестиций рекомендуется самостоятельно изучить договор, документы компании, модель доходности, риски и другие правовые условия. Формулировки о гарантированной прибыли используются только при наличии официального двустороннего договора в соответствии с законодательством Республики Узбекистан."
+    },
     "modal": {
       "title": "Официальный инвестиционный договор (Образец)",
       "badge": "Проект юридического договора",
@@ -756,6 +900,78 @@ export const translations = {
       "description": "Modern automated taxi fleet and regional transport infrastructure project in Qashqadaryo region.",
       "copyright": "© 2026 'ZALATIYE LASTOCHKA' LLC. All rights reserved.",
       "disclaimer": "This offer is based on an official investment partnership agreement. Every transaction is confirmed by legal invoices and statements."
+    },
+    "trustBar": {
+      "items": [
+        { "num": "01", "val": "15 Districts", "label": "Qashqadaryo region" },
+        { "num": "02", "val": "16 Months", "label": "Contract duration" },
+        { "num": "03", "val": "2,640,000 UZS", "label": "Initial capital" },
+        { "num": "04", "val": "100%", "label": "Stated profit model" }
+      ]
+    },
+    "why": {
+      "tag": "Why Orgimchak Taxi?",
+      "title": "Why Choose Orgimchak Taxi?",
+      "subtitle": "6 fundamental advantages unifying regional passenger transit into one digital ecosystem:",
+      "cards": [
+        {
+          "title": "15 Districts",
+          "desc": "Uniting all urban and rural territories of Qashqadaryo into one platform.",
+          "icon": "MapPin"
+        },
+        {
+          "title": "Taxi Park",
+          "desc": "Attracting and systematizing thousands of verified drivers.",
+          "icon": "Car"
+        },
+        {
+          "title": "Automation",
+          "desc": "Complete digital optimization of ride dispatching and operations.",
+          "icon": "Smartphone"
+        },
+        {
+          "title": "Expansion",
+          "desc": "Scaling regional taxi markets and establishing new intercity routes.",
+          "icon": "TrendingUp"
+        },
+        {
+          "title": "Partnership",
+          "desc": "Formal and legally compliant investment collaboration with individuals.",
+          "icon": "Users"
+        },
+        {
+          "title": "Modern Technology",
+          "desc": "Fast, safe, and convenient automated transit ecosystem available 24/7.",
+          "icon": "Zap"
+        }
+      ]
+    },
+    "gallery": {
+      "tag": "Visual Gallery",
+      "title": "Project & Taxi Park Atmosphere",
+      "subtitle": "Modern vehicle fleet, regional highways, dispatch infrastructure, and team operations",
+      "caption": "Orgimchak Taxi — Transport System of the Future",
+      "items": [
+        { "title": "Modern vehicle fleet", "tag": "Fleet" },
+        { "title": "Qashqadaryo night highways", "tag": "Infrastructure" },
+        { "title": "Professional driver service", "tag": "Service" },
+        { "title": "Instant mobile booking app", "tag": "Mobile App" },
+        { "title": "Regional intercity transit", "tag": "Routes" },
+        { "title": "Central Taxi Park headquarters", "tag": "Hub" },
+        { "title": "Management & 24/7 dispatch team", "tag": "Team" },
+        { "title": "Fintech monitoring dashboard", "tag": "Fintech" }
+      ]
+    },
+    "ctaSection": {
+      "tag": "Don't Miss This Opportunity",
+      "title": "Join the Transport System of the Future Today",
+      "subtitle": "Get full details about the 'Orgimchak Taxi' project and discuss partnership options directly with our responsible manager.",
+      "submitBtn": "SUBMIT PARTNERSHIP APPLICATION",
+      "telegramBtn": "Connect via Telegram"
+    },
+    "legalDisclaimer": {
+      "title": "Important Legal Disclaimer",
+      "text": "Important: The financial figures presented on this page are based on the stated partnership terms. Before investing, you are encouraged to independently evaluate the agreement, corporate documents, income model, risks, and legal terms. Stated profit terms apply in accordance with official bilateral contracts executed under the laws of the Republic of Uzbekistan."
     },
     "modal": {
       "title": "Official Investment Partnership Agreement (Sample)",
