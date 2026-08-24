@@ -245,10 +245,10 @@ export const translations = {
     },
     "trustBar": {
       "items": [
-        { "num": "01", "val": "15 ta", "label": "Qashqadaryo tumani" },
-        { "num": "02", "val": "16 oy", "label": "Shartnoma muddati" },
-        { "num": "03", "val": "2 640 000 so‘m", "label": "Boshlang‘ich sarmoya" },
-        { "num": "04", "val": "100%", "label": "Ko‘rsatilgan daromad modeli" }
+        { "val": "15 ta", "label": "Qashqadaryo tumani" },
+        { "val": "16 oy", "label": "Shartnoma muddati" },
+        { "val": "2 640 000 so‘m", "label": "Boshlang‘ich sarmoya" },
+        { "val": "100%", "label": "Ko‘rsatilgan daromad modeli" }
       ]
     },
     "why": {
@@ -574,10 +574,10 @@ export const translations = {
     },
     "trustBar": {
       "items": [
-        { "num": "01", "val": "15 районов", "label": "Кашкадарьинская область" },
-        { "num": "02", "val": "16 месяцев", "label": "Срок договора" },
-        { "num": "03", "val": "2 640 000 сум", "label": "Стартовая инвестиция" },
-        { "num": "04", "val": "100%", "label": "Модель чистой прибыли" }
+        { "val": "15 районов", "label": "Кашкадарьинская область" },
+        { "val": "16 месяцев", "label": "Срок договора" },
+        { "val": "2 640 000 сум", "label": "Стартовая инвестиция" },
+        { "val": "100%", "label": "Модель чистой прибыли" }
       ]
     },
     "why": {
@@ -903,10 +903,10 @@ export const translations = {
     },
     "trustBar": {
       "items": [
-        { "num": "01", "val": "15 Districts", "label": "Qashqadaryo region" },
-        { "num": "02", "val": "16 Months", "label": "Contract duration" },
-        { "num": "03", "val": "2,640,000 UZS", "label": "Initial capital" },
-        { "num": "04", "val": "100%", "label": "Stated profit model" }
+        { "val": "15 Districts", "label": "Qashqadaryo region" },
+        { "val": "16 Months", "label": "Contract duration" },
+        { "val": "2,640,000 UZS", "label": "Initial capital" },
+        { "val": "100%", "label": "Stated profit model" }
       ]
     },
     "why": {
