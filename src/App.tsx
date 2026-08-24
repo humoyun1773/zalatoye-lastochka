@@ -51,12 +51,10 @@ export function App() {
       {/* 0. Full-Screen Fixed Crystal-Clear Background Image - 100% Sharp & Visible */}
       <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2560&q=95"
+          src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2560&q=95"
           alt="Transportation Background"
-          className="w-full h-full object-cover object-center filter contrast-110 brightness-100"
+          className="w-full h-full object-cover object-center filter contrast-105 brightness-100"
         />
-        {/* Subtle light layer for clarity */}
-        <div className="absolute inset-0 bg-white/25 pointer-events-none" />
       </div>
 
       {/* 1. Top Fixed Navbar */}
