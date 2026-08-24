@@ -14,16 +14,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ t }) => {
   };
 
   return (
-    <section id="faq" className="py-20 md:py-28 relative bg-slate-50 border-y border-slate-200 overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/95 via-slate-50/85 to-slate-50/95 pointer-events-none -z-15" />
-
+    <section id="faq" className="py-20 md:py-28 relative bg-transparent border-y border-slate-200/80 overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">

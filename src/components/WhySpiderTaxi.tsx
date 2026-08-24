@@ -17,16 +17,7 @@ export const WhySpiderTaxi: React.FC<WhySpiderTaxiProps> = ({ t }) => {
   };
 
   return (
-    <section id="why" className="py-20 md:py-28 relative bg-white border-y border-slate-200 overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/95 pointer-events-none -z-15" />
-
+    <section id="why" className="py-20 md:py-28 relative bg-transparent border-y border-slate-200/80 overflow-hidden">
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-blue-500/5 rounded-full blur-[140px] pointer-events-none -z-10" />
 

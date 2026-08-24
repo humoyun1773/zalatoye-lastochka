@@ -8,7 +8,7 @@ interface DisclaimerProps {
 
 export const Disclaimer: React.FC<DisclaimerProps> = ({ t }) => {
   return (
-    <section className="py-8 bg-white border-t border-slate-200">
+    <section className="py-8 bg-white/70 backdrop-blur-md border-t border-slate-200">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="p-5 sm:p-6 rounded-2xl bg-blue-50/60 border border-blue-100 flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-slate-600 leading-relaxed shadow-sm">
           <div className="w-9 h-9 rounded-xl bg-blue-100 border border-blue-200 flex items-center justify-center text-blue-700 shrink-0">

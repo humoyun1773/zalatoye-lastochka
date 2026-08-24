@@ -47,7 +47,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
       {/* 1. Top Fixed Navbar */}
       <Navbar
         lang={lang}

@@ -9,16 +9,7 @@ interface FinancialTermsProps {
 
 export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContract }) => {
   return (
-    <section id="terms" className="py-20 md:py-28 relative bg-white border-y border-slate-200 overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/80 to-white/95 pointer-events-none -z-15" />
-
+    <section id="terms" className="py-20 md:py-28 relative bg-transparent border-y border-slate-200/80 overflow-hidden">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-blue-500/5 rounded-full blur-[150px] pointer-events-none -z-10" />
 

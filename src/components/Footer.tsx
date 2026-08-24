@@ -12,7 +12,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
   };
 
   return (
-    <footer className="border-t border-slate-200 bg-white pt-16 pb-12 text-slate-600 text-xs">
+    <footer className="border-t border-slate-200 bg-white/85 backdrop-blur-xl pt-16 pb-12 text-slate-600 text-xs">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-slate-200">
           <div className="md:col-span-6 space-y-3">

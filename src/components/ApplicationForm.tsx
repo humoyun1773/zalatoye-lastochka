@@ -49,16 +49,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
   };
 
   return (
-    <section id="application" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/95 via-white/85 to-[#F8FAFC]/95 pointer-events-none -z-15" />
-
+    <section id="application" className="py-20 md:py-28 relative bg-transparent overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto luxury-card bg-white p-6 sm:p-10 lg:p-12 rounded-3xl border border-slate-200 shadow-xl relative overflow-hidden">
           {/* Ambient Glow */}

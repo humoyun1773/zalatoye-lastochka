@@ -33,16 +33,7 @@ export const Roadmap: React.FC<RoadmapProps> = ({ t }) => {
   ];
 
   return (
-    <section className="py-20 md:py-28 relative bg-slate-50 border-y border-slate-200 overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-50/95 via-slate-50/80 to-slate-50/95 pointer-events-none -z-15" />
-
+    <section className="py-20 md:py-28 relative bg-transparent border-y border-slate-200/80 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">

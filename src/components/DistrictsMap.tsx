@@ -24,16 +24,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
   };
 
   return (
-    <section id="districts" className="py-20 md:py-28 relative overflow-hidden">
-      {/* Background Vivid Crystal-Clear Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/95 via-white/80 to-[#F8FAFC]/95 pointer-events-none -z-15" />
-
+    <section id="districts" className="py-20 md:py-28 relative bg-transparent overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
