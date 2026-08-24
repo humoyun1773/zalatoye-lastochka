@@ -18,6 +18,7 @@ import { FaqSection } from './components/FaqSection';
 import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
 import { ContractModal } from './components/ContractModal';
+import { PageLoader } from './components/PageLoader';
 
 // Cartoon Wealth Rotating Background Images (Scrooge McDuck & Tom & Jerry)
 import scroogeMoney from './assets/scrooge-money.png';
@@ -78,7 +79,10 @@ export function App() {
 
   return (
     <div className="relative min-h-screen text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
-      {/* 0. Full-Screen Rotating Smooth Background Slideshow (4 images cycling) */}
+      {/* Initial Luxury Page Loader Screen */}
+      <PageLoader lang={lang} />
+
+      {/* 0. Full-Screen Rotating Smooth Background Slideshow */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {bgImages.map((img, idx) => (
           <img
