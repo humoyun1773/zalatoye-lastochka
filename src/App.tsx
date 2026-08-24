@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import type { Language } from './types';
 import { translations } from './data/translations';
 import { Navbar } from './components/Navbar';
@@ -19,24 +19,28 @@ import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
 import { ContractModal } from './components/ContractModal';
 
-// Cartoon Wealth & Gold Background Images for dynamic rotation
+// Scrooge McDuck Cartoon Rotating Background Images
 import scroogeMoney from './assets/scrooge-money.png';
 import scroogeSwim from './assets/scrooge-swim.png';
 import scroogeCash from './assets/scrooge-cash.png';
 import scroogeVault from './assets/scrooge-vault.png';
 
-const backgroundSlides = [scroogeMoney, scroogeSwim, scroogeCash, scroogeVault];
+const bgImages = [
+  { src: scroogeMoney, name: 'Scrooge Money' },
+  { src: scroogeSwim, name: 'Scrooge Swimming Gold' },
+  { src: scroogeCash, name: 'Scrooge Cash' },
+  { src: scroogeVault, name: 'Scrooge Vault' },
+];
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
   const [selectedShares, setSelectedShares] = useState<number>(1);
   const [contractModalOpen, setContractModalOpen] = useState<boolean>(false);
-  const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
+  const [bgIndex, setBgIndex] = useState<number>(0);
 
-  // Auto-rotate background image every 4 seconds smoothly
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlideIndex((prev) => (prev + 1) % backgroundSlides.length);
+      setBgIndex((prev) => (prev + 1) % bgImages.length);
     }, 4000);
     return () => clearInterval(timer);
   }, []);
@@ -64,15 +68,17 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
-      {/* 0. Full-Screen Fixed Smooth Rotating Background Images */}
+      {/* 0. Full-Screen Rotating Smooth Background Slideshow (4 images cycling) */}
       <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden bg-slate-950">
-        {backgroundSlides.map((slideSrc, idx) => (
+        {bgImages.map((img, idx) => (
           <img
             key={idx}
-            src={slideSrc}
-            alt={`Scrooge Cartoon Background ${idx + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover object-center filter contrast-105 brightness-100 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlideIndex ? 'opacity-100' : 'opacity-0'
+            src={img.src}
+            alt={img.name}
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
+              bgIndex === idx
+                ? 'opacity-100 scale-100 filter contrast-105 brightness-100'
+                : 'opacity-0 scale-105 pointer-events-none'
             }`}
           />
         ))}
