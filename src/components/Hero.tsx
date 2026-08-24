@@ -106,54 +106,6 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
             </a>
           </div>
         </div>
-
-        {/* Large Crystal-Clear Taxi Park Visual Showcase */}
-        <div className="relative max-w-5xl mx-auto mt-8 rounded-3xl overflow-hidden border border-blue-200 shadow-2xl bg-white p-2 sm:p-3 group">
-          <div className="relative h-64 sm:h-96 md:h-[420px] rounded-2xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2000&q=90"
-              alt="O'rgimchak Taksi Floti"
-              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter contrast-105 brightness-100"
-            />
-            {/* Subtle Gradient for Overlaid Stats */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
-
-            {/* Top Left Floating Badge */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-blue-200 shadow-xl flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
-                🚕
-              </div>
-              <div>
-                <span className="text-xs font-black text-slate-900 block">O‘RGIMCHAK TAKSI PARK</span>
-                <span className="text-[10px] text-blue-600 font-semibold">Qashqadaryo viloyati bo'yicha</span>
-              </div>
-            </div>
-
-            {/* Top Right Live Badge */}
-            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3 py-1.5 rounded-full bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold flex items-center gap-2 shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-              <span>15 Ta Tuman Faol</span>
-            </div>
-
-            {/* Bottom Info Bar */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-4 text-white">
-              <div>
-                <span className="text-[11px] uppercase font-bold text-blue-300 block">Flot va dispecherlik</span>
-                <h3 className="text-lg sm:text-2xl font-black text-white">Zamonaviy Avtopark & Mobil Tizim</h3>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="px-4 py-2 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 text-center">
-                  <span className="text-[10px] text-slate-300 block font-medium">Boshlang'ich</span>
-                  <span className="text-sm sm:text-base font-black text-white font-mono">2,640,000 so'm</span>
-                </div>
-                <div className="px-4 py-2 rounded-xl bg-blue-600/90 backdrop-blur-md text-center">
-                  <span className="text-[10px] text-blue-200 block font-medium">Kafolatlangan</span>
-                  <span className="text-sm sm:text-base font-black text-white font-mono">+100% Daromad</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
