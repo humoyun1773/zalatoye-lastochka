@@ -119,20 +119,27 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
           </div>
         </div>
 
-        {/* Highlight Summary Banner */}
-        <div className="luxury-card-blue p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-blue-200 shadow-xl bg-gradient-to-r from-blue-50/80 via-white to-blue-50/50">
+        {/* Highlight Summary Banner with Cartoon Scrooge McDuck */}
+        <div className="luxury-card-blue p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-blue-200 shadow-xl bg-gradient-to-r from-blue-50/90 via-white to-amber-50/60">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>{t.terms.summaryTotal}</span>
+            <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
+              <img
+                src="/images/scrooge-money.png"
+                alt="Scrooge McDuck Treasury"
+                className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl object-cover border border-amber-300 shadow-lg shrink-0"
+              />
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-center sm:justify-start gap-2 text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>{t.terms.summaryTotal}</span>
+                </div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-black font-mono text-slate-900">
+                  5 280 000 so‘m <span className="text-blue-600 text-lg sm:text-xl font-bold">(200% umumiy tushum)</span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
+                  1 ta ulush (2 640 000 so‘m) kiritilganda: 16 oy ichida 2 640 000 so‘m sof foyda + 17-oyda 2 640 000 so‘m boshlang‘ich sarmoya qaytariladi.
+                </p>
               </div>
-              <div className="text-2xl sm:text-4xl font-black font-mono text-slate-900">
-                5 280 000 so‘m <span className="text-blue-600 text-xl sm:text-2xl">(200% umumiy tushum)</span>
-              </div>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
-                1 ta ulush (2 640 000 so‘m) kiritilganda: 16 oy ichida 2 640 000 so‘m sof foyda + 17-oyda 2 640 000 so‘m boshlang‘ich sarmoya qaytariladi.
-              </p>
             </div>
 
             <button

@@ -107,49 +107,56 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
           </div>
         </div>
 
-        {/* Large Crystal-Clear Taxi Park Visual Showcase */}
-        <div className="relative max-w-5xl mx-auto mt-6 rounded-3xl overflow-hidden border border-blue-200 shadow-2xl bg-white p-2 sm:p-3 group">
-          <div className="relative h-64 sm:h-96 md:h-[420px] rounded-2xl overflow-hidden">
-            <img
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2000&q=95"
-              alt="O'rgimchak Taksi Floti"
-              className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter contrast-105 brightness-100"
-            />
-            {/* Subtle Gradient for Overlaid Stats */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+        {/* Large Crystal-Clear Dual Cartoon & Taxi Park Visual Showcase */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-5xl mx-auto mt-8">
+          {/* Card 1: Scrooge McDuck with Dollar Bag */}
+          <div className="lg:col-span-7 luxury-card rounded-3xl overflow-hidden border border-blue-200 shadow-2xl p-2 sm:p-3 group bg-white">
+            <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden">
+              <img
+                src="/images/scrooge-bg.png"
+                alt="Scrooge McDuck Money"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 filter contrast-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
 
-            {/* Top Left Floating Badge */}
-            <div className="absolute top-4 left-4 sm:top-6 sm:left-6 px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-blue-200 shadow-xl flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
-                🚕
+              {/* Top Left Floating Badge */}
+              <div className="absolute top-4 left-4 px-3.5 py-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-blue-200 shadow-xl flex items-center gap-2">
+                <span className="text-sm">💰</span>
+                <span className="text-xs font-black text-slate-900">100% SOF FOYDA</span>
               </div>
-              <div>
-                <span className="text-xs font-black text-slate-900 block">O‘RGIMCHAK TAKSI PARK</span>
-                <span className="text-[10px] text-blue-600 font-semibold">Qashqadaryo viloyati bo'yicha</span>
+
+              {/* Bottom Info */}
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[11px] uppercase font-bold text-amber-300 block">Investitsiya va Daromad</span>
+                <h3 className="text-base sm:text-xl font-black text-white">O‘rgimchak Taksi — Har Oy Kafolatlangan Foyda</h3>
+                <div className="flex items-center gap-2 mt-2">
+                  <span className="px-2.5 py-1 rounded-lg bg-emerald-500 text-white text-xs font-bold font-mono">+2 640 000 so'm</span>
+                  <span className="text-xs text-slate-200">16 oy davomida</span>
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Top Right Live Badge */}
-            <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3 py-1.5 rounded-full bg-emerald-500/90 backdrop-blur-md text-white text-xs font-bold flex items-center gap-2 shadow-lg">
-              <span className="w-2 h-2 rounded-full bg-white animate-ping" />
-              <span>15 Ta Tuman Faol</span>
-            </div>
+          {/* Card 2: Scrooge McDuck in Gold Coins Vault */}
+          <div className="lg:col-span-5 luxury-card rounded-3xl overflow-hidden border border-blue-200 shadow-2xl p-2 sm:p-3 group bg-white">
+            <div className="relative h-64 sm:h-80 rounded-2xl overflow-hidden">
+              <img
+                src="/images/scrooge-money.png"
+                alt="Scrooge McDuck Gold Vault"
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 filter contrast-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
 
-            {/* Bottom Info Bar */}
-            <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 flex flex-wrap items-center justify-between gap-4 text-white">
-              <div>
-                <span className="text-[11px] uppercase font-bold text-blue-300 block">Flot va dispecherlik</span>
-                <h3 className="text-lg sm:text-2xl font-black text-white">Zamonaviy Avtopark & Mobil Tizim</h3>
+              {/* Top Right Floating Badge */}
+              <div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-blue-600/90 text-white text-xs font-bold shadow-lg">
+                17-Oyda 100% Qaytarish
               </div>
-              <div className="flex items-center gap-3">
-                <div className="px-4 py-2 rounded-xl bg-white/15 backdrop-blur-md border border-white/20 text-center">
-                  <span className="text-[10px] text-slate-300 block font-medium">Boshlang'ich</span>
-                  <span className="text-sm sm:text-base font-black text-white font-mono">2,640,000 so'm</span>
-                </div>
-                <div className="px-4 py-2 rounded-xl bg-blue-600/90 backdrop-blur-md text-center">
-                  <span className="text-[10px] text-blue-200 block font-medium">Kafolatlangan</span>
-                  <span className="text-sm sm:text-base font-black text-white font-mono">+100% Daromad</span>
-                </div>
+
+              {/* Bottom Info */}
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <span className="text-[11px] uppercase font-bold text-sky-300 block">Qashqadaryo 15/15</span>
+                <h3 className="text-base sm:text-lg font-black text-white">Oltin Sarmoyaviy Kafolat</h3>
+                <p className="text-[11px] text-slate-200 mt-1">Rasmiy 2 tomonlama shartnoma bilan to'liq himoyalangan.</p>
               </div>
             </div>
           </div>

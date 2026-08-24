@@ -10,22 +10,22 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
   // High quality realistic images for taxi park, city, fleet, app, team, and dispatch
   const galleryImages = [
     {
-      url: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=90",
+      url: "/images/scrooge-bg.png",
       aspect: "row-span-2 col-span-1 md:col-span-2",
       height: "h-72 sm:h-96",
     },
     {
+      url: "/images/scrooge-money.png",
+      aspect: "col-span-1",
+      height: "h-64 sm:h-72",
+    },
+    {
+      url: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=90",
+      aspect: "col-span-1",
+      height: "h-64 sm:h-72",
+    },
+    {
       url: "https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=1200&q=90",
-      aspect: "col-span-1",
-      height: "h-64 sm:h-72",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=90",
-      aspect: "col-span-1",
-      height: "h-64 sm:h-72",
-    },
-    {
-      url: "https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1200&q=90",
       aspect: "col-span-1",
       height: "h-64 sm:h-72",
     },

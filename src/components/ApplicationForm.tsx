@@ -69,6 +69,26 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
             </p>
           </div>
 
+          {/* Cartoon Wealth Guarantee Banner */}
+          <div className="mb-8 p-3 sm:p-4 rounded-2xl bg-gradient-to-r from-amber-50 via-blue-50 to-emerald-50 border border-blue-200 flex items-center gap-4 shadow-sm">
+            <img
+              src="/images/scrooge-bg.png"
+              alt="Scrooge McDuck"
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover border border-amber-200 shadow-md shrink-0"
+            />
+            <div>
+              <span className="text-[10px] font-black uppercase text-amber-900 bg-amber-200 px-2 py-0.5 rounded">
+                🚀 RASMIY SARMOYAVIY HAMKORLIK
+              </span>
+              <h4 className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
+                Kafolatlangan oylik daromad va rasmiy shartnoma
+              </h4>
+              <p className="text-[11px] text-slate-600">
+                Arizangizni qoldiring, mutaxassisimiz 15 daqiqa ichida siz bilan bog'lanib, barcha shartlarni tushuntirib beradi.
+              </p>
+            </div>
+          </div>
+
           {submitted ? (
             <div className="text-center p-8 sm:p-10 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-4">
               <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
