@@ -51,9 +51,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
     { href: '#terms', label: t.nav.terms },
     { href: '#why', label: t.why?.tag || 'Afzalliklar' },
     { href: '#districts', label: t.nav.districts },
-    { href: '#gallery', label: t.gallery?.tag || 'Galereya' },
     { href: '#guarantees', label: t.nav.guarantees },
-    { href: '#faq', label: t.nav.faq },
   ];
 
   const languages: { code: Language; label: string; name: string }[] = [
