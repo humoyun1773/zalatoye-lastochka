@@ -51,7 +51,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
             <span>{t.calculator.tag}</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
-            📊 Sarmoyangizni hisoblang
+            📊 {t.calculator.title}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-600">
             {t.calculator.subtitle}
@@ -84,17 +84,14 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                 />
 
                 <div className="flex justify-between text-[11px] text-slate-500 mt-2 font-mono">
-                  <span>1 ulush (0.1%)</span>
-                  <span>25 ulush (2.5%)</span>
-                  <span>50 ulush (5.0%)</span>
+                  <span>1 {t.calculator.shareUnit} (0.1%)</span>
+                  <span>25 {t.calculator.shareUnit} (2.5%)</span>
+                  <span>50 {t.calculator.shareUnit} (5.0%)</span>
                 </div>
               </div>
 
               {/* Preset Quick Selectors */}
               <div>
-                <span className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-2">
-                  Tezkor tanlov:
-                </span>
                 <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
                   {presetShares.map((num) => (
                     <button
@@ -125,7 +122,9 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                     <span className="text-xs sm:text-sm text-slate-900 font-bold block">
                       {t.calculator.percentageLabel}
                     </span>
-                    <span className="text-[11px] text-slate-600">Loyiha umumiy fondidagi ulushingiz</span>
+                    <span className="text-[11px] text-slate-600 font-medium">
+                      0.1% × {selectedShares} = {SHARE_PERCENTAGE}%
+                    </span>
                   </div>
                 </div>
                 <span className="text-xl sm:text-2xl font-black text-blue-700 font-mono shrink-0">
@@ -136,12 +135,12 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
               {/* Monthly schedule note */}
               <div className="grid grid-cols-2 gap-3">
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <span className="block text-[10px] sm:text-[11px] text-slate-500 uppercase font-bold">1 - 16 oy</span>
-                  <span className="text-xs sm:text-sm font-black text-blue-700">Har oy sof daromad</span>
+                  <span className="block text-[10px] sm:text-[11px] text-slate-500 uppercase font-bold">1 - 16</span>
+                  <span className="text-xs sm:text-sm font-black text-blue-700">{t.calculator.monthlyIncome}</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
-                  <span className="block text-[10px] sm:text-[11px] text-slate-500 uppercase font-bold">17 - oy</span>
-                  <span className="text-xs sm:text-sm font-black text-emerald-600">100% Sarmoya qaytadi</span>
+                  <span className="block text-[10px] sm:text-[11px] text-slate-500 uppercase font-bold">17</span>
+                  <span className="text-xs sm:text-sm font-black text-emerald-600">{t.calculator.refundMonth}</span>
                 </div>
               </div>
             </div>
@@ -199,7 +198,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                     {formatUZS(GRAND_TOTAL)}
                   </span>
                   <span className="px-2.5 py-1 rounded-full bg-emerald-600 text-white text-[11px] sm:text-xs font-black shadow-sm">
-                    200% Jami Tushum
+                    200% (Total)
                   </span>
                 </div>
               </div>

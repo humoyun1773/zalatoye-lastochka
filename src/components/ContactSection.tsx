@@ -41,7 +41,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t }) => {
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-blue-600 font-bold">
-              <span>To'g'ridan-to'g'ri qo'ng'iroq</span>
+              <span>{t.hero.buttons.call}</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
           </a>
@@ -65,7 +65,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t }) => {
               </div>
             </div>
             <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-sky-600 font-bold">
-              <span>Telegramda bog'lanish</span>
+              <span>{t.hero.buttons.telegram}</span>
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </div>
           </a>

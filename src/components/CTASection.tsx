@@ -82,11 +82,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ t, onApply }) => {
             <div className="pt-4 flex flex-wrap items-center justify-center gap-6 text-xs text-blue-100">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-300" />
-                <span>Rasmiy ikki tomonlama shartnoma</span>
+                <span>{t.guarantees.points?.[0]?.title || t.guarantees.previewBtn}</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-300" />
-                <span>17-oyda 100% sarmoyani qaytarish</span>
+                <span>{t.guarantees.points?.[3]?.title || t.hero.stats.refundLabel}</span>
               </div>
             </div>
           </div>

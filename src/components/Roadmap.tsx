@@ -9,28 +9,7 @@ interface RoadmapProps {
 export const Roadmap: React.FC<RoadmapProps> = ({ t }) => {
   const stepIcons = [FileSignature, Cpu, TrendingUp, ShieldCheck];
 
-  const stepsData = [
-    {
-      step: "01",
-      title: "Ariza qoldiring",
-      desc: "Sayt orqali shaklni to'ldiring yoki to'g'ridan-to'g'ri Telegram (@afrod991) va telefon orqali murojaat qiling.",
-    },
-    {
-      step: "02",
-      title: "Shartlar bilan tanishing",
-      desc: "Kompaniya hujjatlari, ulushlar hisob-kitobi va loyiha rivojlanish rejasi bilan to'liq tanishib chiqing.",
-    },
-    {
-      step: "03",
-      title: "Rasmiy Shartnoma",
-      desc: "'ZALATIYE LASTOCHKA' MCHJ bilan yuridik kuchga ega ikki tomonlama hamkorlik shartnomasini imzolang.",
-    },
-    {
-      step: "04",
-      title: "Daromad va Qaytarish",
-      desc: "16 oy davomida har oy sof foyda oling va 17-oyda kiritilgan boshlang'ich sarmoyangizni 100% qaytarib oling.",
-    },
-  ];
+  const stepsData = t.roadmap.steps || [];
 
   return (
     <section className="py-20 md:py-28 relative bg-transparent border-y border-slate-200/80 overflow-hidden">

@@ -31,21 +31,21 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
           </div>
 
           <div className="md:col-span-3 space-y-2">
-            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">Aloqa Markazi</span>
+            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">{t.contact.title}</span>
             <a href="tel:+998908714010" className="text-slate-800 font-mono hover:text-blue-600 block transition-colors font-bold">
               +998 (90) 871-40-10
             </a>
             <a href="https://t.me/afrod991" target="_blank" rel="noopener noreferrer" className="text-slate-800 hover:text-sky-600 block transition-colors font-bold">
               Telegram: @afrod991
             </a>
-            <p className="text-slate-500">Qashqadaryo viloyati, Qarshi sh.</p>
+            <p className="text-slate-500">{t.contact.address}</p>
           </div>
 
           <div className="md:col-span-3 space-y-2">
-            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">Yuridik Kafolat</span>
+            <span className="text-xs font-bold text-slate-900 uppercase tracking-wider block">{t.guarantees.tag}</span>
             <div className="flex items-center gap-2 text-emerald-600 font-bold">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>100% Rasmiy Shartnoma</span>
+              <span>{t.guarantees.previewBtn}</span>
             </div>
             <p className="text-slate-500 text-[11px] leading-relaxed">
               {t.footer.disclaimer}
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
             onClick={scrollToTop}
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-slate-100 border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-slate-700 hover:text-blue-700 transition-colors cursor-pointer"
           >
-            <span>Yuqoriga qaytish</span>
+            <span>Top ↑</span>
             <ArrowUp className="w-3.5 h-3.5 text-blue-600" />
           </button>
         </div>

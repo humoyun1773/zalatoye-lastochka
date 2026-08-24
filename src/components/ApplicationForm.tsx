@@ -142,7 +142,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 50].map((n) => (
                       <option key={n} value={n} className="bg-white text-slate-900">
-                        {n} ulush ({(n * 0.1).toFixed(1)}% = {(n * 2640000).toLocaleString('uz-UZ')} so‘m)
+                        {n} {t.calculator.shareUnit} ({(n * 0.1).toFixed(1)}% = {(n * 2640000).toLocaleString('uz-UZ')} {lang === 'ru' ? 'сум' : lang === 'en' ? 'UZS' : "so‘m"})
                       </option>
                     ))}
                   </select>

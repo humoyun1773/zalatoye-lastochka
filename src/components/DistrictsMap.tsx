@@ -50,7 +50,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
                 : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-400 hover:bg-blue-50'
             }`}
           >
-            Barchasi (15 ta tuman)
+            {lang === 'ru' ? 'Все (15 районов)' : lang === 'en' ? 'All (15 Districts)' : 'Barchasi (15 ta tuman)'}
           </button>
           <button
             onClick={() => setFilter('active')}
@@ -95,7 +95,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
                       }`}
                     />
                     <span className="text-[10px] font-bold text-slate-500 uppercase">
-                      {d.coverageStatus === 'active' ? 'Faol' : 'Kengaymoqda'}
+                      {d.coverageStatus === 'active' ? t.districts.legend.active : t.districts.legend.expanding}
                     </span>
                   </div>
                 </div>
@@ -109,16 +109,16 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
                 <div className="flex justify-between text-slate-600">
                   <span className="flex items-center gap-1.5">
                     <Car className="w-3.5 h-3.5 text-blue-600" />
-                    <span>Haydovchilar:</span>
+                    <span>{t.districts.driversGoal}</span>
                   </span>
                   <span className="font-bold text-slate-900 font-mono">{d.targetDrivers}+</span>
                 </div>
                 <div className="flex justify-between text-slate-600">
                   <span className="flex items-center gap-1.5">
                     <Navigation className="w-3.5 h-3.5 text-sky-600" />
-                    <span>Yo'nalishlar:</span>
+                    <span>{t.districts.routes}</span>
                   </span>
-                  <span className="font-bold text-slate-900 font-mono">{d.activeRoutes} ta</span>
+                  <span className="font-bold text-slate-900 font-mono">{d.activeRoutes}</span>
                 </div>
               </div>
             </div>
@@ -128,7 +128,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
         {/* Bottom Note */}
         <div className="mt-8 text-center text-xs text-slate-600 flex items-center justify-center gap-2">
           <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-          <span>Qashqadaryo viloyatining barcha 15 ta tumanida haydovchilar bazasi kengaytirilib borilmoqda.</span>
+          <span>{t.districts.subtitle}</span>
         </div>
       </div>
     </section>

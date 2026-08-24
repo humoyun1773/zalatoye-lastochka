@@ -42,13 +42,13 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
               "{t.hero.companyName}" <span className="text-blue-600 font-extrabold">{t.hero.companyType}</span>
             </span>
             <span className="blue-gradient-text">
-              Qashqadaryoda zamonaviy taksi tizimining bir qismiga aylaning
+              {t.hero.title}
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-sm sm:text-base lg:text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto mb-8 sm:mb-10 font-normal px-2">
-            “O‘rgimchak Taksi” — viloyat tumanlari o‘rtasida taksi xizmatlarini avtomatlashtirish va rivojlantirishga qaratilgan zamonaviy Taxi Park loyihasi.
+            {t.hero.subtitle}
           </p>
 
           {/* Highlight Badge Card */}
@@ -58,8 +58,12 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Boshlang‘ich sarmoya</span>
-                <span className="text-xl sm:text-2xl font-black text-blue-700 font-mono">2 640 000 so‘m</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                  {t.hero.stats.minInvestLabel}
+                </span>
+                <span className="text-xl sm:text-2xl font-black text-blue-700 font-mono">
+                  {t.hero.stats.minInvest}
+                </span>
               </div>
             </div>
 
@@ -70,8 +74,12 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
                 <Activity className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">Loyiha ulushi</span>
-                <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">0.1% ulush</span>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-500 block">
+                  {t.hero.stats.profitLabel}
+                </span>
+                <span className="text-xl sm:text-2xl font-black text-slate-900 font-mono">
+                  {t.hero.stats.profit} (+100%)
+                </span>
               </div>
             </div>
           </div>
@@ -83,7 +91,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
               className="w-full sm:w-auto blue-btn px-8 py-4 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base cursor-pointer shadow-xl text-white"
             >
               <Calculator className="w-5 h-5 text-white shrink-0" />
-              <span>Sarmoya imkoniyatini ko‘rish</span>
+              <span>{t.hero.buttons.calculate}</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
             </button>
 
@@ -92,7 +100,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
               className="w-full sm:w-auto white-btn px-7 py-4 rounded-2xl flex items-center justify-center gap-2.5 text-sm sm:text-base font-bold cursor-pointer shadow-md"
             >
               <CheckCircle2 className="w-5 h-5 text-emerald-600 shrink-0" />
-              <span>Bog‘lanish →</span>
+              <span>{t.nav.cta} →</span>
             </button>
 
             <a
@@ -102,7 +110,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
               className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-700 text-sm sm:text-base font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md"
             >
               <Send className="w-4 h-4 text-sky-600 shrink-0" />
-              <span>Telegram @afrod991</span>
+              <span>{t.hero.buttons.telegram}</span>
             </a>
           </div>
         </div>

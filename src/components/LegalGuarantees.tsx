@@ -8,32 +8,8 @@ interface LegalGuaranteesProps {
 }
 
 export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContract }) => {
-  const legalCards = [
-    {
-      title: "Rasmiy Shartnoma",
-      desc: "Har bir sarmoyador bilan 'ZALATIYE LASTOCHKA' MCHJ o'rtasida muhrlangan, yuridik kuchga ega rasmiy ikki tomonlama shartnoma tuziladi.",
-      icon: FileText,
-      tag: "Yuridik kuch",
-    },
-    {
-      title: "Faktura-Vedomost",
-      desc: "Har oy pul topshirish va qabul qilish vaqtida ikki tomonlama Faktura-Vedomost imzolanadi va barcha to'lovlar hujjatlashtiriladi.",
-      icon: Receipt,
-      tag: "Oylik hisobot",
-    },
-    {
-      title: "Shaffof Jarayon",
-      desc: "Daromad shakllanishi, buyurtmalar komissiyasi va mablag'lar harakati real iqtisodiy faoliyatga asoslangan bo'lib, to'liq shaffofdir.",
-      icon: Lock,
-      tag: "Shaffoflik",
-    },
-    {
-      title: "ZALATIYE LASTOCHKA MCHJ",
-      desc: "O'zbekiston Respublikasi qonunchiligiga muvofiq ro'yxatdan o'tgan rasmiy Mas'uliyati Cheklangan Jamiyat kafolati.",
-      icon: Building2,
-      tag: "Rasmiy MCHJ",
-    },
-  ];
+  const icons = [FileText, Receipt, Lock, Building2];
+  const points = t.guarantees.points || [];
 
   return (
     <section id="guarantees" className="py-20 md:py-28 relative bg-transparent overflow-hidden">
@@ -52,8 +28,8 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 mb-12">
-          {legalCards.map((card, idx) => {
-            const Icon = card.icon;
+          {points.map((card, idx) => {
+            const Icon = icons[idx % icons.length];
             return (
               <div
                 key={idx}
@@ -67,9 +43,6 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
                     <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                       {card.title}
                     </h3>
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-100 border border-slate-200 text-slate-600">
-                      {card.tag}
-                    </span>
                   </div>
                   <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                     {card.desc}
@@ -86,10 +59,10 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
             <FileSignature className="w-7 h-7" />
           </div>
           <h3 className="text-xl sm:text-3xl font-black text-slate-900">
-            Rasmiy Ikki Tomonlama Shartnoma Namunasi
+            {t.guarantees.previewBtn}
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 max-w-xl mx-auto leading-relaxed">
-            "ZALATIYE LASTOCHKA" MCHJ bilan tuziladigan to'liq yuridik shartnoma bandlari, huquq va majburiyatlar bilan tanishing.
+            {t.guarantees.subtitle}
           </p>
           <div className="pt-2">
             <button
@@ -97,7 +70,7 @@ export const LegalGuarantees: React.FC<LegalGuaranteesProps> = ({ t, onOpenContr
               className="blue-btn inline-flex items-center gap-2.5 px-8 py-4 rounded-2xl text-xs sm:text-sm font-bold shadow-xl cursor-pointer text-white"
             >
               <FileCheck2 className="w-4 h-4 text-white" />
-              <span>SHARTNOMA NAMUNASINI KO‘RISH</span>
+              <span>{t.guarantees.previewBtn}</span>
             </button>
           </div>
         </div>
