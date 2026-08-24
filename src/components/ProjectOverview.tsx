@@ -50,7 +50,16 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ t }) => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 relative">
+    <section id="about" className="py-20 md:py-28 relative overflow-hidden">
+      {/* Crystal-Clear Background Realistic Photo */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-25 mix-blend-multiply filter contrast-105 pointer-events-none -z-20"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2400&q=90')"
+        }}
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC]/90 via-white/80 to-[#F8FAFC]/95 pointer-events-none -z-15" />
+
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-18">
@@ -106,12 +115,12 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ t }) => {
               {/* Main Realistic Image */}
               <div className="relative h-80 sm:h-96 md:h-[440px] rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1200&q=80"
+                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=90"
                   alt="O'rgimchak Taksi Floti"
                   loading="lazy"
-                  className="w-full h-full object-cover filter brightness-95"
+                  className="w-full h-full object-cover filter contrast-105 brightness-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-50" />
               </div>
 
               {/* 4 Floating Glassmorphic Cards */}
