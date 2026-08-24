@@ -84,8 +84,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
               className="luxury-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-2.5">
-                  <span className="text-[11px] font-mono text-slate-400 font-bold">#{d.id.slice(0, 4)}</span>
+                <div className="flex items-center justify-end mb-2.5">
                   <div className="flex items-center gap-1.5">
                     <span
                       className={`inline-block w-2 h-2 rounded-full ${
