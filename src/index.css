@@ -35,7 +35,7 @@
 
   body {
     background-color: #F8FAFC;
-    background-image: url('/images/scrooge-money.png');
+    background-image: url('./assets/scrooge-money.png');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;

@@ -18,6 +18,7 @@ import { FaqSection } from './components/FaqSection';
 import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
 import { ContractModal } from './components/ContractModal';
+import scroogeMoney from './assets/scrooge-money.png';
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
@@ -50,7 +51,7 @@ export function App() {
       {/* 0. Full-Screen Fixed Crystal-Clear Background Image - 100% Sharp & Visible */}
       <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
         <img
-          src="/images/scrooge-money.png"
+          src={scroogeMoney}
           alt="Money Background"
           className="w-full h-full object-cover object-center filter contrast-105 brightness-100"
         />
