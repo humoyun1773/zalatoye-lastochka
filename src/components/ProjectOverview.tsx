@@ -3,7 +3,6 @@ import {
   Car, 
   MapPin, 
   Users, 
-  BarChart3, 
   CheckCircle2, 
   Cpu, 
   TrendingUp, 
@@ -66,100 +65,34 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* 2-Column Content Grid: Left 6 Pillars, Right Visual with 4 Floating Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: 6 Key Project Focus Areas */}
-          <div className="lg:col-span-7 space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {points.map((pt, idx) => {
-                const Icon = pt.icon;
-                return (
-                  <div
-                    key={idx}
-                    className="p-5 rounded-2xl luxury-card bg-white border border-slate-200 hover:border-blue-500 shadow-sm transition-all duration-300 group flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-3.5 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <h4 className="text-sm sm:text-base font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors leading-snug">
-                        {pt.title}
-                      </h4>
-                      <p className="text-xs text-slate-600 leading-relaxed">
-                        {pt.desc}
-                      </p>
-                    </div>
-
-                    <div className="mt-3 pt-2.5 border-t border-slate-100 flex items-center gap-1.5 text-[11px] text-emerald-600 font-medium">
-                      <CheckCircle2 className="w-3 h-3 shrink-0" />
-                      <span>Rejali amalga oshirish</span>
-                    </div>
+        {/* 6 Key Project Focus Areas Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {points.map((pt, idx) => {
+            const Icon = pt.icon;
+            return (
+              <div
+                key={idx}
+                className="p-6 sm:p-7 rounded-3xl luxury-card bg-white border border-slate-200 hover:border-blue-500 shadow-md transition-all duration-300 group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 mb-4 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                    <Icon className="w-6 h-6" />
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Right Column: Visual Hero Container with 4 Floating Interactive Badges */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-blue-200 shadow-xl bg-white p-2">
-              {/* Main Realistic Image */}
-              <div className="relative h-80 sm:h-96 md:h-[440px] rounded-2xl overflow-hidden">
-                <img
-                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=90"
-                  alt="O'rgimchak Taksi Floti"
-                  loading="lazy"
-                  className="w-full h-full object-cover filter contrast-105 brightness-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-transparent to-transparent opacity-50" />
-              </div>
-
-              {/* 4 Floating Glassmorphic Cards */}
-              {/* Floating Card 1: Taxi Park */}
-              <div className="absolute top-6 left-6 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-blue-200 text-slate-900 shadow-xl flex items-center gap-2.5 animate-float-slow">
-                <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold">
-                  <Car className="w-4 h-4" />
+                  <h4 className="text-base sm:text-lg font-bold text-slate-900 mb-2.5 group-hover:text-blue-600 transition-colors leading-snug">
+                    {pt.title}
+                  </h4>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    {pt.desc}
+                  </p>
                 </div>
-                <div>
-                  <span className="text-xs font-black block text-slate-900">🚕 Taxi Park</span>
-                  <span className="text-[10px] text-blue-600 font-semibold">Zamonaviy Avtopark</span>
+
+                <div className="mt-5 pt-3.5 border-t border-slate-100 flex items-center gap-2 text-xs text-emerald-600 font-semibold">
+                  <CheckCircle2 className="w-4 h-4 shrink-0" />
+                  <span>Rejali amalga oshirish</span>
                 </div>
               </div>
-
-              {/* Floating Card 2: Qashqadaryo */}
-              <div className="absolute top-6 right-6 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-emerald-200 text-slate-900 shadow-xl flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-xs font-black block text-slate-900">📍 Qashqadaryo</span>
-                  <span className="text-[10px] text-slate-500">15 ta tuman qamrovi</span>
-                </div>
-              </div>
-
-              {/* Floating Card 3: Haydovchilar */}
-              <div className="absolute bottom-6 left-6 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-sky-200 text-slate-900 shadow-xl flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center font-bold">
-                  <Users className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-xs font-black block text-slate-900">👥 Haydovchilar</span>
-                  <span className="text-[10px] text-sky-600 font-semibold">3,500+ Faol haydovchi</span>
-                </div>
-              </div>
-
-              {/* Floating Card 4: Buyurtmalar */}
-              <div className="absolute bottom-6 right-6 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-xl border border-blue-200 text-slate-900 shadow-xl flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold">
-                  <BarChart3 className="w-4 h-4" />
-                </div>
-                <div>
-                  <span className="text-xs font-black block text-slate-900">📊 Buyurtmalar</span>
-                  <span className="text-[10px] text-blue-600 font-semibold">Kunlik oqim</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

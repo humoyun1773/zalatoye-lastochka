@@ -22,12 +22,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ t, onApply }) => {
     <section className="py-20 md:py-28 relative overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden border border-blue-400/40 shadow-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
-          {/* Background Realistic Image with Subtle Overlay - Crystal Clear */}
+          {/* Background Image with Subtle Overlay */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay filter contrast-120 brightness-110 pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay filter contrast-120 brightness-110 pointer-events-none"
             style={{
-              backgroundImage:
-                "url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2400&q=90')",
+              backgroundImage: "url('/images/scrooge-vault.png')",
             }}
           />
 
