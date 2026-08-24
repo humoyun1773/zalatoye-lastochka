@@ -49,7 +49,6 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
   const navLinks = [
     { href: '#about', label: t.nav.about },
     { href: '#terms', label: t.nav.terms },
-    { href: '#calculator', label: t.nav.calculator },
     { href: '#why', label: t.why?.tag || 'Afzalliklar' },
     { href: '#districts', label: t.nav.districts },
     { href: '#gallery', label: t.gallery?.tag || 'Galereya' },
