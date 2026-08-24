@@ -144,26 +144,6 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                   <span className="text-xs sm:text-sm font-black text-emerald-600">100% Sarmoya qaytadi</span>
                 </div>
               </div>
-
-              {/* Scrooge McDuck Cartoon Wealth Banner */}
-              <div className="relative rounded-2xl overflow-hidden border border-blue-200 bg-gradient-to-r from-blue-50 to-amber-50 p-4 flex items-center gap-4 shadow-sm">
-                <img
-                  src="/images/scrooge-money.png"
-                  alt="Scrooge McDuck Gold Coins"
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl object-cover object-top border border-blue-200 shadow-md shrink-0"
-                />
-                <div>
-                  <div className="inline-flex items-center gap-1 text-[10px] uppercase font-black px-2 py-0.5 rounded-md bg-amber-200/80 text-amber-900 mb-1">
-                    💰 100% KAFOLATLANGAN DAROMAD
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-black text-slate-900 leading-tight mb-1">
-                    Har bir ulushdan oylik kafolatlangan sof foyda
-                  </h4>
-                  <p className="text-[11px] text-slate-600">
-                    Sarmoyangiz 17-oyda to'liq 100% qaytariladi va 16 oy davomida sof foyda olasiz.
-                  </p>
-                </div>
-              </div>
             </div>
 
             {/* Right Financial Breakdown Box */}

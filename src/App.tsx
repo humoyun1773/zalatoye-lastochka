@@ -47,16 +47,7 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
-      {/* 0. Full-Screen Fixed Crystal-Clear Cartoon Background Image - 100% Sharp & Visible */}
-      <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
-        <img
-          src="/images/scrooge-bg.png"
-          alt="Scrooge McDuck Money Background"
-          className="w-full h-full object-cover object-center filter contrast-105 brightness-100"
-        />
-      </div>
-
+    <div className="relative min-h-screen bg-[#F8FAFC] text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
       {/* 1. Top Fixed Navbar */}
       <Navbar
         lang={lang}

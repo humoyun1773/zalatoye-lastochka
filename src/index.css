@@ -35,11 +35,10 @@
 
   body {
     background-color: #F8FAFC;
-    background-image: url('/images/scrooge-bg.png');
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-image: 
+      radial-gradient(circle at 15% 10%, rgba(37, 99, 235, 0.03) 0px, transparent 40%),
+      radial-gradient(circle at 85% 25%, rgba(16, 185, 129, 0.03) 0px, transparent 45%),
+      radial-gradient(circle at 50% 70%, rgba(37, 99, 235, 0.02) 0px, transparent 50%);
     color: #0F172A;
     overflow-x: hidden;
     margin: 0;
