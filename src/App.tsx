@@ -19,17 +19,27 @@ import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
 import { ContractModal } from './components/ContractModal';
 
-// Scrooge McDuck Cartoon Rotating Background Images
+// Cartoon Wealth Rotating Background Images (Scrooge McDuck & Tom & Jerry)
 import scroogeMoney from './assets/scrooge-money.png';
+import tomJerryCash from './assets/tom-jerry-cash.png';
 import scroogeSwim from './assets/scrooge-swim.png';
+import tomStack from './assets/tom-stack.png';
 import scroogeCash from './assets/scrooge-cash.png';
+import tomMoneyEyes from './assets/tom-money-eyes.png';
+import tomGraffiti from './assets/tom-graffiti.png';
 import scroogeVault from './assets/scrooge-vault.png';
+import tomBossCash from './assets/tom-boss-cash.png';
 
 const bgImages = [
   { src: scroogeMoney, name: 'Scrooge Money' },
+  { src: tomJerryCash, name: 'Tom & Jerry Cash Gun' },
   { src: scroogeSwim, name: 'Scrooge Swimming Gold' },
-  { src: scroogeCash, name: 'Scrooge Cash' },
-  { src: scroogeVault, name: 'Scrooge Vault' },
+  { src: tomStack, name: 'Tom Calling Cash Stack' },
+  { src: scroogeCash, name: 'Scrooge Cash Diamond' },
+  { src: tomMoneyEyes, name: 'Tom Money Bag Eyes' },
+  { src: tomGraffiti, name: 'Tom Graffiti Dollar Rain' },
+  { src: scroogeVault, name: 'Scrooge Vault Wealth' },
+  { src: tomBossCash, name: 'Tom Mafia Boss 100 Dollars' },
 ];
 
 export function App() {
