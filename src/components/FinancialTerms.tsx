@@ -37,7 +37,6 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-200">
             {t.terms.cards.map((card, idx) => {
               const Icon = icons[idx % icons.length];
-              const stepNums = ['01', '02', '03', '04'];
               return (
                 <div key={idx} className="flex flex-col justify-between p-2 lg:px-6 space-y-4">
                   <div>
@@ -47,7 +46,6 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                       }`}>
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="text-xs font-mono font-bold text-slate-400">{stepNums[idx]}</span>
                     </div>
                     <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
                       {card.label}

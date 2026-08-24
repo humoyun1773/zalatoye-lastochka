@@ -24,10 +24,7 @@ export const TrustBar: React.FC<TrustBarProps> = ({ t }) => {
               {/* Subtle blue glow on hover */}
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/15 transition-all" />
 
-              <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono font-bold text-blue-700 tracking-wider px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-200">
-                  {item.num}
-                </span>
+              <div className="flex items-center justify-end mb-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
                   <Icon className="w-5 h-5" />
                 </div>

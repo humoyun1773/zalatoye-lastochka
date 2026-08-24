@@ -50,9 +50,6 @@ export const WhySpiderTaxi: React.FC<WhySpiderTaxiProps> = ({ t }) => {
                     <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <span className="text-[11px] font-mono font-bold text-slate-400">
-                      0{idx + 1}
-                    </span>
                   </div>
 
                   <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-2.5 group-hover:text-blue-600 transition-colors">
