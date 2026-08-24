@@ -35,9 +35,7 @@
 
   body {
     background-color: #F8FAFC;
-    background-image: 
-      linear-gradient(to bottom, rgba(248, 250, 252, 0.75), rgba(241, 245, 249, 0.70), rgba(248, 250, 252, 0.80)),
-      url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2560&q=95');
+    background-image: url('/images/scrooge-money.png');
     background-size: cover;
     background-position: center top;
     background-attachment: fixed;

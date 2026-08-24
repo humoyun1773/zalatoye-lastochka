@@ -24,10 +24,10 @@ export const CTASection: React.FC<CTASectionProps> = ({ t, onApply }) => {
         <div className="relative rounded-3xl overflow-hidden border border-blue-400/40 shadow-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 text-white">
           {/* Background Realistic Image with Subtle Overlay - Crystal Clear */}
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-overlay filter contrast-120 brightness-110 pointer-events-none"
+            className="absolute inset-0 bg-cover bg-center opacity-30 mix-blend-overlay filter contrast-120 brightness-110 pointer-events-none"
             style={{
               backgroundImage:
-                "url('https://images.unsplash.com/photo-1508974239320-0a029497e820?auto=format&fit=crop&w=2400&q=90')",
+                "url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=2400&q=90')",
             }}
           />
 

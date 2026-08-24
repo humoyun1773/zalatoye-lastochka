@@ -128,7 +128,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                 <span>{t.terms.summaryTotal}</span>
               </div>
               <div className="text-2xl sm:text-4xl font-black font-mono text-slate-900">
-                5 280 000 so‘m <span className="text-blue-600 text-xl sm:text-2xl font-bold">(200% umumiy tushum)</span>
+                5 280 000 so‘m <span className="text-blue-600 text-xl sm:text-2xl">(200% umumiy tushum)</span>
               </div>
               <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
                 1 ta ulush (2 640 000 so‘m) kiritilganda: 16 oy ichida 2 640 000 so‘m sof foyda + 17-oyda 2 640 000 so‘m boshlang‘ich sarmoya qaytariladi.

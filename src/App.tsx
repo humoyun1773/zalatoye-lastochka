@@ -11,6 +11,7 @@ import { Roadmap } from './components/Roadmap';
 import { LegalGuarantees } from './components/LegalGuarantees';
 import { WhySpiderTaxi } from './components/WhySpiderTaxi';
 import { DistrictsMap } from './components/DistrictsMap';
+import { Gallery } from './components/Gallery';
 import { CTASection } from './components/CTASection';
 import { ApplicationForm } from './components/ApplicationForm';
 import { ContactSection } from './components/ContactSection';
@@ -47,6 +48,15 @@ export function App() {
 
   return (
     <div className="relative min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
+      {/* 0. Full-Screen Fixed Crystal-Clear Background Image - 100% Sharp & Visible */}
+      <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden">
+        <img
+          src="/images/scrooge-money.png"
+          alt="Money Background"
+          className="w-full h-full object-cover object-center filter contrast-105 brightness-100"
+        />
+      </div>
+
       {/* 1. Top Fixed Navbar */}
       <Navbar
         lang={lang}
@@ -99,7 +109,10 @@ export function App() {
         {/* 10. Qashqadaryo 15 ta tumani xaritasi/kartalari */}
         <DistrictsMap lang={lang} t={t} />
 
-        {/* 11. Katta CTA Section */}
+        {/* 11. Vizual Galereya (8 ta zamonaviy rasm + hover caption) */}
+        <Gallery t={t} />
+
+        {/* 12. Katta CTA Section */}
         <CTASection
           t={t}
           onOpenContract={() => setContractModalOpen(true)}

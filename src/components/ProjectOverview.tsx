@@ -106,7 +106,7 @@ export const ProjectOverview: React.FC<ProjectOverviewProps> = ({ t }) => {
               {/* Main Realistic Image */}
               <div className="relative h-80 sm:h-96 md:h-[440px] rounded-2xl overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1400&q=90"
+                  src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1400&q=90"
                   alt="O'rgimchak Taksi Floti"
                   loading="lazy"
                   className="w-full h-full object-cover filter contrast-105 brightness-100"
