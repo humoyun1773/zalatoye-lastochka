@@ -35,9 +35,7 @@
 
   body {
     background-color: #F8FAFC;
-    background-image: 
-      linear-gradient(to bottom, rgba(248, 250, 252, 0.65), rgba(241, 245, 249, 0.55), rgba(248, 250, 252, 0.70)),
-      url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2560&q=95');
+    background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2560&q=95');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
