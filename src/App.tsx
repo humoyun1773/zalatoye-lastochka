@@ -67,18 +67,18 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
+    <div className="relative min-h-screen text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
       {/* 0. Full-Screen Rotating Smooth Background Slideshow (4 images cycling) */}
-      <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-slate-950">
+      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {bgImages.map((img, idx) => (
           <img
             key={idx}
             src={img.src}
             alt={img.name}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
+            className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
               bgIndex === idx
-                ? 'opacity-100 scale-100 z-10 filter contrast-105 brightness-100'
-                : 'opacity-0 scale-105 z-0'
+                ? 'opacity-100 filter contrast-105 brightness-100'
+                : 'opacity-0 pointer-events-none'
             }`}
           />
         ))}
@@ -93,7 +93,7 @@ export function App() {
       />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         {/* 2. Hero Section */}
         <Hero
           t={t}
