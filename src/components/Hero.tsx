@@ -18,19 +18,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToForm }) => {
   return (
-    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 overflow-hidden">
-      {/* Background Vivid Crystal-Clear Realistic Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-multiply filter contrast-110 brightness-105 pointer-events-none -z-20 transition-all duration-700"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=2400&q=90')"
-        }}
-      />
-
-      {/* Light Multi-layer Gradient Overlays that preserve crisp image visibility */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#F8FAFC]/80 to-[#F8FAFC] pointer-events-none -z-15" />
-      <div className="absolute inset-0 bg-radial at-top from-transparent via-white/60 to-[#F8FAFC]/90 pointer-events-none -z-15" />
-
+    <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-transparent">
       {/* Dynamic Ambient Glows */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] lg:w-[1000px] h-[350px] sm:h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow" />
       <div className="absolute top-1/3 left-0 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none -z-10" />
