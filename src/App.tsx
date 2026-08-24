@@ -41,7 +41,7 @@ export function App() {
   useEffect(() => {
     const timer = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % bgImages.length);
-    }, 4000);
+    }, 3500);
     return () => clearInterval(timer);
   }, []);
 
@@ -69,7 +69,7 @@ export function App() {
   return (
     <div className="relative min-h-screen bg-transparent text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
       {/* 0. Full-Screen Rotating Smooth Background Slideshow (4 images cycling) */}
-      <div className="fixed inset-0 -z-50 pointer-events-none overflow-hidden bg-slate-950">
+      <div className="fixed inset-0 -z-10 pointer-events-none overflow-hidden bg-slate-950">
         {bgImages.map((img, idx) => (
           <img
             key={idx}
@@ -77,8 +77,8 @@ export function App() {
             alt={img.name}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-in-out ${
               bgIndex === idx
-                ? 'opacity-100 scale-100 filter contrast-105 brightness-100'
-                : 'opacity-0 scale-105 pointer-events-none'
+                ? 'opacity-100 scale-100 z-10 filter contrast-105 brightness-100'
+                : 'opacity-0 scale-105 z-0'
             }`}
           />
         ))}
