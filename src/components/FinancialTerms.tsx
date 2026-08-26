@@ -1,5 +1,5 @@
 import React from 'react';
-import { DollarSign, Clock, TrendingUp, RefreshCw, FileText, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { TrendingUp, FileText, ArrowUpRight, AlertTriangle, Phone, Send, MapPin } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
 interface FinancialTermsProps {
@@ -8,77 +8,327 @@ interface FinancialTermsProps {
 }
 
 export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContract }) => {
-  const icons = [DollarSign, Clock, TrendingUp, RefreshCw];
-
   return (
     <section id="terms" className="py-20 md:py-28 relative bg-transparent border-y border-white/10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
-            <DollarSign className="w-3.5 h-3.5 text-emerald-400" />
-            <span>{t.terms.tag}</span>
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+          <div className="text-sm sm:text-base font-extrabold uppercase tracking-widest text-slate-300 mb-2">
+            "ZALATIYE LASTOCHKA" MCHJ & LOTOSFIELD.UZ
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs sm:text-sm font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <span>📈 RASMIY BIZNES-INVESTITSIYA PAKETLARI VA TO‘LOV GRAFIGI</span>
           </div>
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
-            💰 {t.terms.title}
+            {t.terms.title}
           </h2>
           <p className="text-sm sm:text-base md:text-lg text-slate-200">
             {t.terms.subtitle}
           </p>
         </div>
 
-        {/* Big Premium Breakdown Master Card */}
-        <div className="luxury-card rounded-3xl p-6 sm:p-10 border border-white/15 shadow-2xl mb-10 overflow-hidden relative">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
-            {t.terms.cards.map((card, idx) => {
-              const Icon = icons[idx % icons.length];
-              return (
-                <div key={idx} className="flex flex-col justify-between p-2 lg:px-6 space-y-4">
-                  <div>
-                    <div className="flex items-center justify-between mb-4">
-                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
-                        card.highlight ? 'bg-blue-500/30 border border-blue-400/50 text-blue-300' : 'bg-blue-500/20 border border-blue-400/30 text-blue-400'
-                      }`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-                    </div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
-                      {card.label}
-                    </span>
-                    <div className={`text-2xl sm:text-3xl font-black font-mono mb-2 ${
-                      card.highlight ? 'text-blue-300' : 'text-white'
-                    }`}>
-                      {card.value}
-                    </div>
-                  </div>
-                  <p className="text-xs text-slate-300 leading-relaxed border-t border-white/10 pt-3">
-                    {card.sub}
-                  </p>
+        {/* ─── 3 OFFICIAL PACKAGES ─── */}
+        <div className="space-y-10 mb-12">
+          {/* ══════════ 1-PAKET: BARQAROR SARMOYA (100% SOF FOYDA) ══════════ */}
+          <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-hidden relative">
+            {/* Header info */}
+            <div className="border-b border-white/15 pb-6 mb-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <span className="px-3 py-1 rounded-lg bg-blue-600/30 border border-blue-400/50 text-blue-300 text-xs font-black uppercase tracking-wider inline-block mb-2">
+                    1-Paket
+                  </span>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
+                    1-PAKET: BARQAROR SARMOYA <span className="text-emerald-400">(100% SOF FOYDA)</span>
+                  </h3>
                 </div>
-              );
-            })}
+              </div>
+
+              {/* Meta metrics grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 pt-4 border-t border-white/10">
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Kiritiladigan investitsiya:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    2,640,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Jami qaytariladigan pul:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
+                    5,280,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Muddat:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    16 oy + 17-oy <span className="text-xs text-slate-300 font-normal">(Asosiy summa)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead>
+                  <tr className="bg-slate-900 text-white uppercase text-[11px] font-black tracking-wider border-b border-white/20">
+                    <th className="py-3.5 px-4 rounded-tl-xl">Davr</th>
+                    <th className="py-3.5 px-4">Oylik to‘lov</th>
+                    <th className="py-3.5 px-4">Jami davr to‘lovi</th>
+                    <th className="py-3.5 px-4 rounded-tr-xl">Izoh</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1–3 oylar (3 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">50,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">150,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Dastlabki yengil to‘lovlar</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">4–6 oylar (3 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">70,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">210,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Oylik to‘lov oshishi</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">7–16 oylar (10 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">228,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">2,280,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Foydaning qolgan qismi teng bo‘linadi</td>
+                  </tr>
+                  <tr className="bg-emerald-950/30 hover:bg-emerald-950/50 transition-colors">
+                    <td className="py-4 px-4 font-black text-emerald-300 whitespace-nowrap">17-oy</td>
+                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
+                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
+                    <td className="py-4 px-4 font-bold text-emerald-300">Boshlang‘ich sarmoya to‘liq qaytariladi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* ══════════ 2-PAKET: OPTIMAL DAROMAD (100% SOF FOYDA) ══════════ */}
+          <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-hidden relative">
+            {/* Header info */}
+            <div className="border-b border-white/15 pb-6 mb-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <span className="px-3 py-1 rounded-lg bg-sky-600/30 border border-sky-400/50 text-sky-300 text-xs font-black uppercase tracking-wider inline-block mb-2">
+                    2-Paket
+                  </span>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
+                    2-PAKET: OPTIMAL DAROMAD <span className="text-emerald-400">(100% SOF FOYDA)</span>
+                  </h3>
+                </div>
+              </div>
+
+              {/* Meta metrics grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 pt-4 border-t border-white/10">
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Kiritiladigan investitsiya:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    940,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Jami qaytariladigan pul:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
+                    1,880,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Muddat:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    14 oy
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead>
+                  <tr className="bg-slate-900 text-white uppercase text-[11px] font-black tracking-wider border-b border-white/20">
+                    <th className="py-3.5 px-4 rounded-tl-xl">Davr</th>
+                    <th className="py-3.5 px-4">Qaytariladigan ulush</th>
+                    <th className="py-3.5 px-4">Oylik to‘lov</th>
+                    <th className="py-3.5 px-4 rounded-tr-xl">Izoh</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-blue-300 whitespace-nowrap">25%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">235,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Kiritilgan pulning 1/4 qismi qaytadi</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-blue-300 whitespace-nowrap">15%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">141,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">2 oyda sarmoyaning 40%i qaytadi</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–14 oylar (12 oy)</td>
+                    <td className="py-3.5 px-4 font-bold text-blue-300 whitespace-nowrap">Har oy ~10.6%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">125,300 so‘mdan</td>
+                    <td className="py-3.5 px-4 text-slate-300">Qolgan summa teng bo‘lib beriladi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* ══════════ 3-PAKET: KICHIK SARMOYA (140% SOF FOYDA) ══════════ */}
+          <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-hidden relative">
+            {/* Header info */}
+            <div className="border-b border-white/15 pb-6 mb-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                  <span className="px-3 py-1 rounded-lg bg-amber-600/30 border border-amber-400/50 text-amber-300 text-xs font-black uppercase tracking-wider inline-block mb-2">
+                    3-Paket
+                  </span>
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
+                    3-PAKET: KICHIK SARMOYA <span className="text-amber-400">(140% SOF FOYDA)</span>
+                  </h3>
+                </div>
+              </div>
+
+              {/* Meta metrics grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-5 pt-4 border-t border-white/10">
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Kiritiladigan investitsiya:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    560,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Jami qaytariladigan pul:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
+                    1,344,000 so‘m
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
+                  <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
+                    Muddat:
+                  </span>
+                  <div className="text-lg sm:text-xl font-black text-white font-mono">
+                    17 oy
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full text-left border-collapse text-xs sm:text-sm">
+                <thead>
+                  <tr className="bg-slate-900 text-white uppercase text-[11px] font-black tracking-wider border-b border-white/20">
+                    <th className="py-3.5 px-4 rounded-tl-xl">Davr</th>
+                    <th className="py-3.5 px-4">Qaytariladigan ulush</th>
+                    <th className="py-3.5 px-4">Oylik to‘lov</th>
+                    <th className="py-3.5 px-4 rounded-tr-xl">Izoh</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">30%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">168,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Sezilarli boshlang‘ich to‘lov</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">20%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">112,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">60 kunda sarmoyaning 50% (yarmi) qaytadi</td>
+                  </tr>
+                  <tr className="hover:bg-white/5 transition-colors">
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–17 oylar (15 oy)</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">Har oy ~5.5%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">70,900 so‘mdan</td>
+                    <td className="py-3.5 px-4 text-slate-300">Qolgan 1,064,000 so‘m 15 oyga teng bo‘linadi</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
 
-        {/* Highlight Summary Banner */}
-        <div className="luxury-card-blue p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-blue-400/40 shadow-2xl">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="space-y-2 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>{t.terms.summaryTotal}</span>
+        {/* ─── OFFICIAL GUARANTEE NOTICE & CONTACT DETAILS ─── */}
+        <div className="space-y-4">
+          {/* Warning Banner */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/15 border border-amber-400/30 flex items-start gap-3.5 text-slate-200">
+            <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+            <div className="text-xs sm:text-sm font-bold text-amber-200 leading-relaxed">
+              ⚠️ DIQQAT: Barcha investitsiyalar "ZALATIYE LASTOCHKA" MCHJ bilan tuziladigan rasmiy shartnoma asosida kafolatlanadi.
+            </div>
+          </div>
+
+          {/* Contact Bar & Action */}
+          <div className="luxury-card p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto">
+              <a
+                href="tel:+998908714010"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Tel:</span>
+                  <span className="text-xs sm:text-sm font-bold text-white font-mono">+998 (90) 871-40-10</span>
+                </div>
+              </a>
+
+              <a
+                href="https://t.me/afrod991"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+              >
+                <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
+                  <Send className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Telegram:</span>
+                  <span className="text-xs sm:text-sm font-bold text-white font-mono">@afrod991</span>
+                </div>
+              </a>
+
+              <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <div>
+                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Manzil:</span>
+                  <span className="text-xs font-bold text-white">Qarshi sh., Eshon Shahid MFY, NUR o‘quv markazi</span>
+                </div>
               </div>
-              <div className="text-2xl sm:text-4xl font-black font-mono text-white">
-                {t.terms.summaryTotalVal}
-              </div>
-              <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
-                {t.terms.summaryDesc}
-              </p>
             </div>
 
             <button
               onClick={onOpenContract}
-              className="w-full sm:w-auto blue-btn px-7 py-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2.5 shadow-xl cursor-pointer shrink-0 text-white"
+              className="w-full lg:w-auto blue-btn px-7 py-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2.5 shadow-xl cursor-pointer shrink-0 text-white"
             >
               <FileText className="w-4 h-4 text-white" />
               <span>{t.guarantees.previewBtn}</span>
