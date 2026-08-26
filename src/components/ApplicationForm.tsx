@@ -11,11 +11,7 @@ interface ApplicationFormProps {
   initialShares: number;
 }
 
-const SHARES_OPTIONS = [
-  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-  15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100,
-  150, 200, 250, 300, 400, 500, 750, 1000,
-];
+const SHARES_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initialShares }) => {
   const [name, setName] = useState('');
