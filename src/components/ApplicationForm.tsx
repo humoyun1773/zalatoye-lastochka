@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Send, Phone, CheckCircle2, User, MapPin, Sparkles, Plus, Minus, ShieldCheck } from 'lucide-react';
+import { Send, Phone, CheckCircle2, User, MapPin, Sparkles, ChevronDown, Percent } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { QASHQADARYO_DISTRICTS } from '../data/districts';
 import type { Language } from '../types';
@@ -11,7 +11,11 @@ interface ApplicationFormProps {
   initialShares: number;
 }
 
-const PRESET_SHARES = [1, 2, 5, 10, 20, 50, 100];
+const SHARES_OPTIONS = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+  15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100,
+  150, 200, 250, 300, 400, 500, 750, 1000,
+];
 
 export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initialShares }) => {
   const [name, setName] = useState('');
@@ -29,17 +33,10 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
 
   const currencyUnit = lang === 'ru' ? 'сум' : lang === 'en' ? 'UZS' : "so‘m";
 
-  // Financial calculations based on shares
-  const singleSharePrice = 2640000;
-  const totalInvestment = shares * singleSharePrice;
-  const sharePercentage = (shares * 0.1).toFixed(shares >= 10 && (shares * 0.1) % 1 === 0 ? 0 : 1);
-  const monthlyIncome = Math.round(totalInvestment / 16);
-  const totalProfit = totalInvestment;
-  const grandTotal = totalInvestment * 2;
-
-  const handleShareChange = (newVal: number) => {
-    const valid = Math.max(1, Math.min(1000, newVal || 1));
-    setShares(valid);
+  const getShareOptionLabel = (n: number) => {
+    const percent = (n * 0.1).toFixed(n >= 10 && (n * 0.1) % 1 === 0 ? 0 : 1);
+    const amount = (n * 2640000).toLocaleString('uz-UZ');
+    return `${n} ${t.calculator.shareUnit} (${percent}%) — ${amount} ${currencyUnit}`;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -56,11 +53,11 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
 
     setSubmitted(true);
 
-    const formattedInvest = totalInvestment.toLocaleString('uz-UZ');
-    const formattedGrandTotal = grandTotal.toLocaleString('uz-UZ');
+    const sharePercentage = (shares * 0.1).toFixed(1);
+    const totalAmount = (shares * 2640000).toLocaleString('uz-UZ');
 
     const textMsg = encodeURIComponent(
-      `🏢 "ZALATIYE LASTOCHKA" MCHJ sarmoyaviy hamkorlik arizasi:\n👤 Ism: ${name}\n📞 Tel: ${phone}\n📊 Ulush: ${shares} ta (${sharePercentage}% = ${formattedInvest} ${currencyUnit})\n💰 Jami kutilayotgan tushum: ${formattedGrandTotal} ${currencyUnit} (200%)\n📍 Tuman: ${district}\n💬 Xabar: ${message || "Loyiha bo‘yicha shartnoma rasmiylashtirmoqchiman."}`
+      `🏢 "ZALATIYE LASTOCHKA" MCHJ sarmoyaviy hamkorlik arizasi:\n👤 Ism: ${name}\n📞 Tel: ${phone}\n📊 Ulush: ${shares} ta (${sharePercentage}% ulush = ${totalAmount} ${currencyUnit})\n📍 Tuman: ${district}\n💬 Xabar: ${message || "Loyiha haqida batafsil ma'lumot olmoqchiman."}`
     );
     window.open(`https://t.me/afrod991?text=${textMsg}`, '_blank');
   };
@@ -110,9 +107,9 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              {/* Step 1: Personal Info Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+              {/* Row 1: Name and Phone */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
                   <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.nameLabel} *
@@ -125,7 +122,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={t.form.namePlaceholder}
-                      className="w-full bg-slate-900/90 border border-white/20 hover:border-white/40 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors shadow-sm"
+                      className="w-full bg-slate-900/90 border border-white/20 hover:border-blue-400/60 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors shadow-sm"
                     />
                   </div>
                 </div>
@@ -142,187 +139,84 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder={t.form.phonePlaceholder}
-                      className="w-full bg-slate-900/90 border border-white/20 hover:border-white/40 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors font-mono shadow-sm"
+                      className="w-full bg-slate-900/90 border border-white/20 hover:border-blue-400/60 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors font-mono shadow-sm"
                     />
                   </div>
                 </div>
               </div>
 
-              {/* Step 2: Interactive Share Selector & Calculation Box */}
-              <div className="p-5 sm:p-6 rounded-2xl bg-slate-950/70 border border-white/15 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                  <div>
-                    <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider">
-                      {t.form.sharesLabel}
-                    </label>
-                    <span className="text-[11px] text-slate-400">
-                      1 ulush = 2,640,000 {currencyUnit} (0.1%)
-                    </span>
-                  </div>
-
-                  {/* Number Stepper */}
-                  <div className="flex items-center gap-2 self-start sm:self-auto">
-                    <button
-                      type="button"
-                      onClick={() => handleShareChange(shares - 1)}
-                      disabled={shares <= 1}
-                      className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed flex items-center justify-center text-white transition-colors cursor-pointer"
+              {/* Row 2: Shares Select & District Select */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                {/* Fixed Shares Select */}
+                <div>
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                    {t.form.sharesLabel}
+                  </label>
+                  <div className="relative">
+                    <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <Percent className="w-4 h-4" />
+                    </div>
+                    <select
+                      value={shares}
+                      onChange={(e) => setShares(Number(e.target.value))}
+                      className="w-full bg-slate-900/95 border border-white/20 hover:border-blue-400/60 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-13 pr-10 py-3.5 text-sm text-white focus:outline-none transition-colors appearance-none cursor-pointer shadow-sm font-medium"
                     >
-                      <Minus className="w-4 h-4" />
-                    </button>
-
-                    <div className="px-4 py-2 rounded-xl bg-slate-900 border border-white/25 text-center min-w-[90px]">
-                      <span className="text-base sm:text-lg font-black font-mono text-white">
-                        {shares}
-                      </span>
-                      <span className="text-xs text-slate-300 ml-1 font-bold">
-                        {t.calculator.shareUnit}
-                      </span>
-                    </div>
-
-                    <button
-                      type="button"
-                      onClick={() => handleShareChange(shares + 1)}
-                      className="w-10 h-10 rounded-xl bg-white/10 border border-white/20 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer"
-                    >
-                      <Plus className="w-4 h-4" />
-                    </button>
+                      {SHARES_OPTIONS.map((n) => (
+                        <option key={n} value={n} className="bg-slate-900 text-white py-1.5">
+                          {getShareOptionLabel(n)}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="w-5 h-5 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
                 </div>
 
-                {/* Preset Chips */}
-                <div className="flex flex-wrap items-center gap-2 pt-1">
-                  <span className="text-[11px] font-semibold text-slate-400 mr-1">Tezkor tanlash:</span>
-                  {PRESET_SHARES.map((n) => {
-                    const isSelected = shares === n;
-                    return (
-                      <button
-                        key={n}
-                        type="button"
-                        onClick={() => setShares(n)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
-                          isSelected
-                            ? 'bg-blue-600 text-white shadow-md border border-blue-400'
-                            : 'bg-white/5 hover:bg-white/15 text-slate-300 border border-white/10'
-                        }`}
-                      >
-                        {n} {t.calculator.shareUnit}
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Live Calculation Mini Card */}
-                <div className="pt-3 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-white/10">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase block mb-1">
-                      Kiritiladigan sarmoya:
-                    </span>
-                    <div className="text-xs sm:text-sm font-black text-white font-mono">
-                      {totalInvestment.toLocaleString('uz-UZ')} {currencyUnit}
-                    </div>
-                    <span className="text-[10px] text-blue-300 font-bold">
-                      {sharePercentage}% ulush
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-white/10">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase block mb-1">
-                      Oylik sof daromad:
-                    </span>
-                    <div className="text-xs sm:text-sm font-black text-emerald-400 font-mono">
-                      ~{monthlyIncome.toLocaleString('uz-UZ')} {currencyUnit}
-                    </div>
-                    <span className="text-[10px] text-slate-400 font-semibold">
-                      1-16 oylar
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-white/10">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase block mb-1">
-                      16 oylik sof foyda:
-                    </span>
-                    <div className="text-xs sm:text-sm font-black text-emerald-400 font-mono">
-                      +{totalProfit.toLocaleString('uz-UZ')} {currencyUnit}
-                    </div>
-                    <span className="text-[10px] text-emerald-400 font-bold">
-                      +100% foyda
-                    </span>
-                  </div>
-
-                  <div className="p-3 rounded-xl bg-slate-900/80 border border-white/10">
-                    <span className="text-[10px] text-slate-400 font-bold uppercase block mb-1">
-                      17-oyda sarmoya:
-                    </span>
-                    <div className="text-xs sm:text-sm font-black text-white font-mono">
-                      {totalInvestment.toLocaleString('uz-UZ')} {currencyUnit}
-                    </div>
-                    <span className="text-[10px] text-slate-300 font-semibold">
-                      To'liq qaytadi
-                    </span>
-                  </div>
-                </div>
-
-                {/* Grand Total Bar */}
-                <div className="p-3.5 rounded-xl bg-gradient-to-r from-blue-950/60 to-slate-900 border border-blue-400/30 flex flex-wrap items-center justify-between gap-2">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="text-xs font-bold text-slate-200">
-                      Jami tushum (16 oy daromad + sarmoya):
-                    </span>
-                  </div>
-                  <div className="text-sm sm:text-base font-black text-white font-mono">
-                    {grandTotal.toLocaleString('uz-UZ')} {currencyUnit} <span className="text-emerald-400 text-xs font-bold">(200%)</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Step 3: District and Message Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                {/* Fixed District Select */}
                 <div>
                   <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.districtLabel}
                   </label>
                   <div className="relative">
-                    <MapPin className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                    <div className="w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <MapPin className="w-4 h-4" />
+                    </div>
                     <select
                       value={district}
                       onChange={(e) => setDistrict(e.target.value)}
-                      className="w-full bg-slate-900/90 border border-white/20 hover:border-white/40 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-8 py-3.5 text-sm text-white focus:outline-none transition-colors appearance-none cursor-pointer shadow-sm"
+                      className="w-full bg-slate-900/95 border border-white/20 hover:border-blue-400/60 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-13 pr-10 py-3.5 text-sm text-white focus:outline-none transition-colors appearance-none cursor-pointer shadow-sm font-medium"
                     >
                       {QASHQADARYO_DISTRICTS.map((d) => {
                         const localized = lang === 'ru' ? d.nameRu : lang === 'en' ? d.nameEn : d.nameUz;
                         return (
-                          <option key={d.id} value={localized} className="bg-slate-900 text-white py-1">
+                          <option key={d.id} value={localized} className="bg-slate-900 text-white py-1.5">
                             {localized}
                           </option>
                         );
                       })}
-                      <option value="Boshqa hudud" className="bg-slate-900 text-white py-1">
+                      <option value="Boshqa hudud" className="bg-slate-900 text-white py-1.5">
                         Boshqa viloyat / hudud
                       </option>
                     </select>
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-slate-400">
-                      ▼
-                    </div>
+                    <ChevronDown className="w-5 h-5 text-slate-400 absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
                   </div>
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
-                    {t.form.messageLabel}
-                  </label>
-                  <input
-                    type="text"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder={t.form.messagePlaceholder}
-                    className="w-full bg-slate-900/90 border border-white/20 hover:border-white/40 focus:border-blue-400 focus:bg-slate-900 rounded-xl px-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors shadow-sm"
-                  />
                 </div>
               </div>
 
-              {/* Step 4: Action Buttons */}
+              {/* Row 3: Message Textarea */}
+              <div>
+                <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                  {t.form.messageLabel}
+                </label>
+                <textarea
+                  rows={3}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  placeholder={t.form.messagePlaceholder}
+                  className="w-full bg-slate-900/90 border border-white/20 hover:border-blue-400/60 focus:border-blue-400 focus:bg-slate-900 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors resize-none shadow-sm"
+                />
+              </div>
+
+              {/* Row 4: Action Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
