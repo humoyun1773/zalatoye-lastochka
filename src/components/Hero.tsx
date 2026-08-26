@@ -50,14 +50,14 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
           {/* Highlight Badge Card */}
           <div className="inline-flex flex-wrap items-center justify-center gap-4 sm:gap-8 px-6 py-4 rounded-3xl bg-slate-900/85 backdrop-blur-xl border border-white/20 shadow-2xl mb-8 sm:mb-10 text-white">
             <div className="flex items-center gap-3 text-left">
-              <div className="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-400">
+              <div className="w-12 h-12 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center text-amber-400">
                 <Sparkles className="w-6 h-6" />
               </div>
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-300 block">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-200 block">
                   {t.hero.stats.minInvestLabel}
                 </span>
-                <span className="text-xl sm:text-2xl font-black text-blue-400 font-mono">
+                <span className="text-xl sm:text-2xl font-black text-white font-mono">
                   {t.hero.stats.minInvest}
                 </span>
               </div>

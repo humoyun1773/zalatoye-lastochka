@@ -51,9 +51,9 @@
 
 /* Premium Dark Luxury Glassmorphic Cards with Crisp White Text */
 .luxury-card {
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: rgba(10, 15, 29, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5), 0 4px 12px -2px rgba(0, 0, 0, 0.3);
   color: #FFFFFF;
@@ -61,60 +61,57 @@
 }
 
 .luxury-card:hover {
-  border-color: rgba(96, 165, 250, 0.6);
-  box-shadow: 0 24px 48px -10px rgba(37, 99, 235, 0.35), 0 4px 16px -2px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 24px 48px -10px rgba(0, 0, 0, 0.6);
   transform: translateY(-3px);
 }
 
 .luxury-card-gold, .luxury-card-blue {
-  background: linear-gradient(145deg, rgba(30, 58, 138, 0.85) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(17, 24, 39, 0.95) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(147, 197, 253, 0.3);
-  box-shadow: 0 16px 36px -10px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
   color: #FFFFFF;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card-gold:hover, .luxury-card-blue:hover {
-  border-color: #60A5FA;
-  box-shadow: 0 24px 50px -10px rgba(37, 99, 235, 0.45), 0 0 25px rgba(59, 130, 246, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 50px -10px rgba(0, 0, 0, 0.7);
   transform: translateY(-4px);
 }
 
 .luxury-card-emerald {
-  background: linear-gradient(145deg, rgba(6, 78, 59, 0.85) 0%, rgba(15, 23, 42, 0.9) 60%, rgba(17, 24, 39, 0.95) 100%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(110, 231, 183, 0.3);
-  box-shadow: 0 16px 36px -10px rgba(16, 185, 129, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
   color: #FFFFFF;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .luxury-card-emerald:hover {
-  border-color: #34D399;
-  box-shadow: 0 24px 45px -10px rgba(16, 185, 129, 0.35);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 45px -10px rgba(0, 0, 0, 0.7);
   transform: translateY(-3px);
 }
 
-/* Gradient Typography */
+/* Crisp White Typography with Subtitle Shadows */
 .gold-gradient-text, .blue-gradient-text {
-  background: linear-gradient(135deg, #FFFFFF 0%, #93C5FD 50%, #60A5FA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FFFFFF;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 .gold-gradient-sub, .blue-gradient-sub {
-  background: linear-gradient(135deg, #F0F9FF 0%, #BAE6FD 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #F1F5F9;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.7);
 }
 
 .emerald-gradient-text {
-  background: linear-gradient(135deg, #A7F3D0 0%, #34D399 60%, #10B981 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #34D399;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
 }
 
 /* Premium Blue Buttons */
