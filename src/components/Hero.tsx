@@ -19,16 +19,12 @@ interface HeroProps {
 export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToForm }) => {
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-transparent">
-      {/* Dynamic Ambient Glows */}
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] lg:w-[1000px] h-[350px] sm:h-[600px] bg-blue-500/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse-glow" />
-      <div className="absolute top-1/3 left-0 w-80 sm:w-[450px] h-80 sm:h-[450px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none -z-10" />
-
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Hero Header */}
         <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
-          {/* Official Shimmer Verification Badge */}
-          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full shimmer-badge border border-blue-400/40 text-blue-200 text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg backdrop-blur-xl bg-blue-950/70">
-            <Award className="w-4 h-4 text-blue-400 shrink-0" />
+          {/* Official Verification Badge */}
+          <div className="inline-flex items-center gap-2.5 px-4 sm:px-5 py-2 rounded-full border border-white/20 text-white text-xs sm:text-sm font-bold mb-6 sm:mb-8 shadow-lg backdrop-blur-xl bg-white/10">
+            <Award className="w-4 h-4 text-emerald-400 shrink-0" />
             <span className="tracking-wide text-white">{t.hero.badge}</span>
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -38,10 +34,10 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
 
           {/* Main Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-7xl font-black font-display tracking-tight leading-[1.08] mb-6 text-white">
-            <span className="block text-slate-300 font-light text-lg sm:text-2xl lg:text-3xl mb-3 tracking-normal">
-              "{t.hero.companyName}" <span className="text-blue-400 font-extrabold">{t.hero.companyType}</span>
+            <span className="block text-slate-200 font-light text-lg sm:text-2xl lg:text-3xl mb-3 tracking-normal">
+              "{t.hero.companyName}" <span className="text-white font-extrabold">{t.hero.companyType}</span>
             </span>
-            <span className="blue-gradient-text">
+            <span className="text-white">
               {t.hero.title}
             </span>
           </h1>

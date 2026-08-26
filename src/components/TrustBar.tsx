@@ -17,13 +17,8 @@ export const TrustBar: React.FC<TrustBarProps> = ({ t }) => {
           return (
             <div
               key={idx}
-              className={`p-6 sm:p-7 rounded-3xl luxury-card border border-white/15 hover:border-blue-400 shadow-xl transition-all duration-300 group flex flex-col justify-between relative overflow-hidden ${
-                idx === 2 ? 'luxury-card-blue border-blue-400/40' : ''
-              }`}
+              className={`p-6 sm:p-7 rounded-3xl luxury-card border border-white/15 hover:border-white/30 shadow-xl transition-all duration-300 group flex flex-col justify-between relative overflow-hidden`}
             >
-              {/* Subtle blue glow on hover */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-full blur-2xl group-hover:bg-blue-500/25 transition-all" />
-
               <div className="flex items-center justify-end mb-4">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
                   <Icon className="w-5 h-5" />

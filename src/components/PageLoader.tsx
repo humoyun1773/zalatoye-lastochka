@@ -65,10 +65,6 @@ export const PageLoader: React.FC<PageLoaderProps> = ({ lang, onFinish }) => {
         isDone ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100'
       }`}
     >
-      {/* Background Animated Ambient Glows */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-[140px] pointer-events-none animate-pulse" />
-      <div className="absolute top-1/3 left-1/3 w-72 h-72 bg-sky-500/15 rounded-full blur-[100px] pointer-events-none" />
-
       {/* Main Loader Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-md w-full">
         {/* Animated Brand Logo Icon */}

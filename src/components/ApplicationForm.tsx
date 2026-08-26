@@ -52,13 +52,10 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
     <section id="application" className="py-20 md:py-28 relative bg-transparent overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto luxury-card p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
-          {/* Ambient Glow */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
-
           {/* Form Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
-              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>{t.form.tag}</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-3">
