@@ -63,7 +63,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
         <div className="max-w-4xl mx-auto luxury-card p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/20 shadow-2xl relative">
           {/* Form Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
               <Sparkles className="w-3.5 h-3.5 text-amber-400" />
               <span>{t.form.tag}</span>
             </div>
@@ -102,39 +102,43 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               {/* Row 1: Name and Phone */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2.5">
                     {t.form.nameLabel} *
                   </label>
-                  <div className="relative rounded-2xl bg-slate-900 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <User className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <User className="w-4 h-4" />
+                    </div>
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={t.form.namePlaceholder}
-                      className="w-full bg-transparent pl-11 pr-4 py-3.5 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none"
+                      className="w-full bg-transparent pl-14 pr-4 py-4 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none font-medium"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2.5">
                     {t.form.phoneLabel} *
                   </label>
-                  <div className="relative rounded-2xl bg-slate-900 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <Phone className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none" />
+                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <Phone className="w-4 h-4" />
+                    </div>
                     <input
                       type="tel"
                       required
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder={t.form.phonePlaceholder}
-                      className="w-full bg-transparent pl-11 pr-4 py-3.5 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none font-mono"
+                      className="w-full bg-transparent pl-14 pr-4 py-4 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none font-mono font-medium"
                     />
                   </div>
                 </div>
@@ -142,19 +146,24 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
 
               {/* Row 2: Shares Select & District Select */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                {/* Fixed Shares Select - Only percentage */}
+                {/* Shares Select (1-10 ulush) */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
-                    {t.form.sharesLabel}
-                  </label>
-                  <div className="relative rounded-2xl bg-slate-900 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <div className="flex items-center justify-between mb-2.5">
+                    <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider">
+                      {t.form.sharesLabel}
+                    </label>
+                    <span className="text-[11px] font-bold text-blue-300 font-mono">
+                      {(shares * 2640000).toLocaleString('uz-UZ')} {currencyUnit}
+                    </span>
+                  </div>
+                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
                       <Percent className="w-4 h-4" />
                     </div>
                     <select
                       value={shares}
                       onChange={(e) => setShares(Number(e.target.value))}
-                      className="w-full bg-transparent pl-14 pr-10 py-3.5 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
+                      className="w-full bg-transparent pl-14 pr-10 py-4 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
                     >
                       {SHARES_OPTIONS.map((n) => (
                         <option key={n} value={n} className="bg-slate-900 text-white font-medium py-2">
@@ -166,19 +175,19 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   </div>
                 </div>
 
-                {/* Fixed District Select */}
+                {/* District Select */}
                 <div>
-                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2.5">
                     {t.form.districtLabel}
                   </label>
-                  <div className="relative rounded-2xl bg-slate-900 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <div className="w-8 h-8 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
+                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
+                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
                       <MapPin className="w-4 h-4" />
                     </div>
                     <select
                       value={district}
                       onChange={(e) => setDistrict(e.target.value)}
-                      className="w-full bg-transparent pl-14 pr-10 py-3.5 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
+                      className="w-full bg-transparent pl-14 pr-10 py-4 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
                     >
                       {QASHQADARYO_DISTRICTS.map((d) => {
                         const localized = lang === 'ru' ? d.nameRu : lang === 'en' ? d.nameEn : d.nameUz;
@@ -199,7 +208,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
 
               {/* Row 3: Message Textarea */}
               <div>
-                <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2.5">
                   {t.form.messageLabel}
                 </label>
                 <textarea
@@ -207,15 +216,15 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder={t.form.messagePlaceholder}
-                  className="w-full bg-slate-900 border border-white/20 hover:border-blue-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 rounded-2xl px-4 py-3.5 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none transition-all resize-none shadow-sm"
+                  className="w-full bg-slate-950/80 border border-white/20 hover:border-blue-400 focus:border-blue-400 focus:ring-2 focus:ring-blue-500/20 rounded-2xl px-4 py-3.5 text-sm sm:text-base text-white placeholder:text-slate-400 focus:outline-none transition-all resize-none shadow-sm font-medium"
                 />
               </div>
 
               {/* Row 4: Action Buttons */}
-              <div className="pt-2 flex flex-col sm:flex-row gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row gap-3.5">
                 <button
                   type="submit"
-                  className="flex-1 blue-btn py-4 rounded-xl text-sm sm:text-base cursor-pointer shadow-xl text-white font-black flex items-center justify-center gap-2"
+                  className="flex-1 blue-btn py-4 sm:py-4.5 rounded-2xl text-sm sm:text-base cursor-pointer shadow-xl text-white font-black flex items-center justify-center gap-2.5 hover:scale-[1.01] active:scale-[0.99] transition-all"
                 >
                   <span>{t.form.submitBtn}</span>
                   <Send className="w-4 h-4" />
@@ -225,7 +234,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   href="https://t.me/afrod991"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-4 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md backdrop-blur-md"
+                  className="px-6 py-4 sm:py-4.5 rounded-2xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/40 text-sky-200 hover:text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 transition-all cursor-pointer shadow-md backdrop-blur-md"
                 >
                   <Send className="w-4 h-4 text-sky-400" />
                   <span>Telegram @afrod991</span>
