@@ -6,7 +6,6 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { ProjectOverview } from './components/ProjectOverview';
 import { FinancialTerms } from './components/FinancialTerms';
-import { ProfitCalculator } from './components/ProfitCalculator';
 import { Roadmap } from './components/Roadmap';
 import { LegalGuarantees } from './components/LegalGuarantees';
 import { WhySpiderTaxi } from './components/WhySpiderTaxi';
@@ -45,7 +44,7 @@ const bgImages = [
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
-  const [selectedShares, setSelectedShares] = useState<number>(1);
+  const [selectedShares] = useState<number>(1);
   const [contractModalOpen, setContractModalOpen] = useState<boolean>(false);
   const [bgIndex, setBgIndex] = useState<number>(0);
 
@@ -58,23 +57,11 @@ export function App() {
 
   const t = translations[lang] || translations.uz;
 
-  const scrollToCalculator = () => {
-    const el = document.getElementById('calculator');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   const scrollToForm = () => {
     const el = document.getElementById('application');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
-  };
-
-  const handleApplyWithShares = (shares: number) => {
-    setSelectedShares(shares);
-    scrollToForm();
   };
 
   return (
@@ -113,7 +100,6 @@ export function App() {
         {/* 2. Hero Section */}
         <Hero
           t={t}
-          onScrollToCalculator={scrollToCalculator}
           onScrollToForm={scrollToForm}
         />
 
@@ -129,15 +115,7 @@ export function App() {
           onOpenContract={() => setContractModalOpen(true)}
         />
 
-        {/* 6. Interaktiv Kalkulyator (Real-time hisob-kitob) */}
-        <ProfitCalculator
-          t={t}
-          selectedShares={selectedShares}
-          setSelectedShares={setSelectedShares}
-          onApplyWithShares={handleApplyWithShares}
-        />
-
-        {/* 7. Qanday ishlaydi (4 bosqichli jarayon) */}
+        {/* 6. Qanday ishlaydi (4 bosqichli jarayon) */}
         <Roadmap t={t} />
 
         {/* 8. Huquqiy kafolatlar va shaffoflik */}

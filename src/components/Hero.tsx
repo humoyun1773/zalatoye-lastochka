@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   ArrowRight, 
-  Calculator, 
   Send, 
   CheckCircle2, 
   Award, 
@@ -12,11 +11,10 @@ import type { TranslationsType } from '../data/translations';
 
 interface HeroProps {
   t: TranslationsType;
-  onScrollToCalculator: () => void;
   onScrollToForm: () => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToForm }) => {
+export const Hero: React.FC<HeroProps> = ({ t, onScrollToForm }) => {
   return (
     <section className="relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-44 lg:pb-32 overflow-hidden bg-transparent">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,20 +81,12 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToCalculator, onScrollToF
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4">
             <button
-              onClick={onScrollToCalculator}
+              onClick={onScrollToForm}
               className="w-full sm:w-auto blue-btn px-8 py-4 rounded-2xl flex items-center justify-center gap-3 text-sm sm:text-base cursor-pointer shadow-xl text-white font-bold"
             >
-              <Calculator className="w-5 h-5 text-white shrink-0" />
-              <span>{t.hero.buttons.calculate}</span>
+              <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
+              <span>{t.nav.cta}</span>
               <ArrowRight className="w-4 h-4 shrink-0" />
-            </button>
-
-            <button
-              onClick={onScrollToForm}
-              className="w-full sm:w-auto white-btn px-7 py-4 rounded-2xl flex items-center justify-center gap-2.5 text-sm sm:text-base font-bold cursor-pointer shadow-md text-white"
-            >
-              <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-              <span className="text-white">{t.nav.cta} →</span>
             </button>
 
             <a
