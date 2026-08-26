@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Send, Phone, CheckCircle2, User, MapPin, Sparkles, ChevronDown, Percent } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Send, Phone, CheckCircle2, User, MapPin, Sparkles, ChevronDown, Check, Percent } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { QASHQADARYO_DISTRICTS } from '../data/districts';
 import type { Language } from '../types';
@@ -21,11 +21,32 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
+  // Custom Dropdown states
+  const [isSharesOpen, setIsSharesOpen] = useState(false);
+  const [isDistrictOpen, setIsDistrictOpen] = useState(false);
+
+  const sharesRef = useRef<HTMLDivElement>(null);
+  const districtRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (initialShares) {
       setShares(initialShares);
     }
   }, [initialShares]);
+
+  // Click outside to close dropdowns
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (sharesRef.current && !sharesRef.current.contains(e.target as Node)) {
+        setIsSharesOpen(false);
+      }
+      if (districtRef.current && !districtRef.current.contains(e.target as Node)) {
+        setIsDistrictOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const currencyUnit = lang === 'ru' ? 'сум' : lang === 'en' ? 'UZS' : "so‘m";
 
@@ -144,10 +165,10 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                 </div>
               </div>
 
-              {/* Row 2: Shares Select & District Select */}
+              {/* Row 2: Custom Shares Dropdown & Custom District Dropdown */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
-                {/* Shares Select (1-10 ulush) */}
-                <div>
+                {/* ── Custom Shares Dropdown (1-10 ulush) ── */}
+                <div ref={sharesRef} className="relative">
                   <div className="flex items-center justify-between mb-2.5">
                     <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider">
                       {t.form.sharesLabel}
@@ -156,53 +177,137 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                       {(shares * 2640000).toLocaleString('uz-UZ')} {currencyUnit}
                     </span>
                   </div>
-                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                      <Percent className="w-4 h-4" />
+
+                  {/* Trigger Button */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsSharesOpen(!isSharesOpen);
+                      setIsDistrictOpen(false);
+                    }}
+                    className={`w-full rounded-2xl bg-slate-950/80 border ${
+                      isSharesOpen ? 'border-blue-400 ring-2 ring-blue-500/30' : 'border-white/20 hover:border-blue-400'
+                    } pl-3.5 pr-4 py-3 flex items-center justify-between transition-all shadow-sm cursor-pointer text-left`}
+                  >
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
+                        <Percent className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm sm:text-base font-bold text-white tracking-wide">
+                        {getShareOptionLabel(shares)}
+                      </span>
                     </div>
-                    <select
-                      value={shares}
-                      onChange={(e) => setShares(Number(e.target.value))}
-                      className="w-full bg-transparent pl-14 pr-10 py-4 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
-                    >
-                      {SHARES_OPTIONS.map((n) => (
-                        <option key={n} value={n} className="bg-slate-900 text-white font-medium py-2">
-                          {getShareOptionLabel(n)}
-                        </option>
-                      ))}
-                    </select>
-                    <ChevronDown className="w-5 h-5 text-slate-300 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  </div>
+                    <ChevronDown
+                      className={`w-5 h-5 text-slate-300 transition-transform duration-200 shrink-0 ${
+                        isSharesOpen ? 'rotate-180 text-blue-400' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {/* Popup Menu */}
+                  {isSharesOpen && (
+                    <div className="absolute left-0 right-0 top-full mt-2 bg-slate-900/98 border border-white/20 rounded-2xl shadow-2xl backdrop-blur-2xl z-50 p-1.5 max-h-56 overflow-y-auto space-y-1 animate-fadeIn">
+                      {SHARES_OPTIONS.map((n) => {
+                        const isSelected = shares === n;
+                        return (
+                          <button
+                            key={n}
+                            type="button"
+                            onClick={() => {
+                              setShares(n);
+                              setIsSharesOpen(false);
+                            }}
+                            className={`w-full px-3.5 py-2.5 rounded-xl flex items-center justify-between text-left transition-all cursor-pointer ${
+                              isSelected
+                                ? 'bg-blue-600 text-white font-bold shadow-md'
+                                : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                            }`}
+                          >
+                            <span className="text-sm font-semibold">
+                              {getShareOptionLabel(n)}
+                            </span>
+                            {isSelected && <Check className="w-4 h-4 text-white stroke-[3]" />}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
 
-                {/* District Select */}
-                <div>
+                {/* ── Custom District Dropdown ── */}
+                <div ref={districtRef} className="relative">
                   <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2.5">
                     {t.form.districtLabel}
                   </label>
-                  <div className="relative rounded-2xl bg-slate-950/80 border border-white/20 hover:border-blue-400 focus-within:border-blue-400 focus-within:ring-2 focus-within:ring-blue-500/20 transition-all shadow-sm">
-                    <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none">
-                      <MapPin className="w-4 h-4" />
+
+                  {/* Trigger Button */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setIsDistrictOpen(!isDistrictOpen);
+                      setIsSharesOpen(false);
+                    }}
+                    className={`w-full rounded-2xl bg-slate-950/80 border ${
+                      isDistrictOpen ? 'border-blue-400 ring-2 ring-blue-500/30' : 'border-white/20 hover:border-blue-400'
+                    } pl-3.5 pr-4 py-3 flex items-center justify-between transition-all shadow-sm cursor-pointer text-left`}
+                  >
+                    <div className="flex items-center gap-3 truncate">
+                      <div className="w-9 h-9 rounded-xl bg-white/10 border border-white/15 flex items-center justify-center text-white shrink-0">
+                        <MapPin className="w-4 h-4" />
+                      </div>
+                      <span className="text-sm sm:text-base font-bold text-white tracking-wide truncate">
+                        {district}
+                      </span>
                     </div>
-                    <select
-                      value={district}
-                      onChange={(e) => setDistrict(e.target.value)}
-                      className="w-full bg-transparent pl-14 pr-10 py-4 text-sm sm:text-base text-white font-bold focus:outline-none appearance-none cursor-pointer"
-                    >
+                    <ChevronDown
+                      className={`w-5 h-5 text-slate-300 transition-transform duration-200 shrink-0 ml-2 ${
+                        isDistrictOpen ? 'rotate-180 text-blue-400' : ''
+                      }`}
+                    />
+                  </button>
+
+                  {/* Popup Menu */}
+                  {isDistrictOpen && (
+                    <div className="absolute left-0 right-0 top-full mt-2 bg-slate-900/98 border border-white/20 rounded-2xl shadow-2xl backdrop-blur-2xl z-50 p-1.5 max-h-56 overflow-y-auto space-y-1 animate-fadeIn">
                       {QASHQADARYO_DISTRICTS.map((d) => {
                         const localized = lang === 'ru' ? d.nameRu : lang === 'en' ? d.nameEn : d.nameUz;
+                        const isSelected = district === localized;
                         return (
-                          <option key={d.id} value={localized} className="bg-slate-900 text-white font-medium py-2">
-                            {localized}
-                          </option>
+                          <button
+                            key={d.id}
+                            type="button"
+                            onClick={() => {
+                              setDistrict(localized);
+                              setIsDistrictOpen(false);
+                            }}
+                            className={`w-full px-3.5 py-2.5 rounded-xl flex items-center justify-between text-left transition-all cursor-pointer ${
+                              isSelected
+                                ? 'bg-blue-600 text-white font-bold shadow-md'
+                                : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                            }`}
+                          >
+                            <span className="text-sm font-semibold">{localized}</span>
+                            {isSelected && <Check className="w-4 h-4 text-white stroke-[3]" />}
+                          </button>
                         );
                       })}
-                      <option value="Boshqa hudud" className="bg-slate-900 text-white font-medium py-2">
-                        Boshqa viloyat / hudud
-                      </option>
-                    </select>
-                    <ChevronDown className="w-5 h-5 text-slate-300 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none" />
-                  </div>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setDistrict('Boshqa hudud');
+                          setIsDistrictOpen(false);
+                        }}
+                        className={`w-full px-3.5 py-2.5 rounded-xl flex items-center justify-between text-left transition-all cursor-pointer ${
+                          district === 'Boshqa hudud'
+                            ? 'bg-blue-600 text-white font-bold shadow-md'
+                            : 'text-slate-200 hover:bg-white/10 hover:text-white'
+                        }`}
+                      >
+                        <span className="text-sm font-semibold">Boshqa viloyat / hudud</span>
+                        {district === 'Boshqa hudud' && <Check className="w-4 h-4 text-white stroke-[3]" />}
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
 
