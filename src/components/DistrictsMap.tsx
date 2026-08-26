@@ -28,14 +28,14 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <MapPin className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <MapPin className="w-3.5 h-3.5 text-blue-400" />
             <span>{t.districts.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
             {t.districts.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600">
+          <p className="text-sm sm:text-base md:text-lg text-slate-200">
             {t.districts.subtitle}
           </p>
         </div>
@@ -47,7 +47,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
               filter === 'all'
                 ? 'bg-blue-600 text-white font-black shadow-md'
-                : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-400 hover:bg-blue-50'
+                : 'bg-white/10 text-white border border-white/15 hover:border-blue-400 hover:bg-white/20'
             }`}
           >
             {lang === 'ru' ? 'Все (15 районов)' : lang === 'en' ? 'All (15 Districts)' : 'Barchasi (15 ta tuman)'}
@@ -57,10 +57,10 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
               filter === 'active'
                 ? 'bg-emerald-600 text-white font-black shadow-md'
-                : 'bg-white text-slate-700 border border-slate-200 hover:border-emerald-400 hover:bg-emerald-50'
+                : 'bg-white/10 text-white border border-white/15 hover:border-emerald-400 hover:bg-white/20'
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
             {t.districts.legend.active}
           </button>
           <button
@@ -68,10 +68,10 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
             className={`px-4 py-2 rounded-xl text-xs font-bold flex items-center gap-2 transition-all cursor-pointer ${
               filter === 'expanding'
                 ? 'bg-blue-600 text-white font-black shadow-md'
-                : 'bg-white text-slate-700 border border-slate-200 hover:border-blue-400 hover:bg-blue-50'
+                : 'bg-white/10 text-white border border-white/15 hover:border-blue-400 hover:bg-white/20'
             }`}
           >
-            <span className="w-2 h-2 rounded-full bg-blue-500"></span>
+            <span className="w-2 h-2 rounded-full bg-blue-400"></span>
             {t.districts.legend.expanding}
           </button>
         </div>
@@ -81,7 +81,7 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
           {filteredDistricts.map((d) => (
             <div
               key={d.id}
-              className="luxury-card bg-white p-4 sm:p-5 rounded-2xl border border-slate-200 hover:border-blue-500 shadow-sm transition-all duration-300 group flex flex-col justify-between"
+              className="luxury-card p-4 sm:p-5 rounded-2xl border border-white/15 hover:border-blue-400 shadow-xl transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-end mb-2.5">
@@ -89,35 +89,35 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
                     <span
                       className={`inline-block w-2 h-2 rounded-full ${
                         d.coverageStatus === 'active'
-                          ? 'bg-emerald-500'
-                          : 'bg-blue-500'
+                          ? 'bg-emerald-400'
+                          : 'bg-blue-400'
                       }`}
                     />
-                    <span className="text-[10px] font-bold text-slate-500 uppercase">
+                    <span className="text-[10px] font-bold text-slate-300 uppercase">
                       {d.coverageStatus === 'active' ? t.districts.legend.active : t.districts.legend.expanding}
                     </span>
                   </div>
                 </div>
 
-                <h4 className="text-base font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <h4 className="text-base font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">
                   {getDistrictName(d)}
                 </h4>
               </div>
 
-              <div className="space-y-1.5 text-xs border-t border-slate-100 pt-3 mt-1">
-                <div className="flex justify-between text-slate-600">
+              <div className="space-y-1.5 text-xs border-t border-white/10 pt-3 mt-1">
+                <div className="flex justify-between text-slate-300">
                   <span className="flex items-center gap-1.5">
-                    <Car className="w-3.5 h-3.5 text-blue-600" />
+                    <Car className="w-3.5 h-3.5 text-blue-400" />
                     <span>{t.districts.driversGoal}</span>
                   </span>
-                  <span className="font-bold text-slate-900 font-mono">{d.targetDrivers}+</span>
+                  <span className="font-bold text-white font-mono">{d.targetDrivers}+</span>
                 </div>
-                <div className="flex justify-between text-slate-600">
+                <div className="flex justify-between text-slate-300">
                   <span className="flex items-center gap-1.5">
-                    <Navigation className="w-3.5 h-3.5 text-sky-600" />
+                    <Navigation className="w-3.5 h-3.5 text-sky-400" />
                     <span>{t.districts.routes}</span>
                   </span>
-                  <span className="font-bold text-slate-900 font-mono">{d.activeRoutes}</span>
+                  <span className="font-bold text-white font-mono">{d.activeRoutes}</span>
                 </div>
               </div>
             </div>
@@ -125,8 +125,8 @@ export const DistrictsMap: React.FC<DistrictsMapProps> = ({ lang, t }) => {
         </div>
 
         {/* Bottom Note */}
-        <div className="mt-8 text-center text-xs text-slate-600 flex items-center justify-center gap-2">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+        <div className="mt-8 text-center text-xs text-slate-300 flex items-center justify-center gap-2">
+          <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
           <span>{t.districts.subtitle}</span>
         </div>
       </div>

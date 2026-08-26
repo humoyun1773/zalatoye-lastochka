@@ -78,11 +78,11 @@ export function App() {
   };
 
   return (
-    <div className="relative min-h-screen text-slate-900 selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
+    <div className="relative min-h-screen bg-slate-950 text-white selection:bg-blue-600 selection:text-white flex flex-col justify-between overflow-x-hidden font-sans">
       {/* Initial Luxury Page Loader Screen */}
       <PageLoader lang={lang} />
 
-      {/* 0. Full-Screen Rotating Smooth Background Slideshow */}
+      {/* 0. Full-Screen Rotating Smooth Background Slideshow with Dark Luxury Tint */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
         {bgImages.map((img, idx) => (
           <img
@@ -91,11 +91,13 @@ export function App() {
             alt={img.name}
             className={`absolute inset-0 w-full h-full object-cover object-center transition-opacity duration-1000 ease-in-out ${
               bgIndex === idx
-                ? 'opacity-100 filter contrast-105 brightness-100'
+                ? 'opacity-85 filter contrast-110 brightness-90'
                 : 'opacity-0 pointer-events-none'
             }`}
           />
         ))}
+        {/* Dark Luxury Vignette Overlay for Crisp White Text Readability */}
+        <div className="absolute inset-0 bg-slate-950/75 backdrop-blur-[2px] pointer-events-none" />
       </div>
 
       {/* 1. Top Fixed Navbar */}

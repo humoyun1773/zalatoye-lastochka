@@ -56,14 +56,14 @@ export const Gallery: React.FC<GalleryProps> = ({ t }) => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <Camera className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <Camera className="w-3.5 h-3.5 text-blue-400" />
             <span>{t.gallery.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
             {t.gallery.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600">
+          <p className="text-sm sm:text-base md:text-lg text-slate-200">
             {t.gallery.subtitle}
           </p>
         </div>

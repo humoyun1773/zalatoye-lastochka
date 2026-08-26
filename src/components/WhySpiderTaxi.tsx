@@ -24,14 +24,14 @@ export const WhySpiderTaxi: React.FC<WhySpiderTaxiProps> = ({ t }) => {
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <Zap className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <Zap className="w-3.5 h-3.5 text-blue-400" />
             <span>{t.why.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
             {t.why.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600">
+          <p className="text-sm sm:text-base md:text-lg text-slate-200">
             {t.why.subtitle}
           </p>
         </div>
@@ -43,21 +43,21 @@ export const WhySpiderTaxi: React.FC<WhySpiderTaxiProps> = ({ t }) => {
             return (
               <div
                 key={idx}
-                className="luxury-card bg-white p-6 sm:p-8 rounded-3xl relative group flex flex-col justify-between overflow-hidden border border-slate-200 hover:border-blue-500 shadow-sm transition-all duration-300"
+                className="luxury-card p-6 sm:p-8 rounded-3xl relative group flex flex-col justify-between overflow-hidden border border-white/15 hover:border-blue-400 shadow-xl transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
+                    <div className="w-12 h-12 rounded-2xl bg-blue-500/20 border border-blue-400/30 flex items-center justify-center text-blue-400 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300 shadow-sm">
                       <Icon className="w-6 h-6" />
                     </div>
                   </div>
 
-                  <h3 className="text-lg sm:text-xl font-black text-slate-900 mb-2.5 group-hover:text-blue-600 transition-colors">
+                  <h3 className="text-lg sm:text-xl font-black text-white mb-2.5 group-hover:text-blue-300 transition-colors">
                     {card.title}
                   </h3>
                 </div>
 
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-4 mt-2">
+                <p className="text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10 pt-4 mt-2">
                   {card.desc}
                 </p>
               </div>

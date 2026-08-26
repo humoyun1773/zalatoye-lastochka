@@ -51,31 +51,31 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
   return (
     <section id="application" className="py-20 md:py-28 relative bg-transparent overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto luxury-card bg-white p-6 sm:p-10 lg:p-12 rounded-3xl border border-slate-200 shadow-xl relative overflow-hidden">
+        <div className="max-w-5xl mx-auto luxury-card p-6 sm:p-10 lg:p-12 rounded-3xl border border-white/15 shadow-2xl relative overflow-hidden">
           {/* Ambient Glow */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-[100px] pointer-events-none -z-10" />
+          <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
           {/* Form Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
               <span>{t.form.tag}</span>
             </div>
-            <h2 className="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight mb-3">
+            <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight mb-3">
               {t.form.title}
             </h2>
-            <p className="text-sm sm:text-base text-slate-600">
+            <p className="text-sm sm:text-base text-slate-200">
               {t.form.subtitle}
             </p>
           </div>
 
           {submitted ? (
-            <div className="text-center p-8 sm:p-10 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto">
+            <div className="text-center p-8 sm:p-10 rounded-2xl bg-emerald-950/80 border border-emerald-400/40 space-y-4">
+              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900">{t.form.successTitle}</h3>
-              <p className="text-sm text-slate-600 max-w-md mx-auto">{t.form.successDesc}</p>
+              <h3 className="text-xl sm:text-2xl font-bold text-white">{t.form.successTitle}</h3>
+              <p className="text-sm text-slate-200 max-w-md mx-auto">{t.form.successDesc}</p>
               <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
                 <a
                   href="https://t.me/afrod991"
@@ -88,7 +88,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                 </a>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 text-sm font-semibold hover:bg-slate-200 cursor-pointer"
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-white/10 border border-white/20 text-white text-sm font-semibold hover:bg-white/20 cursor-pointer"
                 >
                   Yana ariza yuborish
                 </button>
@@ -98,7 +98,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
             <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.nameLabel} *
                   </label>
                   <div className="relative">
@@ -109,13 +109,13 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder={t.form.namePlaceholder}
-                      className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl pl-11 pr-4 py-3.5 text-sm text-slate-900 focus:outline-none transition-colors shadow-sm"
+                      className="w-full bg-slate-900/90 border border-white/15 hover:border-blue-400/50 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors shadow-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.phoneLabel} *
                   </label>
                   <div className="relative">
@@ -126,22 +126,22 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder={t.form.phonePlaceholder}
-                      className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl pl-11 pr-4 py-3.5 text-sm text-slate-900 focus:outline-none transition-colors font-mono shadow-sm"
+                      className="w-full bg-slate-900/90 border border-white/15 hover:border-blue-400/50 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors font-mono shadow-sm"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.sharesLabel}
                   </label>
                   <select
                     value={shares}
                     onChange={(e) => setShares(parseInt(e.target.value, 10))}
-                    className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3.5 text-sm text-slate-900 focus:outline-none transition-colors cursor-pointer shadow-sm"
+                    className="w-full bg-slate-900/90 border border-white/15 hover:border-blue-400/50 focus:border-blue-400 focus:bg-slate-900 rounded-xl px-4 py-3.5 text-sm text-white focus:outline-none transition-colors cursor-pointer shadow-sm"
                   >
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 50].map((n) => (
-                      <option key={n} value={n} className="bg-white text-slate-900">
+                      <option key={n} value={n} className="bg-slate-900 text-white">
                         {n} {t.calculator.shareUnit} ({(n * 0.1).toFixed(1)}% = {(n * 2640000).toLocaleString('uz-UZ')} {lang === 'ru' ? 'сум' : lang === 'en' ? 'UZS' : "so‘m"})
                       </option>
                     ))}
@@ -149,7 +149,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                  <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                     {t.form.districtLabel}
                   </label>
                   <div className="relative">
@@ -157,10 +157,10 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                     <select
                       value={district}
                       onChange={(e) => setDistrict(e.target.value)}
-                      className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl pl-11 pr-4 py-3.5 text-sm text-slate-900 focus:outline-none transition-colors cursor-pointer shadow-sm"
+                      className="w-full bg-slate-900/90 border border-white/15 hover:border-blue-400/50 focus:border-blue-400 focus:bg-slate-900 rounded-xl pl-11 pr-4 py-3.5 text-sm text-white focus:outline-none transition-colors cursor-pointer shadow-sm"
                     >
                       {QASHQADARYO_DISTRICTS.map((d) => (
-                        <option key={d.id} value={d.nameUz} className="bg-white text-slate-900">
+                        <option key={d.id} value={d.nameUz} className="bg-slate-900 text-white">
                           {lang === 'ru' ? d.nameRu : lang === 'en' ? d.nameEn : d.nameUz}
                         </option>
                       ))}
@@ -170,7 +170,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
               </div>
 
               <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
+                <label className="block text-xs font-bold text-slate-200 uppercase tracking-wider mb-2">
                   {t.form.messageLabel}
                 </label>
                 <textarea
@@ -178,7 +178,7 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder={t.form.messagePlaceholder}
-                  className="w-full bg-slate-50 border border-slate-200 hover:border-slate-300 focus:border-blue-600 focus:bg-white rounded-xl px-4 py-3 text-sm text-slate-900 focus:outline-none transition-colors resize-none shadow-sm"
+                  className="w-full bg-slate-900/90 border border-white/15 hover:border-blue-400/50 focus:border-blue-400 focus:bg-slate-900 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none transition-colors resize-none shadow-sm"
                 />
               </div>
 
@@ -194,9 +194,9 @@ export const ApplicationForm: React.FC<ApplicationFormProps> = ({ lang, t, initi
                   href="https://t.me/afrod991"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-4 rounded-xl bg-sky-50 hover:bg-sky-100 border border-sky-200 text-sky-700 text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm"
+                  className="px-6 py-4 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-400/40 text-sky-200 text-sm font-bold flex items-center justify-center gap-2 transition-all cursor-pointer shadow-md backdrop-blur-md"
                 >
-                  <Send className="w-4 h-4 text-sky-600" />
+                  <Send className="w-4 h-4 text-sky-400" />
                   <span>Telegram @afrod991</span>
                 </a>
               </div>

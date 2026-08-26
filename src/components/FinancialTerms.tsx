@@ -18,23 +18,23 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm">
-            <DollarSign className="w-3.5 h-3.5 text-blue-600" />
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold uppercase tracking-wider mb-4 shadow-sm backdrop-blur-md">
+            <DollarSign className="w-3.5 h-3.5 text-blue-400" />
             <span>{t.terms.tag}</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
             💰 {t.terms.title}
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-slate-600">
+          <p className="text-sm sm:text-base md:text-lg text-slate-200">
             {t.terms.subtitle}
           </p>
         </div>
 
         {/* Big Premium Breakdown Master Card */}
-        <div className="luxury-card rounded-3xl p-6 sm:p-10 border border-slate-200 shadow-xl mb-10 overflow-hidden relative bg-white">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="luxury-card rounded-3xl p-6 sm:p-10 border border-white/15 shadow-2xl mb-10 overflow-hidden relative">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-slate-200">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/10">
             {t.terms.cards.map((card, idx) => {
               const Icon = icons[idx % icons.length];
               return (
@@ -42,21 +42,21 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                   <div>
                     <div className="flex items-center justify-between mb-4">
                       <div className={`w-12 h-12 rounded-2xl flex items-center justify-center ${
-                        card.highlight ? 'bg-blue-100 border border-blue-200 text-blue-700' : 'bg-blue-50 border border-blue-100 text-blue-600'
+                        card.highlight ? 'bg-blue-500/30 border border-blue-400/50 text-blue-300' : 'bg-blue-500/20 border border-blue-400/30 text-blue-400'
                       }`}>
                         <Icon className="w-6 h-6" />
                       </div>
                     </div>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block mb-1">
+                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-1">
                       {card.label}
                     </span>
                     <div className={`text-2xl sm:text-3xl font-black font-mono mb-2 ${
-                      card.highlight ? 'text-blue-700' : 'text-slate-900'
+                      card.highlight ? 'text-blue-300' : 'text-white'
                     }`}>
                       {card.value}
                     </div>
                   </div>
-                  <p className="text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+                  <p className="text-xs text-slate-300 leading-relaxed border-t border-white/10 pt-3">
                     {card.sub}
                   </p>
                 </div>
@@ -66,17 +66,17 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
         </div>
 
         {/* Highlight Summary Banner */}
-        <div className="luxury-card-blue p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-blue-200 shadow-xl bg-gradient-to-r from-blue-50/80 via-white to-blue-50/50">
+        <div className="luxury-card-blue p-6 sm:p-8 rounded-3xl relative overflow-hidden border border-blue-400/40 shadow-2xl">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center lg:text-left">
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-blue-700 text-xs sm:text-sm font-bold uppercase tracking-wider">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-blue-300 text-xs sm:text-sm font-bold uppercase tracking-wider">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 <span>{t.terms.summaryTotal}</span>
               </div>
-              <div className="text-2xl sm:text-4xl font-black font-mono text-slate-900">
+              <div className="text-2xl sm:text-4xl font-black font-mono text-white">
                 {t.terms.summaryTotalVal}
               </div>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-2xl">
+              <p className="text-xs sm:text-sm text-slate-200 max-w-2xl">
                 {t.terms.summaryDesc}
               </p>
             </div>
