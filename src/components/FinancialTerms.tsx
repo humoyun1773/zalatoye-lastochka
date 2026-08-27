@@ -30,7 +30,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
 
         {/* ─── 3 OFFICIAL PACKAGES ─── */}
         <div className="space-y-10 mb-12">
-          {/* ══════════ 1-PAKET: BARQAROR SARMOYA (100% SOF FOYDA) ══════════ */}
+          {/* ══════════ 1-PAKET: KICHIK SARMOYA (140% SOF FOYDA) ══════════ */}
           <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-hidden relative">
             {/* Header info */}
             <div className="border-b border-white/15 pb-6 mb-6">
@@ -40,7 +40,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     1-Paket
                   </span>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
-                    1-PAKET: BARQAROR SARMOYA <span className="text-emerald-400">(100% SOF FOYDA)</span>
+                    1-PAKET: KICHIK SARMOYA <span className="text-amber-400">(140% SOF FOYDA)</span>
                   </h3>
                 </div>
               </div>
@@ -52,7 +52,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Kiritiladigan investitsiya:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-white font-mono">
-                    2,640,000 so‘m
+                    560,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -60,7 +60,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Jami qaytariladigan pul:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
-                    5,280,000 so‘m
+                    1,344,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -68,7 +68,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Muddat:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-white font-mono">
-                    16 oy + 17-oy <span className="text-xs text-slate-300 font-normal">(Asosiy summa)</span>
+                    17 oy
                   </div>
                 </div>
               </div>
@@ -80,35 +80,29 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                 <thead>
                   <tr className="bg-slate-900 text-white uppercase text-[11px] font-black tracking-wider border-b border-white/20">
                     <th className="py-3.5 px-4 rounded-tl-xl">Davr</th>
+                    <th className="py-3.5 px-4">Qaytariladigan ulush</th>
                     <th className="py-3.5 px-4">Oylik to‘lov</th>
-                    <th className="py-3.5 px-4">Jami davr to‘lovi</th>
                     <th className="py-3.5 px-4 rounded-tr-xl">Izoh</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1–3 oylar (3 oy)</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">50,000 so‘mdan</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">150,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Dastlabki yengil to‘lovlar</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">30%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">168,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Sezilarli boshlang‘ich to‘lov</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">4–6 oylar (3 oy)</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">70,000 so‘mdan</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">210,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Oylik to‘lov oshishi</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">20%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">112,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">60 kunda sarmoyaning 50% (yarmi) qaytadi</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">7–16 oylar (10 oy)</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">228,000 so‘mdan</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">2,280,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Foydaning qolgan qismi teng bo‘linadi</td>
-                  </tr>
-                  <tr className="bg-emerald-950/30 hover:bg-emerald-950/50 transition-colors">
-                    <td className="py-4 px-4 font-black text-emerald-300 whitespace-nowrap">17-oy</td>
-                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
-                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
-                    <td className="py-4 px-4 font-bold text-emerald-300">Boshlang‘ich sarmoya to‘liq qaytariladi</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–17 oylar (15 oy)</td>
+                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">Har oy ~5.5%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">70,900 so‘mdan</td>
+                    <td className="py-3.5 px-4 text-slate-300">Qolgan 1,064,000 so‘m 15 oyga teng bo‘linadi</td>
                   </tr>
                 </tbody>
               </table>
@@ -194,7 +188,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
             </div>
           </div>
 
-          {/* ══════════ 3-PAKET: KICHIK SARMOYA (140% SOF FOYDA) ══════════ */}
+          {/* ══════════ 3-PAKET: BARQAROR SARMOYA (100% SOF FOYDA) ══════════ */}
           <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-white/20 shadow-2xl overflow-hidden relative">
             {/* Header info */}
             <div className="border-b border-white/15 pb-6 mb-6">
@@ -204,7 +198,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     3-Paket
                   </span>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
-                    3-PAKET: KICHIK SARMOYA <span className="text-amber-400">(140% SOF FOYDA)</span>
+                    3-PAKET: BARQAROR SARMOYA <span className="text-emerald-400">(100% SOF FOYDA)</span>
                   </h3>
                 </div>
               </div>
@@ -216,7 +210,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Kiritiladigan investitsiya:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-white font-mono">
-                    560,000 so‘m
+                    2,640,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -224,7 +218,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Jami qaytariladigan pul:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
-                    1,344,000 so‘m
+                    5,280,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -232,7 +226,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     Muddat:
                   </span>
                   <div className="text-lg sm:text-xl font-black text-white font-mono">
-                    17 oy
+                    16 oy + 17-oy <span className="text-xs text-slate-300 font-normal">(Asosiy summa)</span>
                   </div>
                 </div>
               </div>
@@ -244,29 +238,35 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                 <thead>
                   <tr className="bg-slate-900 text-white uppercase text-[11px] font-black tracking-wider border-b border-white/20">
                     <th className="py-3.5 px-4 rounded-tl-xl">Davr</th>
-                    <th className="py-3.5 px-4">Qaytariladigan ulush</th>
                     <th className="py-3.5 px-4">Oylik to‘lov</th>
+                    <th className="py-3.5 px-4">Jami davr to‘lovi</th>
                     <th className="py-3.5 px-4 rounded-tr-xl">Izoh</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
-                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">30%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">168,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Sezilarli boshlang‘ich to‘lov</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1–3 oylar (3 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">50,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">150,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Dastlabki yengil to‘lovlar</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
-                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">20%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">112,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">60 kunda sarmoyaning 50% (yarmi) qaytadi</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">4–6 oylar (3 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">70,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">210,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Oylik to‘lov oshishi</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
-                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–17 oylar (15 oy)</td>
-                    <td className="py-3.5 px-4 font-bold text-amber-300 whitespace-nowrap">Har oy ~5.5%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">70,900 so‘mdan</td>
-                    <td className="py-3.5 px-4 text-slate-300">Qolgan 1,064,000 so‘m 15 oyga teng bo‘linadi</td>
+                    <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">7–16 oylar (10 oy)</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">228,000 so‘mdan</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">2,280,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Foydaning qolgan qismi teng bo‘linadi</td>
+                  </tr>
+                  <tr className="bg-emerald-950/30 hover:bg-emerald-950/50 transition-colors">
+                    <td className="py-4 px-4 font-black text-emerald-300 whitespace-nowrap">17-oy</td>
+                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
+                    <td className="py-4 px-4 font-mono font-black text-emerald-300 whitespace-nowrap">2,640,000 so‘m</td>
+                    <td className="py-4 px-4 font-bold text-emerald-300">Boshlang‘ich sarmoya to‘liq qaytariladi</td>
                   </tr>
                 </tbody>
               </table>
