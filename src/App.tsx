@@ -10,7 +10,6 @@ import { Roadmap } from './components/Roadmap';
 import { LegalGuarantees } from './components/LegalGuarantees';
 import { WhySpiderTaxi } from './components/WhySpiderTaxi';
 import { DistrictsMap } from './components/DistrictsMap';
-import { ApplicationForm } from './components/ApplicationForm';
 import { ContactSection } from './components/ContactSection';
 import { FaqSection } from './components/FaqSection';
 import { Disclaimer } from './components/Disclaimer';
@@ -44,7 +43,6 @@ const bgImages = [
 
 export function App() {
   const [lang, setLang] = useState<Language>('uz');
-  const [selectedShares] = useState<number>(1);
   const [contractModalOpen, setContractModalOpen] = useState<boolean>(false);
   const [paymentModalOpen, setPaymentModalOpen] = useState<boolean>(false);
   const [selectedPackage, setSelectedPackage] = useState<{ name?: string; amount?: string }>({});
@@ -59,8 +57,8 @@ export function App() {
 
   const t = translations[lang] || translations.uz;
 
-  const scrollToForm = () => {
-    const el = document.getElementById('application');
+  const scrollToTerms = () => {
+    const el = document.getElementById('terms');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
@@ -107,7 +105,7 @@ export function App() {
         {/* 2. Hero Section */}
         <Hero
           t={t}
-          onScrollToForm={scrollToForm}
+          onScrollToForm={scrollToTerms}
         />
 
         {/* 3. Trust Stats Bar (01: 15 ta tuman, 02: 16 oy, 03: 2.64 mln, 04: 100%) */}
@@ -138,13 +136,6 @@ export function App() {
         {/* 10. Qashqadaryo 15 ta tumani xaritasi/kartalari */}
         <DistrictsMap lang={lang} t={t} />
 
-        {/* 13. Hamkorlikka ariza qoldirish shakli */}
-        <ApplicationForm
-          lang={lang}
-          t={t}
-          initialShares={selectedShares}
-        />
-
         {/* 14. Aloqa ma'lumotlari */}
         <ContactSection t={t} />
 
@@ -163,7 +154,7 @@ export function App() {
         isOpen={contractModalOpen}
         onClose={() => setContractModalOpen(false)}
         t={t}
-        onApply={scrollToForm}
+        onApply={scrollToTerms}
       />
 
       {/* 19. Rasmiy To'lov Kartalari Modali */}
