@@ -4,7 +4,6 @@ import { translations } from './data/translations';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
-import { ProjectOverview } from './components/ProjectOverview';
 import { FinancialTerms } from './components/FinancialTerms';
 import { ProfitCalculator } from './components/ProfitCalculator';
 import { Roadmap } from './components/Roadmap';
@@ -111,9 +110,6 @@ export function App() {
 
         {/* 3. Trust Stats Bar (01: 15 ta tuman, 02: 16 oy, 03: 2.64 mln, 04: 100%) */}
         <TrustBar t={t} />
-
-        {/* 4. Loyiha haqida (6 ta ustun va 4 ta floating cards taxi visual) */}
-        <ProjectOverview t={t} />
 
         {/* 5. Investitsiya shartlari (Katta premium card) */}
         <FinancialTerms

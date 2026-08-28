@@ -248,7 +248,7 @@ export const translations = {
         { "val": "15 ta", "label": "Qashqadaryo tumani" },
         { "val": "17 oy", "label": "Maksimal muddat" },
         { "val": "560 000 so‘m", "label": "Boshlang‘ich sarmoya" },
-        { "val": "140% gacha", "label": "Kafolatlangan sof foyda" }
+        { "val": "207% gacha", "label": "Kafolatlangan sof foyda" }
       ]
     },
     "why": {
