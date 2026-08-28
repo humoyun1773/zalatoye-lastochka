@@ -6,6 +6,7 @@ import { Hero } from './components/Hero';
 import { TrustBar } from './components/TrustBar';
 import { ProjectOverview } from './components/ProjectOverview';
 import { FinancialTerms } from './components/FinancialTerms';
+import { ProfitCalculator } from './components/ProfitCalculator';
 import { Roadmap } from './components/Roadmap';
 import { LegalGuarantees } from './components/LegalGuarantees';
 import { WhySpiderTaxi } from './components/WhySpiderTaxi';
@@ -118,6 +119,12 @@ export function App() {
         <FinancialTerms
           t={t}
           onOpenContract={() => setContractModalOpen(true)}
+          onOpenPayment={handleOpenPayment}
+        />
+
+        {/* 5.1 Interaktiv Daromad va Foiz Kalkulyatori */}
+        <ProfitCalculator
+          t={t}
           onOpenPayment={handleOpenPayment}
         />
 
