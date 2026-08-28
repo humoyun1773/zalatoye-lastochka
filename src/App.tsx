@@ -10,7 +10,6 @@ import { Roadmap } from './components/Roadmap';
 import { LegalGuarantees } from './components/LegalGuarantees';
 import { WhySpiderTaxi } from './components/WhySpiderTaxi';
 import { DistrictsMap } from './components/DistrictsMap';
-import { CTASection } from './components/CTASection';
 import { ApplicationForm } from './components/ApplicationForm';
 import { ContactSection } from './components/ContactSection';
 import { FaqSection } from './components/FaqSection';
@@ -138,13 +137,6 @@ export function App() {
 
         {/* 10. Qashqadaryo 15 ta tumani xaritasi/kartalari */}
         <DistrictsMap lang={lang} t={t} />
-
-        {/* 11. Katta CTA Section */}
-        <CTASection
-          t={t}
-          onOpenContract={() => setContractModalOpen(true)}
-          onApply={scrollToForm}
-        />
 
         {/* 13. Hamkorlikka ariza qoldirish shakli */}
         <ApplicationForm

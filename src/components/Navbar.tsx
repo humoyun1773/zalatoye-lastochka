@@ -90,7 +90,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
                   <span className="font-black text-sm sm:text-base lg:text-lg tracking-tight text-white group-hover:text-blue-400 transition-colors whitespace-nowrap">
-                    O‘RGIMCHAK TAKSI
+                    O‘RGIMCHAK
                   </span>
                   <span className="text-[9px] uppercase font-extrabold tracking-wider px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-400/40">
                     MCHJ
@@ -200,7 +200,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
                 🕸
               </div>
               <div>
-                <span className="font-black text-white text-sm block">O‘RGIMCHAK TAKSI</span>
+                <span className="font-black text-white text-sm block">O‘RGIMCHAK</span>
                 <span className="text-[10px] text-blue-400 font-semibold">ZALATIYE LASTOCHKA MCHJ</span>
               </div>
             </div>

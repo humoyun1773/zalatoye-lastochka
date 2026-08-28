@@ -14,11 +14,11 @@ export const translations = {
       "badge": "Rasmiy Sarmoyaviy Hamkorlik Taklifi • Qashqadaryo 2026",
       "companyName": "ZALATIYE LASTOCHKA",
       "companyType": "MCHJ",
-      "title": "O'rgimchak Taksi Parkini Birgalikda Kengaytiramiz",
-      "subtitle": "Qashqadaryo viloyatining 15 ta tumani o'rtasida taksi xizmatini to'liq avtomatlashtirish loyihasiga rasmiy sarmoyaviy hamkor bo'ling va 100% kafolatlangan sof foyda oling.",
+      "title": "O'rgimchak Biznes Loyihasini Birgalikda Kengaytiramiz",
+      "subtitle": "Qashqadaryo viloyatining 15 ta tumanida zamonaviy xizmatlar infratuzilmasini to'liq avtomatlashtirish loyihasiga rasmiy sarmoyaviy hamkor bo'ling va 100% kafolatlangan sof foyda oling.",
       "stats": {
-        "minInvest": "2,640,000 so'm",
-        "minInvestLabel": "Boshlang'ich sarmoya (0.1% ulush)",
+        "minInvest": "560,000 so'm",
+        "minInvestLabel": "Boshlang'ich sarmoya (1-Paket)",
         "term": "16 oy",
         "termLabel": "Shartnoma muddati",
         "profit": "100%",
@@ -246,9 +246,9 @@ export const translations = {
     "trustBar": {
       "items": [
         { "val": "15 ta", "label": "Qashqadaryo tumani" },
-        { "val": "16 oy", "label": "Shartnoma muddati" },
-        { "val": "2 640 000 so‘m", "label": "Boshlang‘ich sarmoya" },
-        { "val": "100%", "label": "Ko‘rsatilgan daromad modeli" }
+        { "val": "17 oy", "label": "Maksimal muddat" },
+        { "val": "560 000 so‘m", "label": "Boshlang‘ich sarmoya" },
+        { "val": "140% gacha", "label": "Kafolatlangan sof foyda" }
       ]
     },
     "why": {
@@ -343,11 +343,11 @@ export const translations = {
       "badge": "Официальное инвестиционное предложение • Кашкадарья 2026",
       "companyName": "ZALATIYE LASTOCHKA",
       "companyType": "ООО (MCHJ)",
-      "title": "Масштабируем таксопарк «Оргимчак Такси» вместе",
-      "subtitle": "Станьте официальным инвестиционным партнером в проекте полной автоматизации службы такси в 15 районах Кашкадарьинской области со 100% гарантированной чистой прибылью.",
+      "title": "Масштабируем бизнес-проект «Оргимчак» вместе",
+      "subtitle": "Станьте официальным инвестиционным партнером в проекте полной автоматизации современной инфраструктуры услуг в 15 районах Кашкадарьинской области с гарантированной прибылью.",
       "stats": {
-        "minInvest": "2,640,000 сум",
-        "minInvestLabel": "Стартовая инвестиция (0.1% доля)",
+        "minInvest": "560,000 сум",
+        "minInvestLabel": "Стартовая инвестиция (1-Пакет)",
         "term": "16 месяцев",
         "termLabel": "Срок контракта",
         "profit": "100%",
@@ -575,9 +575,9 @@ export const translations = {
     "trustBar": {
       "items": [
         { "val": "15 районов", "label": "Кашкадарьинская область" },
-        { "val": "16 месяцев", "label": "Срок договора" },
-        { "val": "2 640 000 сум", "label": "Стартовая инвестиция" },
-        { "val": "100%", "label": "Модель чистой прибыли" }
+        { "val": "17 месяцев", "label": "Макс. срок" },
+        { "val": "560 000 сум", "label": "Стартовая инвестиция" },
+        { "val": "до 140%", "label": "Чистая прибыль" }
       ]
     },
     "why": {
@@ -672,11 +672,11 @@ export const translations = {
       "badge": "Official Investment Partnership Offer • Qashqadaryo 2026",
       "companyName": "ZALATIYE LASTOCHKA",
       "companyType": "LLC",
-      "title": "Scale the 'Orgimchak Taxi' Fleet Together",
-      "subtitle": "Become an official investment partner in the full taxi automation project across 15 districts of Qashqadaryo region and earn 100% guaranteed net profit.",
+      "title": "Scale the 'Orgimchak' Business Project Together",
+      "subtitle": "Become an official investment partner in the smart service infrastructure project across 15 districts of Qashqadaryo region and earn up to 140% guaranteed net profit.",
       "stats": {
-        "minInvest": "2,640,000 UZS",
-        "minInvestLabel": "Starting Investment (0.1% Share)",
+        "minInvest": "560,000 UZS",
+        "minInvestLabel": "Starting Investment (Package 1)",
         "term": "16 Months",
         "termLabel": "Contract Duration",
         "profit": "100%",
@@ -904,9 +904,9 @@ export const translations = {
     "trustBar": {
       "items": [
         { "val": "15 Districts", "label": "Qashqadaryo region" },
-        { "val": "16 Months", "label": "Contract duration" },
-        { "val": "2,640,000 UZS", "label": "Initial capital" },
-        { "val": "100%", "label": "Stated profit model" }
+        { "val": "17 Months", "label": "Max duration" },
+        { "val": "560,000 UZS", "label": "Initial capital" },
+        { "val": "Up to 140%", "label": "Net profit rate" }
       ]
     },
     "why": {
