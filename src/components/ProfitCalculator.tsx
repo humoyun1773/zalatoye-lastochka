@@ -84,7 +84,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
     } catch {}
   };
 
-  const presetUnits = [1, 2, 3, 5, 10, 20];
+  const presetUnits = [1, 2, 3, 5, 10];
 
   return (
     <section id="calculator" className="py-16 md:py-24 relative bg-transparent overflow-hidden">
@@ -159,7 +159,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                 <input
                   type="range"
                   min="1"
-                  max="30"
+                  max="10"
                   step="1"
                   value={units}
                   onChange={(e) => setUnits(parseInt(e.target.value, 10))}
@@ -168,14 +168,14 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
 
                 <div className="flex justify-between text-[11px] text-slate-300 mt-2 font-mono">
                   <span>1 paket</span>
-                  <span>15 paket</span>
-                  <span>30 paket</span>
+                  <span>5 paket</span>
+                  <span>10 paket</span>
                 </div>
               </div>
 
               {/* Preset Quick Selectors */}
               <div>
-                <div className="grid grid-cols-6 gap-2">
+                <div className="grid grid-cols-5 gap-2">
                   {presetUnits.map((num) => (
                     <button
                       key={num}
