@@ -1,13 +1,13 @@
-import { FileText, ArrowUpRight, AlertTriangle, Phone, Send, MapPin, CreditCard } from 'lucide-react';
+import { CreditCard } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
 interface FinancialTermsProps {
   t?: TranslationsType;
-  onOpenContract: () => void;
+  onOpenContract?: () => void;
   onOpenPayment?: (packageName?: string, packageAmount?: string) => void;
 }
 
-export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContract, onOpenPayment }) => {
+export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment }) => {
   return (
     <section id="terms" className="py-20 md:py-28 relative bg-transparent border-y border-white/10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -319,69 +319,6 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                 </tbody>
               </table>
             </div>
-          </div>
-        </div>
-
-        {/* ─── OFFICIAL GUARANTEE NOTICE & CONTACT DETAILS ─── */}
-        <div className="space-y-4">
-          {/* Warning Banner */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-amber-500/15 border border-amber-400/30 flex items-start gap-3.5 text-slate-200">
-            <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
-            <div className="text-xs sm:text-sm font-bold text-amber-200 leading-relaxed">
-              ⚠️ DIQQAT: Barcha investitsiyalar "ZALATIYE LASTOCHKA" MCHJ bilan tuziladigan rasmiy shartnoma asosida kafolatlanadi.
-            </div>
-          </div>
-
-          {/* Contact Bar & Action */}
-          <div className="luxury-card p-6 sm:p-8 rounded-3xl border border-white/20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-6">
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full lg:w-auto">
-              <a
-                href="tel:+998908714010"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0">
-                  <Phone className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Tel:</span>
-                  <span className="text-xs sm:text-sm font-bold text-white font-mono">+998 (90) 871-40-10</span>
-                </div>
-              </a>
-
-              <a
-                href="https://t.me/afrod991"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
-              >
-                <div className="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center shrink-0">
-                  <Send className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Telegram:</span>
-                  <span className="text-xs sm:text-sm font-bold text-white font-mono">@afrod991</span>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-3 p-3 rounded-2xl bg-white/5 border border-white/10">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
-                  <MapPin className="w-5 h-5" />
-                </div>
-                <div>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase block">Manzil:</span>
-                  <span className="text-xs font-bold text-white">Qarshi sh., Eshon Shahid MFY, NUR o‘quv markazi</span>
-                </div>
-              </div>
-            </div>
-
-            <button
-              onClick={onOpenContract}
-              className="w-full lg:w-auto blue-btn px-7 py-4 rounded-2xl text-xs sm:text-sm font-bold flex items-center justify-center gap-2.5 shadow-xl cursor-pointer shrink-0 text-white"
-            >
-              <FileText className="w-4 h-4 text-white" />
-              <span>{t?.guarantees?.previewBtn || 'Rasmiy shartnoma namunasi'}</span>
-              <ArrowUpRight className="w-4 h-4 text-white" />
-            </button>
           </div>
         </div>
       </div>

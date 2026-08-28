@@ -122,6 +122,7 @@ export function App() {
         <ProfitCalculator
           t={t}
           onOpenPayment={handleOpenPayment}
+          onOpenContract={() => setContractModalOpen(true)}
         />
 
         {/* 6. Qanday ishlaydi (4 bosqichli jarayon) */}
