@@ -17,6 +17,7 @@ import { FaqSection } from './components/FaqSection';
 import { Disclaimer } from './components/Disclaimer';
 import { Footer } from './components/Footer';
 import { ContractModal } from './components/ContractModal';
+import { PaymentCardsModal } from './components/PaymentCardsModal';
 import { PageLoader } from './components/PageLoader';
 
 // Cartoon Wealth Rotating Background Images (Scrooge McDuck & Tom & Jerry)
@@ -46,6 +47,8 @@ export function App() {
   const [lang, setLang] = useState<Language>('uz');
   const [selectedShares] = useState<number>(1);
   const [contractModalOpen, setContractModalOpen] = useState<boolean>(false);
+  const [paymentModalOpen, setPaymentModalOpen] = useState<boolean>(false);
+  const [selectedPackage, setSelectedPackage] = useState<{ name?: string; amount?: string }>({});
   const [bgIndex, setBgIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -62,6 +65,11 @@ export function App() {
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleOpenPayment = (name?: string, amount?: string) => {
+    setSelectedPackage({ name, amount });
+    setPaymentModalOpen(true);
   };
 
   return (
@@ -113,6 +121,7 @@ export function App() {
         <FinancialTerms
           t={t}
           onOpenContract={() => setContractModalOpen(true)}
+          onOpenPayment={handleOpenPayment}
         />
 
         {/* 6. Qanday ishlaydi (4 bosqichli jarayon) */}
@@ -163,6 +172,14 @@ export function App() {
         onClose={() => setContractModalOpen(false)}
         t={t}
         onApply={scrollToForm}
+      />
+
+      {/* 19. Rasmiy To'lov Kartalari Modali */}
+      <PaymentCardsModal
+        isOpen={paymentModalOpen}
+        onClose={() => setPaymentModalOpen(false)}
+        packageName={selectedPackage.name}
+        packageAmount={selectedPackage.amount}
       />
     </div>
   );

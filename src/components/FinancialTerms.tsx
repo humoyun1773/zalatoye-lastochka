@@ -1,13 +1,14 @@
 import React from 'react';
-import { TrendingUp, FileText, ArrowUpRight, AlertTriangle, Phone, Send, MapPin } from 'lucide-react';
+import { TrendingUp, FileText, ArrowUpRight, AlertTriangle, Phone, Send, MapPin, CreditCard } from 'lucide-react';
 import type { TranslationsType } from '../data/translations';
 
 interface FinancialTermsProps {
   t: TranslationsType;
   onOpenContract: () => void;
+  onOpenPayment?: (packageName?: string, packageAmount?: string) => void;
 }
 
-export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContract }) => {
+export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContract, onOpenPayment }) => {
   return (
     <section id="terms" className="py-20 md:py-28 relative bg-transparent border-y border-white/10 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,6 +44,17 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     1-PAKET: KICHIK SARMOYA <span className="text-amber-400">(140% SOF FOYDA)</span>
                   </h3>
                 </div>
+
+                {onOpenPayment && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenPayment('1-PAKET: KICHIK SARMOYA (140% SOF FOYDA)', '560,000 so‘m')}
+                    className="self-start md:self-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-amber-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                  >
+                    <CreditCard className="w-4 h-4 text-slate-950 stroke-[2.5]" />
+                    <span>To‘lov qilish / Karta raqamlari</span>
+                  </button>
+                )}
               </div>
 
               {/* Meta metrics grid */}
@@ -122,6 +134,17 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     2-PAKET: OPTIMAL DAROMAD <span className="text-emerald-400">(100% SOF FOYDA)</span>
                   </h3>
                 </div>
+
+                {onOpenPayment && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenPayment('2-PAKET: OPTIMAL DAROMAD (100% SOF FOYDA)', '940,000 so‘m')}
+                    className="self-start md:self-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-sky-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                  >
+                    <CreditCard className="w-4 h-4 text-white stroke-[2.5]" />
+                    <span>To‘lov qilish / Karta raqamlari</span>
+                  </button>
+                )}
               </div>
 
               {/* Meta metrics grid */}
@@ -201,6 +224,17 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ t, onOpenContrac
                     3-PAKET: BARQAROR SARMOYA <span className="text-emerald-400">(100% SOF FOYDA)</span>
                   </h3>
                 </div>
+
+                {onOpenPayment && (
+                  <button
+                    type="button"
+                    onClick={() => onOpenPayment('3-PAKET: BARQAROR SARMOYA (100% SOF FOYDA)', '2,640,000 so‘m')}
+                    className="self-start md:self-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                  >
+                    <CreditCard className="w-4 h-4 text-white stroke-[2.5]" />
+                    <span>To‘lov qilish / Karta raqamlari</span>
+                  </button>
+                )}
               </div>
 
               {/* Meta metrics grid */}
