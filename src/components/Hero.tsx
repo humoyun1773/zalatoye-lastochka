@@ -72,7 +72,7 @@ export const Hero: React.FC<HeroProps> = ({ t, onScrollToForm }) => {
                   {t.hero.stats.profitLabel}
                 </span>
                 <span className="text-xl sm:text-2xl font-black text-white font-mono">
-                  {t.hero.stats.profit} <span className="text-emerald-400">(+100%)</span>
+                  {t.hero.stats.profit} <span className="text-emerald-400">gacha</span>
                 </span>
               </div>
             </div>

@@ -14,14 +14,14 @@ export const translations = {
       "badge": "Rasmiy Sarmoyaviy Hamkorlik Taklifi • Qashqadaryo 2026",
       "companyName": "ZALATIYE LASTOCHKA",
       "companyType": "MCHJ",
-      "title": "O'rgimchak Biznes Loyihasini Birgalikda Kengaytiramiz",
-      "subtitle": "Qashqadaryo viloyatining 15 ta tumanida zamonaviy xizmatlar infratuzilmasini to'liq avtomatlashtirish loyihasiga rasmiy sarmoyaviy hamkor bo'ling va 100% kafolatlangan sof foyda oling.",
+      "title": "Jamg'armangizni passiv daromadga aylantiring!",
+      "subtitle": "\"ZALATIYE LASTOCHKA\" MCHJ bilan rasmiy shartnoma asosida ishonchli investitsiya kiriting va kafolatlangan daromadga ega bo'ling!",
       "stats": {
         "minInvest": "560,000 so'm",
         "minInvestLabel": "Boshlang'ich sarmoya (1-Paket)",
-        "term": "16 oy",
-        "termLabel": "Shartnoma muddati",
-        "profit": "100%",
+        "term": "17 oy",
+        "termLabel": "Maksimal muddat",
+        "profit": "140%",
         "profitLabel": "Kafolatlangan sof foyda",
         "refund": "17-oyda",
         "refundLabel": "100% Asosiy sarmoya qaytadi"
@@ -248,7 +248,7 @@ export const translations = {
         { "val": "15 ta", "label": "Qashqadaryo tumani" },
         { "val": "17 oy", "label": "Maksimal muddat" },
         { "val": "560 000 so‘m", "label": "Boshlang‘ich sarmoya" },
-        { "val": "207% gacha", "label": "Kafolatlangan sof foyda" }
+        { "val": "140% gacha", "label": "Kafolatlangan sof foyda" }
       ]
     },
     "why": {

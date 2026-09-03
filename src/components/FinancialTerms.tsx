@@ -30,7 +30,7 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
 
         {/* ─── 3 OFFICIAL PACKAGES (ORIGINAL LUXURY DESIGN WITH UPDATED DATA) ─── */}
         <div className="space-y-10 mb-12">
-          {/* ══════════ 1-PAKET: KICHIK SARMOYA (207% SOF FOYDA) ══════════ */}
+          {/* ══════════ 1-PAKET: KICHIK SARMOYA (140% SOF FOYDA) ══════════ */}
           <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-pink-500/40 shadow-2xl overflow-hidden relative">
             {/* Header info */}
             <div className="border-b border-white/15 pb-6 mb-6">
@@ -41,18 +41,18 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                       1-Paket
                     </span>
                     <span className="px-3 py-1 rounded-lg bg-pink-500 text-white text-xs font-black uppercase tracking-wider inline-block shadow-md">
-                      207% SOF FOYDA
+                      140% SOF FOYDA
                     </span>
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
-                    1-PAKET: KICHIK SARMOYA <span className="text-pink-400">(207% SOF FOYDA)</span>
+                    1-PAKET: KICHIK SARMOYA <span className="text-pink-400">(140% SOF FOYDA)</span>
                   </h3>
                 </div>
 
                 {onOpenPayment && (
                   <button
                     type="button"
-                    onClick={() => onOpenPayment('1-PAKET: KICHIK SARMOYA (207% SOF FOYDA)', '560,000 so‘m')}
+                    onClick={() => onOpenPayment('1-PAKET: KICHIK SARMOYA (140% SOF FOYDA)', '560,000 so‘m')}
                     className="self-start md:self-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <CreditCard className="w-4 h-4 text-white stroke-[2.5]" />
@@ -75,8 +75,8 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                   <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
                     Jami qaytariladigan pul:
                   </span>
-                  <div className="text-lg sm:text-xl font-black text-amber-400 font-mono">
-                    1,720,000 so‘m
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
+                    1,344,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -106,26 +106,26 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
                     <td className="py-3.5 px-4 font-bold text-pink-300 whitespace-nowrap">30%</td>
                     <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">168,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Sarmoyaning 30% qismi qaytadi</td>
+                    <td className="py-3.5 px-4 text-slate-300">Dastlabki 30% to‘lov</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
                     <td className="py-3.5 px-4 font-bold text-pink-300 whitespace-nowrap">20%</td>
                     <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">112,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Sarmoyaning 20% qismi qaytadi</td>
+                    <td className="py-3.5 px-4 text-slate-300">60 kunda 50% qaytadi</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–17 oylar (15 oy)</td>
-                    <td className="py-3.5 px-4 font-bold text-pink-300 whitespace-nowrap">Har oy ~5.58%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">96,000 so‘mdan</td>
-                    <td className="py-3.5 px-4 text-slate-300">15 oy davomida har oy (jami 1,440,000 so‘m)</td>
+                    <td className="py-3.5 px-4 font-bold text-pink-300 whitespace-nowrap">Har oy ~5.5%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">70,900 so‘mdan</td>
+                    <td className="py-3.5 px-4 text-slate-300">Qolgan 1,064,000 so‘m 15 oyga teng bo‘linadi</td>
                   </tr>
                 </tbody>
               </table>
             </div>
           </div>
 
-          {/* ══════════ 2-PAKET: OPTIMAL DAROMAD (146% SOF FOYDA) ══════════ */}
+          {/* ══════════ 2-PAKET: OPTIMAL DAROMAD (100% SOF FOYDA) ══════════ */}
           <div className="luxury-card rounded-3xl p-6 sm:p-8 border border-emerald-500/40 shadow-2xl overflow-hidden relative">
             {/* Header info */}
             <div className="border-b border-white/15 pb-6 mb-6">
@@ -136,18 +136,18 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                       2-Paket
                     </span>
                     <span className="px-3 py-1 rounded-lg bg-emerald-500 text-slate-950 text-xs font-black uppercase tracking-wider inline-block shadow-md">
-                      146% SOF FOYDA
+                      100% SOF FOYDA
                     </span>
                   </div>
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white">
-                    2-PAKET: OPTIMAL DAROMAD <span className="text-emerald-400">(146% SOF FOYDA)</span>
+                    2-PAKET: OPTIMAL DAROMAD <span className="text-emerald-400">(100% SOF FOYDA)</span>
                   </h3>
                 </div>
 
                 {onOpenPayment && (
                   <button
                     type="button"
-                    onClick={() => onOpenPayment('2-PAKET: OPTIMAL DAROMAD (146% SOF FOYDA)', '940,000 so‘m')}
+                    onClick={() => onOpenPayment('2-PAKET: OPTIMAL DAROMAD (100% SOF FOYDA)', '940,000 so‘m')}
                     className="self-start md:self-auto px-5 py-3 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-black text-xs sm:text-sm flex items-center gap-2 shadow-lg hover:shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <CreditCard className="w-4 h-4 text-white stroke-[2.5]" />
@@ -170,8 +170,8 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                   <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wider block mb-1">
                     Jami qaytariladigan pul:
                   </span>
-                  <div className="text-lg sm:text-xl font-black text-amber-400 font-mono">
-                    2,320,000 so‘m
+                  <div className="text-lg sm:text-xl font-black text-emerald-400 font-mono">
+                    1,880,000 so‘m
                   </div>
                 </div>
                 <div className="p-3.5 rounded-2xl bg-slate-900/90 border border-white/15">
@@ -199,21 +199,21 @@ export const FinancialTerms: React.FC<FinancialTermsProps> = ({ onOpenPayment })
                 <tbody className="divide-y divide-white/10 text-slate-200 font-medium">
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">1-oy</td>
-                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">30%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">282,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Sarmoyaning 30% qismi qaytadi</td>
+                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">25%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">235,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">Kiritilgan pulning 25% qismi qaytadi</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">2-oy</td>
-                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">20%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">188,000 so‘m</td>
-                    <td className="py-3.5 px-4 text-slate-300">Sarmoyaning 20% qismi qaytadi</td>
+                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">15%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-white whitespace-nowrap">141,000 so‘m</td>
+                    <td className="py-3.5 px-4 text-slate-300">2 oyda 40% qaytadi</td>
                   </tr>
                   <tr className="hover:bg-white/5 transition-colors">
                     <td className="py-3.5 px-4 font-bold text-white whitespace-nowrap">3–14 oylar (12 oy)</td>
-                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">Har oy ~6.65%</td>
-                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">154,200 so‘mdan</td>
-                    <td className="py-3.5 px-4 text-slate-300">12 oy davomida har oy (jami ~1,850,400 so‘m)</td>
+                    <td className="py-3.5 px-4 font-bold text-emerald-300 whitespace-nowrap">Har oy ~10.6%</td>
+                    <td className="py-3.5 px-4 font-mono font-bold text-emerald-400 whitespace-nowrap">125,300 so‘mdan</td>
+                    <td className="py-3.5 px-4 text-slate-300">Qolgan 1,504,000 so‘m teng bo‘lib beriladi</td>
                   </tr>
                 </tbody>
               </table>
