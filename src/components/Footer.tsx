@@ -32,8 +32,8 @@ export const Footer: React.FC<FooterProps> = ({ t }) => {
 
           <div className="md:col-span-3 space-y-2">
             <span className="text-xs font-bold text-white uppercase tracking-wider block">{t.contact.title}</span>
-            <a href="tel:+998908714010" className="text-slate-200 font-mono hover:text-blue-400 block transition-colors font-bold">
-              +998 (90) 871-40-10
+            <a href="tel:+998900000000" className="text-slate-200 font-mono hover:text-blue-400 block transition-colors font-bold">
+              +998 (90) 000-00-00
             </a>
             <a href="https://t.me/afrod991" target="_blank" rel="noopener noreferrer" className="text-slate-200 hover:text-sky-400 block transition-colors font-bold">
               Telegram: @afrod991

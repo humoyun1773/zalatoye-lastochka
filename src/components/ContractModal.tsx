@@ -126,7 +126,7 @@ export const ContractModal: React.FC<ContractModalProps> = ({ isOpen, onClose, t
               <span className="font-bold text-blue-300 block mb-1">KOMPANIYA:</span>
               <p className="text-white font-bold">"ZALATIYE LASTOCHKA" MCHJ</p>
               <p className="text-slate-300 mt-1">Qashqadaryo viloyati, Qarshi sh.</p>
-              <p className="text-slate-300 font-mono">Tel: +998 (90) 871-40-10</p>
+              <p className="text-slate-300 font-mono">Tel: +998 (90) 000-00-00</p>
               <div className="mt-3 p-2 rounded-xl bg-blue-500/20 border border-blue-400/40 text-[11px] text-blue-200 font-mono text-center font-bold">
                 [ RASMIY MUHR VA IMZO ]
               </div>

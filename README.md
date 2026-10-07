@@ -55,7 +55,7 @@ npm run build
 ## 📞 Bog'lanish (Contacts)
 
 - **Kompaniya**: "ZALATIYE LASTOCHKA" MCHJ
-- **Telefon**: `+998 (90) 871-40-10`
+- **Telefon**: `+998 (90) 000-00-00`
 - **Telegram**: [@afrod991](https://t.me/afrod991)
 - **Manzil**: O'zbekiston, Qashqadaryo viloyati
 

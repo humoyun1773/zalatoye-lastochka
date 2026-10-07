@@ -70,11 +70,11 @@ export const CTASection: React.FC<CTASectionProps> = ({ t, onApply }) => {
               </a>
 
               <a
-                href="tel:+998908714010"
+                href="tel:+998900000000"
                 className="w-full sm:w-auto px-6 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/25 text-white text-sm sm:text-base font-bold flex items-center justify-center gap-2.5 transition-all cursor-pointer backdrop-blur-md"
               >
                 <PhoneCall className="w-5 h-5 text-white" />
-                <span>+998 (90) 871-40-10</span>
+                <span>+998 (90) 000-00-00</span>
               </a>
             </div>
 

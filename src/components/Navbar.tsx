@@ -272,7 +272,7 @@ export const Navbar: React.FC<NavbarProps> = ({ lang, setLang, t, onOpenContract
             {/* Quick Contact Line */}
             <div className="grid grid-cols-2 gap-2 pt-1">
               <a
-                href="tel:+998908714010"
+                href="tel:+998900000000"
                 className="py-3 px-2 rounded-xl bg-blue-500/20 border border-blue-400/40 text-blue-300 text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-blue-500/30 transition-colors"
               >
                 <Phone className="w-3.5 h-3.5 text-blue-400" />

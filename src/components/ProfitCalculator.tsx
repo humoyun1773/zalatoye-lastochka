@@ -304,7 +304,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 items-stretch">
               {/* Phone Card */}
               <a
-                href="tel:+998908714010"
+                href="tel:+998900000000"
                 className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all hover:border-blue-400/50 group h-full"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
@@ -313,7 +313,7 @@ export const ProfitCalculator: React.FC<ProfitCalculatorProps> = ({
                 <div className="min-w-0">
                   <span className="text-[10px] text-slate-400 font-bold uppercase tracking-wider block">Tel:</span>
                   <span className="text-xs sm:text-sm font-black text-white font-mono whitespace-nowrap block">
-                    +998 (90) 871-40-10
+                    +998 (90) 000-00-00
                   </span>
                 </div>
               </a>

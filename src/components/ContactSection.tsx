@@ -26,7 +26,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ t }) => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
           {/* Phone Card */}
           <a
-            href="tel:+998908714010"
+            href="tel:+998900000000"
             className="luxury-card p-7 sm:p-8 rounded-3xl group flex flex-col justify-between cursor-pointer border border-white/15 hover:border-blue-400 shadow-xl transition-all"
           >
             <div>

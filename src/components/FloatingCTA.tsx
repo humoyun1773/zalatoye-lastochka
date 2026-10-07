@@ -20,12 +20,12 @@ export const FloatingCTA: React.FC = () => {
 
       {/* Phone Call Floating Button */}
       <a
-        href="tel:+998908714010"
+        href="tel:+998900000000"
         className="w-12 h-12 rounded-2xl gold-btn text-slate-950 flex items-center justify-center shadow-2xl shadow-amber-500/40 hover:scale-110 active:scale-95 transition-all duration-300 relative group cursor-pointer"
-        title="Qo'ng'iroq: +998 (90) 871-40-10"
+        title="Qo'ng'iroq: +998 (90) 000-00-00"
       >
         <span className="absolute right-14 px-2.5 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[11px] font-bold text-amber-300 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none shadow-xl">
-          +998 (90) 871-40-10
+          +998 (90) 000-00-00
         </span>
         <span className="relative flex h-3 w-3 absolute -top-1 -right-1">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
